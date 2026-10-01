@@ -1,0 +1,118 @@
+.legal-page {
+    padding: 9rem 0 4rem;
+    color: var(--color-text);
+    font-family: var(--font-body);
+}
+
+.legal-page .legal-container {
+    max-width: 960px;
+}
+
+.legal-header {
+    margin-bottom: 2rem;
+}
+
+.legal-back,
+.legal-page a {
+    color: var(--color-brown);
+    text-underline-offset: 0.2em;
+    overflow-wrap: anywhere;
+}
+
+.legal-eyebrow {
+    margin: 2rem 0 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.legal-header h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+
+.legal-date {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.legal-introduction {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.legal-contents,
+.legal-document {
+    background: var(--color-cream);
+    border: 1px solid var(--color-gold-dark);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.25rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+}
+
+.legal-contents h2,
+.legal-section h2,
+.legal-translation h2 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    color: var(--color-brown);
+    margin: 0 0 1rem;
+}
+
+.legal-contents ol {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem 2rem;
+    padding-left: 1.25rem;
+    margin: 0;
+}
+
+.legal-section,
+.legal-translation {
+    scroll-margin-top: 7rem;
+}
+
+.legal-section + .legal-section,
+.legal-translation {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-gold-dark);
+}
+
+.legal-section p,
+.legal-section li,
+.legal-translation p {
+    line-height: 1.8;
+}
+
+.legal-section p + p,
+.legal-translation p + p {
+    margin-top: 0.85rem;
+}
+
+.legal-section ul {
+    padding-left: 1.25rem;
+    margin: 0.85rem 0;
+}
+
+.legal-section li + li {
+    margin-top: 0.5rem;
+}
+
+.legal-related {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    padding-bottom: 2.5rem;
+}
+
+@media (max-width: 600px) {
+    .legal-page {
+        padding-top: 7rem;
+    }
+
+    .legal-contents ol {
+        grid-template-columns: 1fr;
+    }
+}

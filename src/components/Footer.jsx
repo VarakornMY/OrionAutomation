@@ -90,7 +90,11 @@ const Footer = () => {
                     opacity: 0.6,
                     fontSize: '0.85rem',
                 }}>
-                    © 2025 Orion Automation. All rights reserved.
+                    <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.75rem 1.5rem', marginBottom: '1rem' }}>
+                        <Link to="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link>
+                        <Link to="/terms-and-conditions" style={{ color: 'inherit' }}>Terms &amp; Conditions</Link>
+                    </div>
+                    © {new Date().getFullYear()} Orion Automation. All rights reserved.
                 </div>
             </div>
         </footer>

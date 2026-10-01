@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useUser } from '../context/UserContext';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Icon from '../components/Icons';
 
@@ -305,6 +305,11 @@ const Auth = () => {
                                 {isSubmitting ? 'Please wait...' : (isLogin ? 'Login' : 'Create Account')}
                             </button>
                         </form>
+
+                        <p style={{ marginTop: 'var(--spacing-md)', fontSize: '0.85rem', lineHeight: 1.6 }}>
+                            Read our <Link to="/privacy-policy">Privacy Policy</Link> and{' '}
+                            <Link to="/terms-and-conditions">Terms &amp; Conditions</Link> before using the account demonstration.
+                        </p>
 
                         {isLogin && (
                             <p style={{

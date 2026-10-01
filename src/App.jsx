@@ -22,6 +22,8 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import AdminBlog from './pages/AdminBlog';
 import NotFound from './pages/NotFound';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsAndConditions from './pages/TermsAndConditions';
 
 // The CMS has its own chrome — hide the public Navbar/Footer/widget there.
 const Shell = () => {
@@ -53,6 +55,8 @@ const Shell = () => {
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/blog" element={<Blog />} />
                     <Route path="/blog/:slug" element={<BlogPost />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                    <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                     <Route path="/admin" element={<AdminBlog />} />
                     <Route path="/admin/blog" element={<AdminBlog />} />
                     <Route path="*" element={<NotFound />} />
