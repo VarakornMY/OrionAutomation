@@ -7,7 +7,7 @@ const defaults = {
     botName: 'Orion AI',
     aiGoal: 'Provide helpful information about our services and schedule appointments.',
     personality: 'Professional, friendly, and concise.',
-    knowledgeBase: 'Services: AI chatbots, website development, marketing and SEO. Contact: marketing@orionautomation.xyz',
+    knowledgeBase: 'Services: AI chatbots, website development, marketing and SEO. Contact: orionaiautomation@gmail.com',
 };
 
 export default function ChatbotAdmin() {

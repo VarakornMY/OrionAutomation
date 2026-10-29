@@ -16,3 +16,7 @@
   repetitive subtitles, decorative emoji or arrow glyphs, fake dashboards,
   or fabricated statistics. Prefer clear headings and useful content.
   Motion should respond to interaction and honour reduced-motion settings.
+- Publish only confirmed company identity and contact details. Never invent a
+  registration number, address, accreditation, client testimonial, partnership,
+  or verification status. Keep business descriptions and policies consistent
+  with the live website and actual services.

@@ -896,7 +896,7 @@ const AdminBlog = () => {
                         <h1>Content management</h1>
                         <p>The admin portal is not available yet. Contact our team for help with content or a project.</p>
                         <div className="support-actions"><Link to="/" className="button button-primary">Back to website</Link><Link to="/blog" className="button button-secondary">Read the journal</Link></div>
-                        <a className="support-text-link" href="mailto:marketing@orionautomation.xyz">Contact the team</a>
+                        <a className="support-text-link" href="mailto:orionaiautomation@gmail.com">Contact the team</a>
                     </div>
                 </section>
             </div>

@@ -2,16 +2,17 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { mkdir } from 'node:fs/promises';
 import { getAllPosts } from '../../src/data/blogPosts.js';
+import { business } from '../../src/data/business.js';
 
 const routes = [
     '/', '/ai-automation', '/ai-chatbot', '/website', '/marketing',
     '/blog',
-    ...getAllPosts().map(post => `/blog/${post.slug}`), '/about-us', '/privacy-policy',
+    ...getAllPosts().map(post => `/blog/${post.slug}`), '/about-us', '/contact', '/privacy-policy',
     '/terms-and-conditions', '/auth', '/profile', '/admin', '/admin/blog',
     '/not-a-page', '/blog/not-an-article',
 ];
-const tabletRoutes = ['/', '/website', '/blog', '/privacy-policy'];
-const auditRoutes = ['/', '/website', '/blog', '/blog/ai-chatbots-for-small-business-2026', '/privacy-policy', '/admin'];
+const tabletRoutes = ['/', '/website', '/blog', '/contact', '/privacy-policy'];
+const auditRoutes = ['/', '/website', '/blog', '/blog/ai-chatbots-for-small-business-2026', '/contact', '/privacy-policy', '/admin'];
 
 test.beforeEach(async ({ page }) => {
     // No third-party telemetry is needed to verify our local UI.
@@ -40,7 +41,7 @@ for (const route of routes) {
             const result = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
             expect(result.violations.map(item => ({ id: item.id, nodes: item.nodes.map(node => node.target) }))).toEqual([]);
         }
-        if (['/', '/website', '/blog', '/blog/ai-chatbots-for-small-business-2026', '/privacy-policy'].includes(route)) {
+        if (['/', '/website', '/blog', '/blog/ai-chatbots-for-small-business-2026', '/contact', '/privacy-policy'].includes(route)) {
             await mkdir('artifacts/ui-review', { recursive: true });
             const name = route === '/' ? 'home' : route.replaceAll('/', '-').slice(1);
             await page.screenshot({ path: `artifacts/ui-review/${testInfo.project.name}-${name}.png` });
@@ -140,4 +141,41 @@ test('blog filtering and article contents support navigation', async ({ page }) 
     const href = await firstLink.getAttribute('href');
     await firstLink.click();
     await expect(page).toHaveURL(new RegExp(`${href}$`));
+});
+
+test('business contact details are reachable and match the public identity', async ({ page }, testInfo) => {
+    await page.goto('/');
+    if (testInfo.project.name !== 'desktop') await page.getByRole('button', { name: 'Open navigation menu' }).click();
+    await page.locator('.site-header').getByRole('link', { name: testInfo.project.name === 'desktop' ? 'Contact' : 'Contact Orion', exact: true }).click();
+    await expect(page).toHaveURL('/contact');
+    await expect(page.getByRole('heading', { name: 'Contact Orion', exact: true })).toBeVisible();
+    const main = page.locator('main');
+    await expect(main.getByRole('link', { name: business.email, exact: true })).toHaveAttribute('href', `mailto:${business.email}`);
+    await expect(main.getByRole('link', { name: business.phoneDisplay, exact: true })).toHaveAttribute('href', `tel:${business.phone}`);
+    await expect(main.getByText(business.name, { exact: true })).toBeVisible();
+    const schemas = await page.locator('script[type="application/ld+json"]').allTextContents();
+    const organization = schemas.map(text => JSON.parse(text)).find(schema => schema['@type'] === 'Organization');
+    expect(organization.telephone).toBe(business.phone);
+    expect(organization.email).toBe(business.email);
+    expect(organization.url).toBe(business.url);
+});
+
+test('business pages can be read without JavaScript', async ({ browser }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop');
+    const context = await browser.newContext({ javaScriptEnabled: false, baseURL: testInfo.project.use.baseURL });
+    const page = await context.newPage();
+    try {
+        for (const route of ['/', '/about-us', '/contact', '/website', '/ai-automation', '/ai-chatbot', '/marketing', '/privacy-policy', '/terms-and-conditions']) {
+            const response = await page.goto(route, { waitUntil: 'domcontentloaded' });
+            expect(response.status()).toBe(200);
+            await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
+            await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+            await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `${business.url}${route}`);
+            await expect(page.locator('.site-footer').getByRole('link', { name: business.phoneDisplay, exact: true })).toHaveAttribute('href', `tel:${business.phone}`);
+        }
+        await page.goto('/privacy-policy', { waitUntil: 'domcontentloaded' });
+        await expect(page.locator('.legal-document')).toContainText('orionautomation.my');
+    } finally {
+        await context.close();
+    }
 });

@@ -13,27 +13,27 @@ const posts = [
         slug: 'ai-chatbots-for-small-business-2026',
         title: 'AI Chatbots for Small Business in 2026: A Practical Guide',
         description:
-            'How small businesses can deploy AI chatbots in 2026 to capture leads 24/7, cut response times, and grow revenue without hiring more support staff.',
+            'How small businesses can choose an AI chatbot use case, plan a rollout, and measure response times and enquiry handling.',
         keywords:
             'AI chatbot for small business, chatbot 2026, conversational AI, lead generation chatbot, customer support automation, WhatsApp chatbot, Orion Automation',
         author: 'Orion Automation Team',
         category: 'AI Chatbots',
         readMinutes: 7,
         publishedAt: '2026-04-12',
-        updatedAt: '2026-05-10',
+        updatedAt: '2026-10-30',
         cover: '#c8c1af',
         excerpt:
-            'A no-fluff playbook for small businesses ready to add an AI chatbot in 2026 — from picking use cases to measuring ROI in the first 30 days.',
+            'A practical guide to choosing a chatbot use case, preparing its information, and reviewing the first month of conversations.',
         sections: [
-            { type: 'p', text: 'Three years ago, deploying an AI chatbot meant a six-figure budget and a four-month rollout. In 2026, a small business can launch a capable assistant in days — and the businesses that move first are pulling ahead on response time, conversion rate, and customer satisfaction.' },
+            { type: 'p', text: 'An AI chatbot can help with common enquiries, appointment requests, and contact details. The work involved depends on your information, messaging platforms, integrations, and the checks needed before launch.' },
             { type: 'p', text: 'This guide walks through how to choose the right first use case, what to expect from a modern conversational AI, and how to measure whether your chatbot is actually paying for itself.' },
 
-            { type: 'h2', text: 'Why 2026 is the inflection point' },
-            { type: 'p', text: 'Three things changed: large language models got dramatically cheaper, retrieval became reliable enough for production, and pre-built connectors to WhatsApp, Messenger, and website widgets shortened deployment from months to days.' },
-            { type: 'p', text: 'For a small business, this means an AI chatbot is no longer a "nice to have." It is a baseline expectation — and an unanswered message at 9pm is now a lost customer.' },
+            { type: 'h2', text: 'What to check before choosing a chatbot' },
+            { type: 'p', text: 'Language models, searchable knowledge bases, and messaging integrations can support a chatbot that answers from business information. Each connection still needs configuration and testing.' },
+            { type: 'p', text: 'For a small business, the useful question is whether a chatbot solves a recurring customer problem. Check where enquiries are delayed and how customers can reach a person when the chatbot cannot help.' },
 
             { type: 'h2', text: 'Pick one painful use case, not five' },
-            { type: 'p', text: 'The most common reason chatbot projects stall is scope creep. Start with the single most expensive conversation your team has on repeat. For most small businesses, it is one of these:' },
+            { type: 'p', text: 'A broad scope makes a first chatbot harder to test. Start with one recurring type of conversation, such as:' },
             { type: 'ul', items: [
                 'After-hours lead qualification — capturing intent while you sleep',
                 'Booking and appointment scheduling — eliminating the back-and-forth',
@@ -43,24 +43,24 @@ const posts = [
             { type: 'p', text: 'Pick one. Ship it. Measure it. Then expand.' },
 
             { type: 'h2', text: 'What a modern AI chatbot can actually do' },
-            { type: 'p', text: 'Today\'s chatbots are not the scripted decision trees of 2019. A well-built assistant in 2026 can:' },
+            { type: 'p', text: 'Depending on the product and integrations, a chatbot can be configured to:' },
             { type: 'ul', items: [
                 'Hold a multi-turn conversation that remembers earlier context',
-                'Read your knowledge base and quote it accurately with citations',
+                'Answer from your knowledge base and show supporting sources, with checks for missing or incorrect answers',
                 'Hand off cleanly to a human when intent or sentiment warrants it',
                 'Book directly into Google Calendar, Calendly, or your CRM',
-                'Speak your customer\'s language — English, Malay, Mandarin, Thai, and more',
+                'Support the languages your customers use, with review by someone who understands each language',
             ] },
 
             { type: 'h2', text: 'Measuring ROI in the first 30 days' },
-            { type: 'p', text: 'A chatbot that cannot prove its value will be turned off. Track these four numbers from day one:' },
+            { type: 'p', text: 'Agree on what a useful result looks like before launch, then track these measures:' },
             { type: 'ol', items: [
                 'Containment rate — percentage of conversations resolved without a human',
                 'Lead capture rate — visitors who provide contact details vs. total visitors',
-                'Median first-response time — should drop from hours to seconds',
+                'Median first-response time, alongside the time taken to reach a useful answer',
                 'Conversion lift — bookings or sales attributable to chatbot-handled sessions',
             ] },
-            { type: 'quote', text: 'If your chatbot is not measurably moving one of these four numbers within 30 days, you have a configuration problem, not a technology problem.', cite: 'Orion Automation' },
+            { type: 'quote', text: 'Use the first month of conversations to review answer quality, customer handoffs, and the measures you agreed before launch.', cite: 'Orion Automation' },
 
             { type: 'h2', text: 'Common pitfalls to avoid' },
             { type: 'ul', items: [
@@ -71,7 +71,7 @@ const posts = [
             ] },
 
             { type: 'h2', text: 'Where to go from here' },
-            { type: 'p', text: 'If you are exploring an AI chatbot for your business, the cheapest next step is a 30-minute scoping call. We will help you pick the right first use case and give you an honest read on the timeline and budget.' },
+            { type: 'p', text: 'If you are exploring an AI chatbot for your business, send us the questions it needs to handle and the tools it would connect to. We can discuss a suitable scope, timeline, and budget.' },
             { type: 'cta', text: 'Ready to see what a chatbot can do for your business?', to: '/ai-chatbot', label: 'Explore AI Chatbots' },
         ],
     },
@@ -80,42 +80,42 @@ const posts = [
         slug: 'small-business-website-must-haves-2026',
         title: '10 Things Every Small Business Website Must Have in 2026',
         description:
-            'The 2026 checklist for small business websites: SEO, Core Web Vitals, AI search readiness, accessibility, and conversion essentials that actually move the needle.',
+            'A checklist for small business websites covering performance, accessibility, contact details, useful content, and clear next steps.',
         keywords:
             'small business website 2026, website checklist, SEO best practices, Core Web Vitals, web design Malaysia, conversion optimization, accessibility WCAG, Orion Automation',
         author: 'Orion Automation Team',
         category: 'Websites',
         readMinutes: 8,
         publishedAt: '2026-03-22',
-        updatedAt: '2026-04-30',
+        updatedAt: '2026-10-30',
         cover: '#ead6b9',
         excerpt:
-            'A modern small business website has 10 non-negotiable elements. Miss any of them and you are quietly losing customers to competitors who did not.',
+            'Ten areas to review on a small business website, from mobile usability and contact details to pricing and useful content.',
         sections: [
-            { type: 'p', text: 'A website in 2026 is not a brochure. It is your highest-leverage salesperson — open every hour, in every market, in every language. But the bar has moved. What worked in 2022 now actively costs you customers.' },
-            { type: 'p', text: 'Here are the ten things every small business website needs in 2026, ranked by impact.' },
+            { type: 'p', text: 'A business website should help people understand what you offer, check the details, and contact you. Review it from the perspective of someone who has never heard of the business.' },
+            { type: 'p', text: 'Here are ten areas to check when planning or reviewing a small business website.' },
 
-            { type: 'h2', text: '1. Sub-2-second load on mobile' },
-            { type: 'p', text: 'Google now treats Core Web Vitals as a ranking signal, and 53% of mobile visitors abandon a page that takes more than three seconds to load. Modern frameworks, image optimization, and a CDN make sub-2-second loads achievable on a small business budget.' },
+            { type: 'h2', text: '1. Fast loading on mobile' },
+            { type: 'p', text: 'Test page loading on a real phone and a mobile connection. Compress large images, review unnecessary scripts, and check the main content appears promptly.' },
 
             { type: 'h2', text: '2. A single, obvious primary action' },
-            { type: 'p', text: 'Every page should ask the visitor to do one thing. Book a call. Get a quote. Start a chat. Sites with three competing call-to-actions convert worse than sites with one clear one.' },
+            { type: 'p', text: 'Give each page a clear primary action, such as requesting a quote or viewing a package. Keep other navigation available without making every link compete for attention.' },
 
             { type: 'h2', text: '3. Structured data for AI search' },
-            { type: 'p', text: 'AI-powered search engines and assistants — ChatGPT, Perplexity, Google AI Overviews — read JSON-LD to understand what your business does. Without it, you are invisible to a growing share of search traffic.' },
+            { type: 'p', text: 'Use structured data that accurately describes the business and the content on each page. It can help machines interpret information, but it does not guarantee rankings or AI citations.' },
 
             { type: 'h2', text: '4. Genuine social proof' },
-            { type: 'p', text: 'Real customer testimonials with names, photos, and outcomes outperform stock-photo "5-star reviews" by an order of magnitude. If you cannot get a written quote, get a screenshot of a real message.' },
+            { type: 'p', text: 'Use genuine customer feedback with permission and enough context to understand the work involved. Do not invent reviews, results, names, or customer logos.' },
 
             { type: 'h2', text: '5. Live chat or AI chatbot' },
-            { type: 'p', text: 'Visitors who engage with chat convert 2-3x more often than those who do not. An AI chatbot covers the hours your team cannot.' },
+            { type: 'p', text: 'Chat can offer another way to ask questions. If you add a chatbot, make its limits clear and provide a route to a person.' },
             { type: 'cta', text: 'Curious how a chatbot fits into your site?', to: '/ai-chatbot', label: 'See AI Chatbot Options' },
 
             { type: 'h2', text: '6. Accessibility (WCAG 2.2 AA)' },
-            { type: 'p', text: 'Accessible sites rank better, convert better, and protect you from a growing wave of compliance complaints. Basics: sufficient color contrast, keyboard navigation, alt text, semantic HTML.' },
+            { type: 'p', text: 'Check sufficient colour contrast, keyboard navigation, informative image descriptions, semantic HTML, and clear form labels. Automated checks should be followed by manual testing.' },
 
             { type: 'h2', text: '7. Local SEO essentials' },
-            { type: 'p', text: 'For most small businesses, 70% of traffic should come from local search. That means a complete Google Business Profile, location-specific landing pages, and NAP (name, address, phone) consistency across the web.' },
+            { type: 'p', text: 'For a business serving a local area, keep its name, address where public, phone number, opening hours, and service area consistent across the website and business listings.' },
 
             { type: 'h2', text: '8. Honest pricing — or a clear path to it' },
             { type: 'p', text: 'You do not have to publish exact prices. But hiding all pricing context behind a "Contact us" form costs you the visitors who self-qualify by budget. Show ranges, packages, or a starting price.' },
@@ -124,11 +124,11 @@ const posts = [
             { type: 'p', text: 'Google Analytics 4, Microsoft Clarity, or Plausible — pick one and check it weekly. The site you launch is never the site that converts; iteration is where the wins come from.' },
 
             { type: 'h2', text: '10. A blog or resource hub' },
-            { type: 'p', text: 'Content marketing remains the single most cost-effective way for a small business to compete on search. One useful article per month, written for your actual customer, compounds over years.' },
+            { type: 'p', text: 'Publish articles that answer questions your customers actually ask. Keep them accurate and current rather than publishing to meet a volume target.' },
 
             { type: 'h2', text: 'The bar is higher, but so are the tools' },
-            { type: 'p', text: 'You do not need to ship all ten at once. You need a roadmap. If you want a candid review of where your current site sits on this list, we are happy to do a free 15-minute teardown.' },
-            { type: 'cta', text: 'Want a free audit of your current website?', to: '/website', label: 'Explore Website Services' },
+            { type: 'p', text: 'You do not need to address every item at once. Start with problems that stop people using the site or contacting you, then plan the remaining work.' },
+            { type: 'cta', text: 'Discuss a review of your current website.', to: '/website', label: 'Explore Website Services' },
         ],
     },
 
@@ -143,7 +143,7 @@ const posts = [
         category: 'Marketing',
         readMinutes: 6,
         publishedAt: '2026-02-18',
-        updatedAt: '2026-04-02',
+        updatedAt: '2026-10-30',
         cover: '#f1daac',
         excerpt:
             'Marketing automation is a force multiplier — until it makes every email sound the same. Here is how to scale without flattening what makes you, you.',
@@ -163,7 +163,7 @@ const posts = [
             { type: 'quote', text: 'The brands that win at AI-assisted marketing are the ones who treat their voice as a product, not a vibe.', cite: 'Orion Automation' },
 
             { type: 'h2', text: 'Use automation to listen, not just to speak' },
-            { type: 'p', text: 'The highest-leverage automation in 2026 is not "send more emails." It is automatically capturing every customer signal — support chats, reviews, sales calls, social mentions — and surfacing the patterns to your marketing team.' },
+            { type: 'p', text: 'Automation can also help organise customer feedback from support conversations, reviews, and sales notes. Collect it with appropriate permission and let people review the themes before acting on them.' },
             { type: 'p', text: 'You cannot scale a brand voice you do not know. Listening at scale is what makes speaking at scale possible.' },
 
             { type: 'h2', text: 'A starter stack that does not break the bank' },
@@ -185,7 +185,7 @@ const posts = [
             ] },
 
             { type: 'h2', text: 'The takeaway' },
-            { type: 'p', text: 'Marketing automation done right is not about doing more. It is about doing the same things at a higher quality, more consistently, with a team that still has time to think. The brands that get this right in 2026 will own their categories.' },
+            { type: 'p', text: 'Choose a few repeatable marketing tasks, define who reviews the output, and measure whether the process saves time without reducing quality. Keep customer-facing wording under human review.' },
             { type: 'cta', text: 'Want help designing a marketing system that scales with your voice?', to: '/marketing', label: 'Explore Marketing Services' },
         ],
     },
@@ -194,41 +194,41 @@ const posts = [
         slug: 'seo-for-ai-search-engines',
         title: 'SEO for AI Search Engines: How to Get Cited by ChatGPT, Perplexity, and Google AI Overviews',
         description:
-            'AI search is rewriting the rules of SEO. Learn what ChatGPT, Perplexity, and Google AI Overviews actually look at — and how to make your site the one they cite.',
+            'How to make business information and articles easier to find, understand, and check when people use search engines and AI assistants.',
         keywords:
             'AI SEO, generative engine optimization, GEO, ChatGPT SEO, Perplexity SEO, Google AI Overviews, structured data, schema markup, Orion Automation',
         author: 'Orion Automation Team',
         category: 'SEO',
         readMinutes: 9,
         publishedAt: '2026-01-15',
-        updatedAt: '2026-05-05',
+        updatedAt: '2026-10-30',
         cover: '#dac4b3',
         excerpt:
-            'Traditional SEO is about ranking. AI SEO is about being cited. The playbook has changed — here is what is actually working in 2026.',
+            'A guide to clear answers, accurate business information, crawlable pages, and measuring referrals from AI assistants.',
         sections: [
-            { type: 'p', text: 'In 2024, the question was "how do I rank on page one?" In 2026, an increasing share of searches never produce a page of blue links at all. ChatGPT answers directly. Perplexity cites three sources. Google AI Overviews summarises before the user scrolls.' },
-            { type: 'p', text: 'The new game is not just ranking. It is being the source the AI cites. Here is what is working.' },
+            { type: 'p', text: 'People can use search results and AI assistants to research a business. An answer may summarise several pages or link to supporting sources, so the information on your own site needs to be easy to understand and check.' },
+            { type: 'p', text: 'This guide covers practical content and website checks. No content format can guarantee that an assistant will cite a particular business.' },
 
             { type: 'h2', text: 'Write for the question, not the keyword' },
-            { type: 'p', text: 'AI search engines parse intent, not just terms. Pages structured around a clear question — and that answer it directly in the first paragraph — get cited far more than keyword-stuffed pages that bury the answer.' },
+            { type: 'p', text: 'Organise a page around the question it answers. A direct answer near the start helps readers assess whether the rest of the page is relevant.' },
             { type: 'ul', items: [
                 'Lead with the answer, then explain',
                 'Use H2s phrased as the questions your customer actually asks',
                 'Keep the answer self-contained in 2-3 sentences before going deeper',
             ] },
 
-            { type: 'h2', text: 'Structured data is non-negotiable' },
-            { type: 'p', text: 'JSON-LD schema is how AI engines understand what kind of content they are looking at. At minimum, every page should declare:' },
+            { type: 'h2', text: 'Use relevant structured data' },
+            { type: 'p', text: 'Structured data describes page content in a machine-readable format. Choose types that match what is actually on the page, such as:' },
             { type: 'ul', items: [
-                'Organization schema (sitewide)',
+                'Organization schema for accurate business details',
                 'Article schema on blog posts',
-                'FAQPage schema on Q&A content',
+                'Question-and-answer markup only where the page and current platform guidance support it',
                 'Product or Service schema where relevant',
                 'BreadcrumbList for hierarchy',
             ] },
 
             { type: 'h2', text: 'Citations and external signals matter more than ever' },
-            { type: 'p', text: 'AI engines weight authority heavily. A page on a site with strong, relevant inbound links and brand mentions gets cited; a page on an unknown domain does not, no matter how well written.' },
+            { type: 'p', text: 'Relevant coverage and links can help people discover and check your business. Seek genuine mentions from organisations that understand your work; avoid purchased endorsements or fabricated authority.' },
             { type: 'p', text: 'Three durable tactics:' },
             { type: 'ol', items: [
                 'Get cited by industry publications — guest posts, expert quotes, original research',
@@ -236,8 +236,8 @@ const posts = [
                 'Original data is link-magnet gold — survey your customers, publish the findings',
             ] },
 
-            { type: 'h2', text: 'Freshness is a stronger signal than ever' },
-            { type: 'p', text: 'AI engines preferentially cite recent content, especially for fast-moving topics. A post from 2022 about "AI marketing" will rarely be cited in 2026 — even if it ranks. Update timestamps, refresh content, and republish.' },
+            { type: 'h2', text: 'Keep information current' },
+            { type: 'p', text: 'Review time-sensitive claims, prices, and product details. Update the content when facts change, and change its update date only when a meaningful review or revision has taken place.' },
 
             { type: 'h2', text: 'Don\'t neglect the basics' },
             { type: 'p', text: 'Generative engine optimization does not replace traditional SEO. It sits on top of it. The fundamentals still apply:' },
@@ -249,7 +249,7 @@ const posts = [
             ] },
 
             { type: 'h2', text: 'How to measure it' },
-            { type: 'p', text: 'The standard tools have not caught up. Track these three signals manually until they do:' },
+            { type: 'p', text: 'Use several measures rather than treating a single assistant response as a stable ranking:' },
             { type: 'ol', items: [
                 'Brand mention searches — are people asking about you by name?',
                 'Referral traffic from chat.openai.com, perplexity.ai, and similar',
@@ -257,7 +257,7 @@ const posts = [
             ] },
 
             { type: 'h2', text: 'The strategic shift' },
-            { type: 'p', text: 'The brands that will own search in 2026 and beyond are not the ones who game algorithms. They are the ones who become genuinely useful, authoritative sources — clearly labelled, well structured, and updated often enough to stay current.' },
+            { type: 'p', text: 'A useful starting point is a site with accurate business details, readable answers, clear sources, and working navigation. Review actual enquiries and referrals to decide what to improve next.' },
             { type: 'cta', text: 'Want an AI-search-ready website?', to: '/website', label: 'Explore Website Services' },
         ],
     },
@@ -273,20 +273,20 @@ const posts = [
         category: 'AI Automation',
         readMinutes: 8,
         publishedAt: '2026-05-20',
-        updatedAt: '2026-05-20',
+        updatedAt: '2026-10-30',
         cover: '#c8c1af',
         excerpt:
             'A no-fluff 2026 playbook for SMBs ready to stop pasting data between tabs — how to pick the right first workflow, build it, and prove it paid for itself.',
         sections: [
-            { type: 'p', text: 'The average small business in 2026 runs on twelve to fifteen SaaS tools that do not talk to each other. The cost of that gap is not a line item on your P&L, but it is real: every hour your team spends copy-pasting between a CRM, a spreadsheet, an inbox, and an invoicing app is an hour you paid for twice.' },
-            { type: 'p', text: 'Workflow automation closes that gap. Done well, it gives an eight-person team the operational leverage of an eighteen-person team. Done poorly, it produces silent failures that quietly corrupt your data and erode trust in the system. This playbook is how to do it well.' },
+            { type: 'p', text: 'When CRM, spreadsheets, email, and invoicing tools are separate, staff may need to copy the same information between them. List those handoffs and the time they take before deciding what to automate.' },
+            { type: 'p', text: 'Workflow automation can connect those steps, but a poorly tested connection can also repeat errors. This guide covers how to choose a process, test it, and monitor the result.' },
 
-            { type: 'h2', text: 'What changed in 2026' },
-            { type: 'p', text: 'Three things are different now from even two years ago. First, LLM-augmented workflow steps are cheap and reliable enough to handle the messy parts of a process — parsing a free-text email, classifying intent, summarising a call transcript — that used to require a human. Second, no-code orchestrators like n8n, Make, and Zapier ship native AI nodes and persistent agent memory, which means a small business can wire up a multi-step automation in an afternoon instead of a quarter. Third, the market has voted: 62% of organizations are experimenting with or scaling AI agents, and SMB workflow automation is on a double-digit growth trajectory through the decade.' },
-            { type: 'p', text: 'Translation: the tooling is no longer the bottleneck. The bottleneck is knowing which workflows to build, in what order, and how to keep them honest.' },
+            { type: 'h2', text: 'What workflow tools can connect' },
+            { type: 'p', text: 'Workflow tools can combine scheduled jobs, API connections, and optional AI steps for tasks such as extracting fields or drafting replies. Check the available connectors, permissions, running costs, and review requirements for your own tools.' },
+            { type: 'p', text: 'The choice of tool follows the process: what starts it, what information it needs, what it may change, and who is responsible when a run fails.' },
 
             { type: 'h2', text: 'Find the candidates before you pick a tool' },
-            { type: 'p', text: 'Most automation projects fail in the first week, before a single trigger is configured, because the team picked a fashionable process instead of a painful one. The right candidates share four traits:' },
+            { type: 'p', text: 'Choose a process because it causes a measurable problem, rather than because a tool can automate it. Useful candidates share four traits:' },
             { type: 'ul', items: [
                 'High frequency — it happens daily or many times a week, not once a quarter',
                 'Rule-based — the decisions can be written down without lots of "it depends"',
@@ -309,19 +309,19 @@ const posts = [
                 'Action — write to the CRM, send the email, generate the invoice, post to Slack, charge the card',
                 'Human-in-the-loop checkpoint — for anything irreversible or above a risk threshold, require an approval click before the action fires',
             ] },
-            { type: 'p', text: 'The single biggest upgrade most SMBs can make to their existing automations is adding the AI step in the middle. A workflow that used to fail whenever an email did not match a regex now reads the email, decides what it is, and routes accordingly.' },
+            { type: 'p', text: 'An AI step may help interpret unstructured text, but it should be tested against clear rules and examples. Keep a manual route for uncertain or unexpected input.' },
 
             { type: 'h2', text: 'Pick the orchestrator that fits your team' },
             { type: 'p', text: 'There is no universal right answer here, but the trade-offs are clear in 2026.' },
             { type: 'ul', items: [
-                'Zapier — fastest time-to-value, 8,000+ integrations, best for non-technical operators; you pay per task, which gets expensive at high volume',
-                'Make — visual canvas, strong for branching logic and data transformation, mid-price; the sweet spot for ops teams who want to see the whole flow',
-                'n8n — most depth, AI-native with broad LangChain support, self-hostable with unlimited executions; rewards a team comfortable with light technical work',
+                'Zapier: check its connectors, task allowances, permissions, and costs against your expected volume',
+                'Make: evaluate its visual workflow editor with a small example of your branching and transformation needs',
+                'n8n: evaluate its workflow features and hosting options, including the maintenance and security responsibilities of self-hosting',
             ] },
             { type: 'p', text: 'Pick one and standardise. The cost of running three orchestrators in parallel — context switching, duplicated credentials, fragmented logs — is almost always greater than the cost of consolidating on the second-best fit.' },
 
             { type: 'h2', text: 'The failure modes that will bite you' },
-            { type: 'p', text: 'Every SMB that has run automations for more than six months has a story about the one that went wrong. The patterns are predictable.' },
+            { type: 'p', text: 'Plan for failures before connecting a workflow to customer or financial records. Check the following risks:' },
             { type: 'ul', items: [
                 'Silent failures — the workflow runs, produces output, and no one notices it was wrong until a customer complains. Fix: every workflow needs an owner and a weekly five-minute log review',
                 'Cascading errors — a five-step chain across three external systems compounds failure probability at every hop. Fix: add retries, dead-letter queues, and alerts on the steps you cannot afford to lose',
@@ -332,22 +332,22 @@ const posts = [
             { type: 'quote', text: 'Automation does not fix a broken process — it just lets you break it faster and at scale. Map first, delete second, automate third.', cite: 'Orion Automation' },
 
             { type: 'h2', text: 'Measuring ROI without fooling yourself' },
-            { type: 'p', text: 'A workflow that cannot prove its value will be quietly turned off in six months. Before you ship, write down the baseline. After you ship, measure the delta. Four numbers are usually enough.' },
+            { type: 'p', text: 'Record a baseline before launch so you can compare the result with the manual process. Review these measures:' },
             { type: 'ol', items: [
                 'Hours reclaimed per week — multiply by a loaded labour cost to get a real currency figure',
                 'Cycle time — how long the process used to take end to end vs. now',
                 'Error rate — the percentage of runs that needed manual cleanup or caused a customer issue',
                 'Revenue or retention lift — for customer-facing workflows, the downstream metric that actually matters',
             ] },
-            { type: 'p', text: 'Industry benchmarks help calibrate expectations but should not replace your own measurement. Well-scoped SMB workflow projects routinely report payback inside six months and productivity gains of 25-30% on the processes they touch. If your first automation is not on a similar trajectory after 60 days, the problem is almost always design, not the tool.' },
+            { type: 'p', text: 'Calculate the result from your own usage: time saved, corrections needed, licence and hosting costs, maintenance, and the cost of building the workflow. Agree a review point without assuming a fixed payback period.' },
 
-            { type: 'h2', text: 'A 30-day rollout that actually ships' },
-            { type: 'p', text: 'You do not need a steering committee. You need a sequence that gets a real workflow into production fast enough to learn from it.' },
+            { type: 'h2', text: 'An example 30-day rollout' },
+            { type: 'p', text: 'Use this as a planning example, then adjust it for the process complexity, testing, and people involved:' },
             { type: 'ol', items: [
                 'Week 1 — pick the one process, map it, delete the dead steps, and write the baseline metrics',
                 'Week 2 — build the workflow in a sandbox, test with real (but copied) data, add the human-in-the-loop step',
                 'Week 3 — go live on a small slice (one team, one customer segment), monitor the logs daily, fix what surfaces',
-                'Week 4 — open the floodgates, document the runbook, and queue up the next candidate from your list',
+                'Week 4: review the pilot, document support and rollback steps, and expand only if the checks pass',
             ] },
             { type: 'p', text: 'Two automations shipped and stable beats ten half-built workflows every time. The teams that win at automation in 2026 are the ones who treat each workflow as a product they own, not a script they set and forget.' },
             { type: 'cta', text: 'Want a candid second opinion on which workflow to automate first?', to: '/ai-automation', label: 'Explore AI Automation' },
@@ -365,10 +365,10 @@ const posts = [
         category: 'AI Automation',
         readMinutes: 8,
         publishedAt: '2026-05-19',
-        updatedAt: '2026-05-19',
+        updatedAt: '2026-10-30',
         cover: '#ead6b9',
         excerpt:
-            'Most reporting dashboards are broken before they ship — not because of bad design, but because the pipeline feeding them is fragile. Here is what a reliable one looks like in 2026.',
+            'How to define consistent metrics, move data between systems, and identify pipeline failures before relying on reports.',
         sections: [
             { type: 'p', text: 'Every growing business eventually hits the same wall. The CEO asks a simple question — "what did we book last month, and where did the leads come from?" — and three different teams produce three different numbers. The CRM says one thing, the finance system says another, and the marketing dashboard tells a third story. The problem is rarely the people. It is the pipes connecting your systems.' },
             { type: 'p', text: 'Data pipeline automation is the unglamorous plumbing that makes the rest of your stack honest. Done well, it is invisible. Done badly, it quietly poisons every decision you make. This guide is for founders and ops leaders who do not want to become data engineers, but do need to know what good looks like in 2026.' },
@@ -378,7 +378,7 @@ const posts = [
             { type: 'p', text: 'Most small and mid-sized businesses already have pipelines. They just happen to be manual ones held together by a brittle mix of CSV exports, Zapier flows, and an ops person who remembers which spreadsheet matters. That works at ten customers. It breaks at a thousand.' },
 
             { type: 'h2', text: 'Why this matters more than it used to' },
-            { type: 'p', text: 'Three things have changed the stakes in 2026. AI assistants are now reading your data and acting on it — which means a stale field is no longer a reporting nuisance, it is a wrong decision made at machine speed. Customers expect real-time experiences, so a sync that lagged by a day used to be fine and now feels broken. And the tooling has matured enough that you no longer need a six-person data team to do this properly.' },
+            { type: 'p', text: 'The freshness and accuracy of data matter when reports, customer messages, or automated actions depend on it. Decide how up to date each source needs to be, and what should happen when it is unavailable.' },
             { type: 'p', text: 'In practical terms, a reliable pipeline gives you four things:' },
             { type: 'ul', items: [
                 'Reports that match across teams — one number for revenue, one for active customers',
@@ -389,19 +389,19 @@ const posts = [
 
             { type: 'h2', text: 'ETL vs ELT, in plain language' },
             { type: 'p', text: 'You will hear these two acronyms constantly. They describe the same three steps in different orders. ETL means Extract, Transform, Load — you pull the data out, clean it up, then drop it into the destination. ELT flips the middle two — you pull the data, dump it straight into a cloud warehouse, and transform it later inside the warehouse using SQL.' },
-            { type: 'p', text: 'ELT has quietly won for most modern use cases. Cloud warehouses like Snowflake, BigQuery, and Databricks have become cheap and powerful enough that it is faster to load raw data first and shape it inside the warehouse than to do the transformation in transit. The most common 2026 stack pairs a managed ingestion tool like Fivetran or Airbyte with dbt for the in-warehouse transformations.' },
+            { type: 'p', text: 'ELT can be useful when a warehouse supports the transformations you need and retaining raw data is appropriate. ETL may be a better fit when data must be cleaned or limited before it reaches the destination.' },
             { type: 'p', text: 'Why you care: ELT is more forgiving. If you decide next quarter that you want to slice revenue differently, you do not need to rebuild the pipeline. You just rewrite a SQL model. ETL pipelines, by contrast, tend to lock in assumptions you have not made yet.' },
 
             { type: 'h2', text: 'The 2026 tooling landscape' },
             { type: 'p', text: 'You do not need to know all of these by heart, but recognising the categories helps when a vendor or consultant starts throwing names around.' },
             { type: 'ul', items: [
-                'Ingestion (getting data in): Fivetran is the managed-service gold standard with 700+ connectors; Airbyte is the fast-growing open-source alternative and now ships an LLM assistant that pre-fills connector configs',
-                'Transformation: dbt has become the default for shaping data inside the warehouse using version-controlled SQL',
-                'Reverse ETL (getting data back out to operational tools): Hightouch and Census push warehouse data into Salesforce, HubSpot, and 300+ other destinations so sales sees the same numbers as finance',
+                'Ingestion: tools such as Fivetran and Airbyte move data from source systems; check connector coverage, sync limits, and costs',
+                'Transformation: tools such as dbt organise data transformations in version-controlled SQL',
+                'Reverse ETL: tools such as Hightouch and Census can move prepared warehouse data back to operational systems; verify the destinations you need',
                 'Lightweight orchestration: n8n and similar low-code tools are excellent for the smaller, glue-everything-together workflows that do not need a full warehouse',
                 'Observability: Monte Carlo and similar platforms watch your pipelines for silent failures — schema changes, freshness gaps, volume anomalies',
             ] },
-            { type: 'p', text: 'A note on consolidation: Fivetran acquired Census in 2025 and announced a merger with dbt Labs, so expect ingestion, transformation, and activation to collapse into fewer vendors over the next 18 months. That is good news if you hate stitching tools together.' },
+            { type: 'p', text: 'Vendor ownership, pricing, and product scope can change. Check the current documentation, export options, and support arrangements before committing to a platform.' },
 
             { type: 'h2', text: 'A sensible reference architecture for a growing business' },
             { type: 'p', text: 'If you are starting from scratch or replacing a tangle of spreadsheets, this is the shape most teams should aim for:' },
@@ -417,18 +417,18 @@ const posts = [
 
             { type: 'h2', text: 'Where AI is genuinely changing things' },
             { type: 'p', text: 'The phrase "AI-augmented data pipeline" is doing a lot of work in vendor marketing right now. Strip the hype and there are three real shifts worth caring about.' },
-            { type: 'p', text: 'First, AI is making pipelines easier to build. Airbyte\'s connector assistant, Snowflake Cortex, and Databricks Genie can scaffold integrations and SQL transformations from a plain-English description, which dramatically shortens the on-ramp for non-engineers.' },
-            { type: 'p', text: 'Second, AI is making pipelines easier to monitor. Observability platforms now use ML to detect anomalies — a sudden drop in row counts, an unexpected schema change, a freshness gap — and route them to the right person before the CEO sees a broken dashboard. Gartner has projected that the majority of the market will adopt data observability by 2026.' },
+            { type: 'p', text: 'AI assistants can help draft connector configurations, queries, or transformations. Review their output and test it against sample data before letting it modify production records.' },
+            { type: 'p', text: 'Monitoring tools can flag unusual row counts, schema changes, and stale data. Define which conditions should raise an alert and who will investigate it.' },
             { type: 'p', text: 'Third, and most consequentially, agentic systems are starting to act on your data autonomously. That raises the cost of bad data sharply. An agent that emails the wrong customer because a contact field was stale is a different class of problem than a slightly wrong weekly report.' },
 
             { type: 'h2', text: 'Where things actually go wrong' },
-            { type: 'p', text: 'After enough pipeline projects, the failure modes start to rhyme. The technology is rarely the villain. The pattern is almost always one of these:' },
+            { type: 'p', text: 'Include these failure cases in the design and review checklist:' },
             { type: 'ul', items: [
                 'Building the pipeline before defining the metrics — you cannot model "active customer" if the business has not agreed what that means',
                 'Skipping data quality checks because the source system "looks fine" — duplicates and nulls always show up at the worst moment',
                 'Underestimating schema drift — when a SaaS tool renames a field on their end, your pipeline silently breaks',
                 'No ownership — pipelines need a name next to them, not a shared inbox',
-                'Usage-based pricing surprises — ingestion tools often bill on rows synced, and a chatty event source can turn a $200 bill into a $4,000 one overnight',
+                'Usage-based pricing: estimate sync volume and set spending alerts where available, since changes in source data can increase costs',
                 'Activating bad data downstream — reverse ETL pushes whatever you give it, so syncing a messy table into the CRM means sales now distrusts the CRM too',
             ] },
 
@@ -445,7 +445,7 @@ const posts = [
             { type: 'quote', text: 'A data pipeline is not a project you finish. It is a product you maintain. The teams that treat it that way are the ones whose dashboards still tell the truth a year later.', cite: 'Orion Automation' },
 
             { type: 'h2', text: 'Where to go from here' },
-            { type: 'p', text: 'If your reports do not agree with each other, if your CRM and finance system are quietly drifting apart, or if you are about to layer AI agents on top of a stack you secretly do not trust — fix the pipes first. The tooling in 2026 is genuinely good enough that a focused four-to-six-week engagement can replace a year of manual reconciliation.' },
+            { type: 'p', text: 'If reports disagree or your CRM and finance records drift apart, start by documenting definitions and tracing the data between systems. Scope the first phase around a small set of reports and clear checks, rather than promising a fixed timeline.' },
             { type: 'cta', text: 'Want a pipeline you can actually trust? Let\'s scope it.', to: '/ai-automation', label: 'Explore AI Automation' },
         ],
     },
@@ -461,17 +461,17 @@ const posts = [
         category: 'AI Automation',
         readMinutes: 8,
         publishedAt: '2026-05-18',
-        updatedAt: '2026-05-18',
+        updatedAt: '2026-10-30',
         cover: '#f1daac',
         excerpt:
             'Shared spreadsheets and aging legacy software are quietly draining your operations team. Here is how mid-sized businesses are moving to lightweight, AI-augmented internal apps in 2026 — and what to build, buy, or skip.',
         sections: [
             { type: 'p', text: 'Walk into the operations floor of almost any mid-sized business and you will find the same thing: a shared spreadsheet with thirty tabs, a Word template someone emails around for approvals, and a legacy desktop application from 2011 that one person knows how to restart. The dashboards live in someone\'s head. The audit trail is a Slack thread. Everyone is busy, nothing is wrong on paper, and yet the business is leaking hours every week.' },
-            { type: 'p', text: 'In 2026, this is no longer a budget problem. The tools to fix it have gotten dramatically cheaper, dramatically faster to deploy, and — for the first time — genuinely useful with AI baked in. The question is not whether to modernize your internal systems. It is which ones to modernize first, and whether to build, buy, or assemble.' },
+            { type: 'p', text: 'Before replacing an internal system, identify its current responsibilities and the problems a change should solve. Compare building, buying, and assembling tools against the budget, maintenance work, and controls you need.' },
 
             { type: 'h2', text: 'The real cost of spreadsheet chaos' },
             { type: 'p', text: 'Spreadsheets are not the enemy. They are the most successful piece of business software ever shipped. The problem is what happens when a spreadsheet becomes a production system — shared between five people, edited concurrently, copy-pasted into PDFs, and treated as the source of truth for decisions that involve real money.' },
-            { type: 'p', text: 'Research consistently shows that around 94% of business spreadsheets contain critical errors, and workers spend on average 3.6 hours a week fixing them — roughly 22 full working days per employee per year. For a 40-person operations team, that is the equivalent of three full-time hires lost to manual reconciliation. None of that work shows up on an invoice. All of it shows up in slower decisions, missed approvals, and the quiet attrition of people who got tired of being a human macro.' },
+            { type: 'p', text: 'When several people depend on the same spreadsheet, formula changes, duplicate entries, and unclear ownership can cause mistakes. Record the time spent reconciling data and correcting errors so the cost is based on your own operation.' },
 
             { type: 'h2', text: 'What "production internal system automation" actually means' },
             { type: 'p', text: 'When we say production internal system automation, we are talking about replacing the connective tissue of your business with software that behaves like software — not like a shared document. The core building blocks are well-understood by now:' },
@@ -486,15 +486,15 @@ const posts = [
             { type: 'p', text: 'You do not need all of this on day one. You need to know that the platform you pick can grow into all of it without a rewrite.' },
 
             { type: 'h2', text: 'The 2026 internal-tools landscape, briefly' },
-            { type: 'p', text: 'Gartner forecasts the low-code market will hit $44.5 billion in 2026, and roughly 75% of new applications are now built on low-code foundations. Most of that growth is internal tooling — the unglamorous software that runs your business. A few platforms have separated from the pack:' },
+            { type: 'p', text: 'Internal-tool platforms offer different approaches to database access, forms, approvals, and deployment. Compare them using a small example from your own process:' },
             { type: 'ul', items: [
-                'Retool — the market leader for production internal apps, strongest on developer ergonomics and database connectivity',
-                'Appsmith — open-source, JavaScript-heavy, popular with engineering teams that want full control',
-                'ToolJet — open-source, AI-ready, increasingly the pick for teams that want flexibility without a per-seat success tax',
-                'Budibase and UI Bakery — fast for CRUD apps and governed enterprise rollouts respectively',
+                'Retool: check database connections, access controls, deployment choices, and the licensing needed for your users',
+                'Appsmith: evaluate its application builder, scripting options, and maintenance requirements',
+                'ToolJet: evaluate its application builder, integrations, access controls, and deployment requirements',
+                'Budibase and UI Bakery: test forms, data editing, and approval needs against the features of the relevant edition',
                 'Custom apps — still the right call when the workflow is your competitive edge, not a commodity',
             ] },
-            { type: 'p', text: 'The honest answer is that the platform matters less than the discipline you bring to the build. A clean Retool app and a clean ToolJet app will both outperform a sprawling spreadsheet by an order of magnitude.' },
+            { type: 'p', text: 'The platform is only part of the decision. A useful internal app also needs clear permissions, reliable data, testing, and someone responsible for support.' },
 
             { type: 'h2', text: 'AI copilots inside internal tools' },
             { type: 'p', text: 'The biggest shift in 2026 is not low-code — it is the AI layer sitting inside every modern internal tool. A few patterns that are now table stakes:' },
@@ -520,13 +520,13 @@ const posts = [
             { type: 'p', text: 'This staged approach is slower than a rewrite on paper. In practice it ships, while rewrites stall.' },
 
             { type: 'h2', text: 'Buy, build, or assemble' },
-            { type: 'p', text: 'The build-versus-buy question is sharper in 2026 than it has ever been, because the middle option — assemble — finally works. The framework we use with clients is straightforward:' },
+            { type: 'p', text: 'Compare buying an existing product, assembling an app from existing components, and building custom software. A starting framework is:' },
             { type: 'ul', items: [
                 'Buy when the workflow is a commodity — payroll, accounting, ticketing, e-signature. Do not rebuild what fifty companies already sell',
                 'Assemble when the workflow is specific to you but the components are not — approvals, dashboards, internal portals, document generation. This is where low-code platforms earn their keep',
                 'Build when the workflow is part of your competitive edge — the thing your customers actually pay you to do better than your competitors',
             ] },
-            { type: 'p', text: 'The trap is treating every internal need as a build project. A mid-sized company can easily spend $300,000 a year on overlapping SaaS subscriptions, more than half of which sit unused, while custom internal apps on a low-code platform often pay back inside the first two quarters. The trap on the other side is buying so much off-the-shelf software that integration becomes its own full-time job. Most operators land somewhere in the middle: a tight core of bought systems, a thin layer of assembled internal apps stitching them together, and a small set of genuinely custom builds where the work is differentiating.' },
+            { type: 'p', text: 'Before building, review the tools you already pay for and whether they cover the requirement. Compare the full costs of licences, integration, migration, training, maintenance, and support. A custom app should solve a documented need rather than duplicate an existing tool.' },
 
             { type: 'h2', text: 'Security, access, and audit trails are not optional' },
             { type: 'p', text: 'The moment your internal system can change something — approve a payment, edit a customer record, push a price update — it stops being a productivity tool and starts being a system of record. That brings non-negotiable requirements:' },
@@ -537,7 +537,7 @@ const posts = [
                 'Reviewable AI actions — every model-generated suggestion stored with its inputs and the human decision that followed',
                 'Data residency awareness — for regulated industries, knowing where your data physically lives',
             ] },
-            { type: 'p', text: 'Spreadsheets cannot give you any of this. A modern internal app gives you all of it as a side effect of being built correctly.' },
+            { type: 'p', text: 'Check each requirement in the proposed system rather than assuming a new app provides it automatically. Spreadsheet products may already have useful permissions and history features, while custom apps need those controls designed and tested.' },
 
             { type: 'h2', text: 'How to measure whether it is working' },
             { type: 'p', text: 'A modernization project that cannot prove its value will be quietly defunded. Track these numbers from the first sprint:' },
@@ -558,48 +558,48 @@ const posts = [
 
     {
         slug: 'websites-that-convert-2026',
-        title: 'Designing Websites That Actually Convert in 2026: A Data-Backed Guide',
+        title: 'Designing Websites That Help Visitors Take the Next Step in 2026',
         description:
-            'Practical, research-backed conversion design principles for 2026 — hero discipline, CTA focus, social proof, mobile gaps, friction reduction, and AI-era visitor behavior.',
+            'Practical website design checks covering clear calls to action, genuine customer evidence, mobile usability, and short forms.',
         keywords:
             'website conversion 2026, conversion rate optimization, CRO best practices, hero section design, CTA optimization, social proof, mobile conversion, AI search traffic, Orion Automation',
         author: 'Orion Automation Team',
         category: 'Websites',
         readMinutes: 7,
         publishedAt: '2026-05-17',
-        updatedAt: '2026-05-17',
+        updatedAt: '2026-10-30',
         cover: '#dac4b3',
         excerpt:
-            'Most small business websites convert under 3%. The ones that beat that average obey a small set of rules — and almost all of them are about removing friction, not adding cleverness.',
+            'Clear wording, working mobile layouts, useful contact information, and shorter forms can remove obstacles between visitors and an enquiry.',
         sections: [
-            { type: 'p', text: 'The average website converts somewhere between 1% and 4% of its visitors. Across industries, the all-up benchmark sits around 2.9%, and e-commerce specifically hovers near 2.6%. That means 97 out of every 100 visitors leave without doing the thing you wanted them to do. The question is not whether your site converts — it does, badly — but whether you are willing to design for the way real people behave in 2026.' },
-            { type: 'p', text: 'The good news: conversion design is not a dark art. The patterns that move the needle have been tested at scale, and most of them have nothing to do with persuasion tricks. They are about clarity, speed, and removing reasons to leave. Here is what the data says actually works.' },
+            { type: 'p', text: 'A conversion might be an enquiry, booking, or purchase. Define the action you want a page to support, then measure how people move towards it and where they stop. Results vary with the audience, service, traffic source, and measurement setup.' },
+            { type: 'p', text: 'Start by checking whether the page explains the offer, loads reliably, and lets a visitor complete the next step. Change one meaningful part at a time and review the result.' },
 
             { type: 'h2', text: 'The hero section is a promise, not a poster' },
-            { type: 'p', text: 'Visitors decide in under three seconds whether your page is worth their attention. Your hero needs to answer three questions immediately: what is this, who is it for, and what happens next. Vague headlines lose. Clever headlines lose. Crystal-clear value propositions win.' },
-            { type: 'p', text: 'The most expensive mistake we see is cramming the hero with competing messages — a rotating carousel, three CTAs, a video, and a 60-word paragraph. Studies of landing pages with multiple competing actions have shown conversion drops of up to 266% versus pages with a single, focused CTA. Pick one promise. Make one ask. Save the rest for further down the page.' },
+            { type: 'p', text: 'The opening of a page should answer three questions clearly: what is this, who is it for, and what happens next. Use wording a first-time visitor can understand without knowing the business.' },
+            { type: 'p', text: 'A crowded opening can make it hard to choose what to do. Give the main action enough space, keep the explanation short, and move supporting details to the relevant sections below.' },
 
             { type: 'h2', text: 'CTA discipline beats CTA cleverness' },
-            { type: 'p', text: 'Unbounce\'s analysis of more than 18,000 landing pages found that pages with a single primary CTA converted at 13.5%, while pages with three or more CTAs converted at 10.5%. A 30% relative lift, just from removing options.' },
+            { type: 'p', text: 'Choose a primary action that fits the page, such as viewing a package or requesting a quote. Test the wording and placement using your own visitors rather than assuming a published benchmark will apply.' },
             { type: 'p', text: 'In practice this means one primary action per page, repeated at natural decision points — after the hero, after the social proof, after the pricing, and at the end. A secondary action is fine if it genuinely serves a different audience segment, but it should be visually quieter. Two equal-weight buttons is not balance, it is paralysis.' },
 
             { type: 'h2', text: 'Social proof has to be specific to be believed' },
-            { type: 'p', text: 'Roughly 93% of consumers read reviews before buying. But generic five-star quotes from "Sarah M." do nothing. The social proof that actually moves conversion is specific — full names, company logos, dollar figures, before-and-after numbers, video testimonials. Video testimonials in particular have been shown to lift conversion rates significantly, with some studies reporting increases as high as 80%.' },
-            { type: 'p', text: 'Place social proof near the moments of doubt: directly under the hero CTA, beside the pricing table, and at the bottom of any form. Trust badges and testimonials placed near the call-to-action have been shown to lift conversions by 15-34% depending on placement and industry. The point is not to brag — it is to neutralize the visitor\'s last reason to hesitate.' },
+            { type: 'p', text: 'Use genuine testimonials or project examples with permission. Include enough context to understand the work, and make any stated results traceable to the customer and method of measurement.' },
+            { type: 'p', text: 'Place relevant evidence beside the offer it supports. Only display badges, affiliations, customer logos, and payment options that you are entitled to use and that accurately describe the business.' },
 
             { type: 'h2', text: 'Mobile is not "also" — it is the primary surface' },
-            { type: 'p', text: 'Mobile generates roughly 60-65% of web traffic, but mobile conversion rates lag desktop badly. Industry data shows mobile conversion averages around 2.2% versus 4.3% on desktop — a gap that has barely closed in five years. Average mobile checkout times run about 40% longer than desktop. That is not a user problem; it is a design problem.' },
+            { type: 'p', text: 'Check mobile and desktop separately. A readable desktop page may still have small touch targets, difficult forms, or a long checkout on a phone. Use your own analytics to identify where visitors have trouble.' },
             { type: 'p', text: 'A mobile-first audit is brutal but cheap. Open your site on a real phone over 4G, not WiFi. Can you read the hero without zooming? Is the CTA reachable with one thumb? Does the form auto-fill from the keyboard? Do you use the correct input types for email, phone, and number fields? Most small business sites fail at least three of these — and each failure compounds the desktop-to-mobile gap.' },
 
             { type: 'h2', text: 'Every form field costs you conversions' },
-            { type: 'p', text: 'Form length is one of the most studied levers in conversion design, and the trend is unambiguous. Across large datasets, single-field forms have converted at roughly 18%, dropping to about 13% at two fields, 11.5% at three, and below 6% by the time you hit eight. HubSpot\'s own research found that cutting a form from four fields to three could lift conversions by nearly 50%.' },
+            { type: 'p', text: 'Ask for the information needed to handle the request. Explain why sensitive or unexpected fields are necessary, and move optional details to a later conversation where possible.' },
             { type: 'p', text: 'The honest test is to look at every field on your form and ask: will we actually use this in the first 24 hours? If the answer is no, delete it or move it to a follow-up step. Ask for the minimum required to start the conversation, and earn the rest later.' },
             { type: 'ul', items: [
                 'Replace "Company size" dropdowns with optional fields, not required',
                 'Drop "How did you hear about us?" — it is for you, not the visitor',
                 'Use a single name field, not first and last separately',
-                'Never ask for a phone number unless you will call within the hour',
-                'Auto-detect country from IP rather than making it a dropdown',
+                'Explain how you will use a requested phone number and whether a call is necessary',
+                'Ask for country only when it is needed, and let the visitor correct any suggested value',
             ] },
 
             { type: 'h2', text: 'Trust signals are infrastructure, not decoration' },
@@ -607,12 +607,12 @@ const posts = [
             { type: 'p', text: 'For Malaysian and Southeast Asian markets specifically, displaying local payment options like FPX, GrabPay, or Touch \'n Go eWallet matters more than yet another credit card logo. Localized trust signals beat generic ones every time.' },
 
             { type: 'h2', text: 'Speed is a conversion feature, not a technical metric' },
-            { type: 'p', text: 'Sites that load in one second convert at roughly 2.5x the rate of sites that load in five seconds. Every additional second of load time costs about 7% in conversions, and 53% of mobile visitors will abandon a page that takes more than three seconds. For an e-commerce business doing $1M a year at a 2% conversion rate, a one-second improvement is worth around $70,000 annually.' },
-            { type: 'p', text: 'You do not need to chase a perfect Lighthouse score. You need to chase a hero section that paints in under 1.5 seconds on a mid-range Android over 4G. That is the bar. Image compression, a real CDN, and lazy-loading anything below the fold get most sites 80% of the way there.' },
+            { type: 'p', text: 'Slow loading can interrupt a visitor before they reach the offer or form. Measure the page on the devices and connections your audience uses, then review speed and enquiry completion after changes.' },
+            { type: 'p', text: 'Start with oversized images, unnecessary scripts, caching, and content that moves while loading. Agree performance targets from measurements instead of assuming the same target fits every site.' },
 
             { type: 'h2', text: 'The AI-era visitor arrives pre-informed' },
-            { type: 'p', text: 'In 2026, a growing share of your visitors have already spent ten minutes inside ChatGPT, Gemini, or Perplexity before they land on your site. AI referral traffic grew 206% year over year through 2025, and visitors arriving from AI tools convert at 4x to 23x the rate of non-branded organic search. They are not browsing — they are verifying.' },
-            { type: 'p', text: 'This changes what your page needs to do. The pre-informed visitor already knows roughly what you cost, who your competitors are, and what your category does. They do not need the persuasive setup. They need fast proof that the specific claim the AI made about you is true: pricing transparent, deliverables specific, recent work visible, a way to start that takes less than two minutes. Burying that information behind a "Contact us for pricing" wall is the single fastest way to lose the highest-intent traffic you have ever had.' },
+            { type: 'p', text: 'Some visitors may arrive after researching the business in an AI assistant. Make it easy for them to check the source information on your own site.' },
+            { type: 'p', text: 'Publish current prices or explain how quotes are prepared, state the deliverables clearly, and provide a working contact route. Correct misleading descriptions of your business wherever you can, including in directories and profiles you control.' },
             { type: 'quote', text: 'In 2026, the visitor with the highest intent is also the most impatient. Design for the one who has already done their homework and just wants to confirm they are in the right place.', cite: 'Orion Automation' },
 
             { type: 'h2', text: 'Where to start tomorrow' },
@@ -632,23 +632,23 @@ const posts = [
         category: 'Websites',
         readMinutes: 8,
         publishedAt: '2026-05-16',
-        updatedAt: '2026-05-16',
+        updatedAt: '2026-10-30',
         cover: '#c8c1af',
         excerpt:
             'LCP, INP, CLS, TTFB — four acronyms that quietly decide whether Google ranks you and whether visitors stay. Here is what each one actually means, the 2026 targets, and the fixes that move the needle.',
         sections: [
-            { type: 'p', text: 'Web performance used to be a developer obsession. In 2026 it is a P&L line item. Google bakes Core Web Vitals into ranking, every 100 milliseconds of load time costs roughly 1% in conversions, and 53% of mobile visitors abandon a page that takes longer than three seconds to render. The numbers are not subtle anymore.' },
+            { type: 'p', text: 'Web performance affects how people experience a page. Measuring loading, interaction delay, and layout movement helps identify problems that can interrupt reading, enquiries, or purchases.' },
             { type: 'p', text: 'The problem is the language. LCP, INP, CLS, TTFB — the metrics sound like aerospace acronyms, and most business owners nod through the explanation and approve the invoice anyway. This cheat sheet decodes the four numbers that matter, the targets you should hold your team to in 2026, and the handful of fixes that deliver almost all of the gain.' },
 
             { type: 'h2', text: 'Why these numbers run your business now' },
-            { type: 'p', text: 'Core Web Vitals are not a vanity dashboard. Google evaluates them at the 75th percentile of real visitor data, meaning three out of four of your visitors have to clear the bar before you get credit. Fall below the threshold and you bleed three ways at once.' },
+            { type: 'p', text: 'Review real-user performance where enough data is available, as well as lab tests. A site-wide summary can hide problems on a particular page, device, or connection.' },
             { type: 'ul', items: [
                 'SEO — Core Web Vitals are a confirmed page-experience ranking signal across mobile and desktop search',
-                'Conversion — e-commerce sites loading in one second convert at 3.05%; the same sites at five seconds convert at 1.08%',
-                'Bounce rate — going from a 1-second to a 5-second load increases bounce probability by 90%',
-                'Revenue — for a site doing roughly $10M a year, a 500ms speed-up is worth about $500K in recovered sales',
+                'Conversion: compare completion of enquiries or purchases before and after a performance change',
+                'Engagement: look for pages where visitors leave before reaching useful content',
+                'Business impact: measure outcomes from your own visitors instead of applying a fixed revenue uplift',
             ] },
-            { type: 'p', text: 'If your site is slow, you are paying for the same traffic twice and converting half of it.' },
+            { type: 'p', text: 'Prioritise delays that affect your most useful pages and actions.' },
 
             { type: 'h2', text: 'LCP: how fast the page feels useful' },
             { type: 'p', text: 'Largest Contentful Paint measures how long it takes for the biggest visible element — usually your hero image, headline, or product photo — to appear on screen. It is the closest single number to "the page loaded."' },
@@ -657,16 +657,16 @@ const posts = [
                 'Needs improvement: 2.5 to 4.0 seconds',
                 'Poor: over 4.0 seconds',
             ] },
-            { type: 'p', text: 'The usual culprits are oversized hero images, slow hosting, and render-blocking scripts that hold the page hostage before anything paints. Compressing your hero image and serving it in a modern format like AVIF or WebP routinely drops LCP by a full second.' },
+            { type: 'p', text: 'Check oversized images, server response time, and scripts that delay rendering. Measure each change; an image format change alone does not guarantee a particular improvement.' },
 
             { type: 'h2', text: 'INP: how fast the page feels alive' },
-            { type: 'p', text: 'On 12 March 2024, Google retired First Input Delay and replaced it with Interaction to Next Paint. The shift matters because FID only measured the very first click; INP watches every interaction across the visit — taps, scrolls, form input — and reports the worst lag the user actually felt.' },
+            { type: 'p', text: 'Interaction to Next Paint measures responsiveness to supported user interactions. When an interaction is slow, inspect the work happening before the page can show the next visual update.' },
             { type: 'ul', items: [
                 'Good: under 200 milliseconds',
                 'Needs improvement: 200 to 500 milliseconds',
                 'Poor: over 500 milliseconds',
             ] },
-            { type: 'p', text: 'INP is the hardest of the three to pass — roughly 43% of sites still fail it in 2026. The cause is almost always JavaScript: bloated tag managers, oversized analytics stacks, chat widgets, and unsplit bundles that lock up the main thread every time a visitor taps something.' },
+            { type: 'p', text: 'If interactions are slow, inspect long JavaScript tasks, third-party scripts, and expensive event handlers. A trace from an affected device is more useful than assuming which script caused the delay.' },
 
             { type: 'h2', text: 'CLS: whether the page misbehaves' },
             { type: 'p', text: 'Cumulative Layout Shift measures unexpected movement — the banner that pushes your "Buy" button down half a second after the page renders, the cookie bar that shoves the headline sideways. CLS is the metric that makes a page feel cheap.' },
@@ -684,20 +684,20 @@ const posts = [
                 'Needs improvement: 800ms to 1,800ms',
                 'Poor: over 1,800ms',
             ] },
-            { type: 'p', text: 'TTFB is mostly a hosting and geography problem. A Malaysian shop on a shared US server will quietly serve every Klang Valley visitor a 1.5-second handshake before a single pixel paints. A CDN with edge nodes in Singapore or Kuala Lumpur usually cuts that to under 100ms.' },
+            { type: 'p', text: 'TTFB can be affected by network distance, server processing, caching, and connection setup. Test from locations relevant to your audience before deciding whether a hosting or CDN change is worthwhile.' },
 
             { type: 'h2', text: 'How to measure without guessing' },
             { type: 'p', text: 'You need two views: lab data (synthetic test in a clean environment) and field data (what your actual visitors experience). Use both, and trust the field data when they disagree.' },
             { type: 'ol', items: [
-                'PageSpeed Insights — paste your URL, get both lab and field numbers in 30 seconds',
+                'PageSpeed Insights: enter a URL to review lab measurements and any available field data',
                 'Google Search Console — Core Web Vitals report under Experience, segmented by mobile and desktop',
                 'Chrome DevTools — Lighthouse panel for deep-dive lab audits while you debug',
                 'Chrome User Experience Report (CrUX) — the same real-user data Google uses for ranking, viewable in PageSpeed Insights',
             ] },
-            { type: 'p', text: 'Only 42% of sites pass all three Core Web Vitals on mobile, while 63% pass on desktop — and mobile is now 62% of e-commerce traffic. Always check mobile first.' },
+            { type: 'p', text: 'Test mobile and desktop, and review individual page types. Your audience and their connections may differ from the conditions used in a lab test.' },
 
             { type: 'h2', text: 'The highest-leverage fixes' },
-            { type: 'p', text: 'You do not need to fix everything. In our experience, the same five interventions deliver the overwhelming majority of the Core Web Vitals gain on a typical small-business site.' },
+            { type: 'p', text: 'Use the audit results to prioritise fixes. These are useful areas to inspect, rather than a promise that every site will benefit in the same way:' },
             { type: 'ol', items: [
                 'Image optimization — convert hero and product images to AVIF or WebP, serve responsive sizes, and lazy-load anything below the fold',
                 'Better hosting plus a CDN — move off cheap shared hosting and put a CDN with regional edge nodes in front of it',
@@ -705,15 +705,15 @@ const posts = [
                 'Font discipline — self-host one or two web fonts, preload them, and use font-display: swap so text never disappears',
                 'Reserve space everywhere — set explicit width and height on images, video, ads, and embeds so nothing shifts the layout after paint',
             ] },
-            { type: 'quote', text: 'Most small-business sites do not have a performance problem — they have a third-party script problem. Audit what is loading, kill the half you cannot justify, and your Core Web Vitals usually pass before lunch.', cite: 'Orion Automation' },
+            { type: 'quote', text: 'Review every third-party script: what it does, whether it is needed, and how it affects loading and interaction. Measure before and after removing or deferring it.', cite: 'Orion Automation' },
 
             { type: 'h2', text: 'What "good" actually looks like in 2026' },
-            { type: 'p', text: 'A realistic target for a well-built small-business site on a modern stack is LCP under 2.0 seconds on mobile 4G, INP under 150 milliseconds, CLS under 0.05, and TTFB under 400 milliseconds. That is comfortably inside Google\'s "good" band on every metric with margin for the bad-network days.' },
+            { type: 'p', text: 'Set performance targets for the pages, devices, and connections your visitors use. The Core Web Vitals thresholds provide a starting point; an individual lab run cannot prove what every visitor experiences.' },
             { type: 'p', text: 'If your current numbers are a long way from that, it is rarely one big fix. It is a stack of small ones — and the order matters. Start with hosting and images, then strip JavaScript, then chase the long tail.' },
 
             { type: 'h2', text: 'Where to go from here' },
-            { type: 'p', text: 'Performance is the rare investment that compounds against every other channel you run. Faster pages rank higher, convert better, and make every ringgit of paid traffic work harder. The shortest path from where you are to where you should be usually starts with a 20-minute audit of your current numbers.' },
-            { type: 'cta', text: 'Want a free Core Web Vitals audit of your current website?', to: '/website', label: 'Explore Website Services' },
+            { type: 'p', text: 'Start with an audit of your current measurements and the pages that matter to your business. Agree which changes to make, then repeat the measurements and review the effect on actual enquiries or purchases.' },
+            { type: 'cta', text: 'Discuss a performance review of your current website.', to: '/website', label: 'Explore Website Services' },
         ],
     },
 
@@ -721,36 +721,36 @@ const posts = [
         slug: 'web-accessibility-wcag-2026',
         title: 'Web Accessibility in 2026: A Practical WCAG 2.2 Guide for Business Owners',
         description:
-            'A plain-language guide to WCAG 2.2 AA for business owners: why accessibility matters in 2026, the legal landscape after the European Accessibility Act, the highest-leverage fixes, and how to test your own site.',
+            'A plain-language guide to WCAG 2.2, keyboard navigation, contrast, form labels, and combining automated checks with manual testing.',
         keywords:
             'WCAG 2.2, web accessibility 2026, European Accessibility Act, ADA website lawsuits, accessibility compliance, color contrast, keyboard navigation, alt text, Lighthouse, axe DevTools, Orion Automation',
         author: 'Orion Automation Team',
         category: 'Websites',
         readMinutes: 8,
         publishedAt: '2026-05-15',
-        updatedAt: '2026-05-15',
+        updatedAt: '2026-10-30',
         cover: '#ead6b9',
         excerpt:
-            'WCAG 2.2 AA is the new floor for legal, commercial, and search-engine reasons. Here is what it means in plain English, where most sites fail, and how to fix the issues that matter most.',
+            'A practical introduction to WCAG 2.2 and the checks that can make a website easier to read, navigate, and use.',
         sections: [
-            { type: 'p', text: 'Web accessibility used to feel like a checkbox somewhere between cookie banners and privacy policies. In 2026 it is none of those things. It is a legal exposure, a search ranking factor, and a measurable chunk of revenue you are either capturing or leaving for a competitor.' },
+            { type: 'p', text: 'Accessibility means people with different abilities and ways of using a device can read the content and operate the website. It needs to be considered in design, content, development, and testing.' },
             { type: 'p', text: 'This guide explains WCAG 2.2 AA in plain language, walks through the changes since 2.1, and gives you a practical fix list and testing routine you can run on your own site this week.' },
 
             { type: 'h2', text: 'Why accessibility matters more in 2026' },
-            { type: 'p', text: 'Three forces have collided. First, the European Accessibility Act took effect on 28 June 2025, applying harmonized accessibility rules across all 27 EU Member States to e-commerce sites, banking, e-books, ticketing, and most consumer-facing digital services — including non-EU companies that sell into the EU. Penalties can reach three million euros and include suspension of the right to do business in a market.' },
-            { type: 'p', text: 'Second, U.S. litigation keeps climbing. More than 5,000 digital accessibility lawsuits were filed in 2025 across federal and state courts, with federal filings up roughly 37% year over year at the midpoint. E-commerce accounts for around 69% of cases, and being sued once does not reduce future risk — over 1,400 of those 2025 cases were against repeat defendants.' },
-            { type: 'p', text: 'Third, the commercial case has hardened. Roughly 16% of the world has a significant disability, search engines reward the same semantic structure assistive technology depends on, and accessibility overlay widgets have collapsed in credibility — the U.S. Federal Trade Commission reached a one million dollar settlement with overlay vendor accessiBe in 2025 over misleading compliance claims. Real fixes beat plugins.' },
+            { type: 'p', text: 'Accessibility requirements depend on the markets you serve, the services you offer, and the rules that apply to the organisation. Check the relevant official guidance and obtain advice for your circumstances instead of treating a general article as a legal assessment.' },
+            { type: 'p', text: 'A technical checklist should support, rather than replace, understanding the needs of people using assistive technology. Include key tasks such as finding information, completing a form, and recovering from an error.' },
+            { type: 'p', text: 'Do not rely on an overlay or a badge as proof that a website is accessible. Check the underlying page and test it with a keyboard and assistive technology.' },
 
             { type: 'h2', text: 'What WCAG 2.2 actually is' },
-            { type: 'p', text: 'WCAG stands for Web Content Accessibility Guidelines. Version 2.2 became a W3C Recommendation in October 2023 and is now the de facto global benchmark, referenced by the European Accessibility Act, U.S. federal procurement rules, and an increasing number of court settlements. It is also now formally an ISO standard, which matters for enterprise procurement.' },
-            { type: 'p', text: 'WCAG defines three conformance levels: A is the minimum, AA is the practical legal and commercial target, and AAA is aspirational. When regulators and lawyers say "accessible," they almost always mean WCAG 2.2 AA.' },
+            { type: 'p', text: 'WCAG stands for Web Content Accessibility Guidelines, published by W3C. Use the current guidance and success criteria when planning an assessment, and distinguish a technical accessibility target from any legal requirements that apply to the business.' },
+            { type: 'p', text: 'WCAG defines three conformance levels: A, AA, and AAA. State which version and level you are assessing, and do not claim conformance from an automated score alone.' },
             { type: 'p', text: 'The guidelines are organized around four principles, often abbreviated POUR: content must be Perceivable, Operable, Understandable, and Robust. Every success criterion ladders up to one of those four.' },
 
             { type: 'h2', text: 'What changed from WCAG 2.1 to 2.2' },
-            { type: 'p', text: 'WCAG 2.2 adds nine new success criteria and removes one. The new criteria focus on three groups that 2.1 underserved: keyboard users, people with motor impairments on mobile, and people with cognitive disabilities. If you are already on 2.1 AA, these are the ones to add:' },
+            { type: 'p', text: 'When moving from WCAG 2.1 to 2.2, review the added criteria and the level assigned to each one. The following are examples to discuss in the assessment, rather than a complete AA checklist:' },
             { type: 'ul', items: [
                 'Focus Not Obscured (2.4.11) — when a user tabs through the page, the focused element cannot be hidden behind a sticky header, cookie banner, or chat widget',
-                'Focus Appearance — focus indicators must be large enough and high-contrast enough to actually see',
+                'Focus Appearance: review the indicator size and contrast, and distinguish this AAA criterion from the criteria required for an AA assessment',
                 'Dragging Movements (2.5.7) — anything done by dragging must also work with a single tap or click',
                 'Target Size (2.5.8) — interactive elements must be at least 24 by 24 CSS pixels, or have enough spacing around them',
                 'Consistent Help (3.2.6) — contact and help links must appear in the same place across pages',
@@ -760,7 +760,7 @@ const posts = [
             { type: 'p', text: 'The one removal is 4.1.1 Parsing, which is obsolete because modern browsers handle minor HTML errors gracefully.' },
 
             { type: 'h2', text: 'The issues that break most sites' },
-            { type: 'p', text: 'Industry audits consistently surface the same handful of failures on more than nine out of ten home pages. Fixing this short list usually moves a site from clearly non-compliant to defensible:' },
+            { type: 'p', text: 'Include the following checks in an initial review. Finding and fixing them is useful, but this list is not a complete conformance assessment:' },
             { type: 'ol', items: [
                 'Low color contrast on body text, buttons, and form labels',
                 'Missing or meaningless alt text on informational images',
@@ -773,16 +773,16 @@ const posts = [
             ] },
 
             { type: 'h2', text: 'The highest-leverage fixes' },
-            { type: 'p', text: 'You do not need to rebuild the site. A focused sprint on these six areas typically closes 70 to 80% of real-world issues.' },
+            { type: 'p', text: 'Start with these areas, then review the remaining success criteria and the tasks visitors need to complete. The amount of work depends on the site.' },
             { type: 'p', text: 'Color contrast. Body text needs a contrast ratio of at least 4.5:1 against its background, and large text or UI components need at least 3:1. Light grey on white and beige buttons on cream are the usual culprits. A free tool like the WebAIM Contrast Checker resolves this in minutes.' },
             { type: 'p', text: 'Keyboard navigation. Every interactive element must be reachable and operable with Tab, Shift+Tab, Enter, Space, and arrow keys. No mouse should be required. Test by unplugging yours.' },
             { type: 'p', text: 'Alt text. Informational images need a short, specific description of what they convey, not the file name. Purely decorative images should have an empty alt attribute so screen readers skip them.' },
-            { type: 'p', text: 'Focus states. Never set outline: none without replacing it with a visible focus ring. WCAG 2.2 raised the bar here — the indicator must have sufficient size and contrast, not just exist.' },
+            { type: 'p', text: 'Focus states. Keep a visible focus indicator and check that focused controls remain visible. Do not remove the outline without providing a suitable replacement.' },
             { type: 'p', text: 'Semantic HTML. Use button for buttons, a for links, h1 through h6 in order, label tied to every form input. This single discipline removes the need for most ARIA and fixes a long tail of issues automatically.' },
             { type: 'p', text: 'ARIA, used sparingly. The first rule of ARIA is: do not use ARIA. Reach for it only when native HTML cannot express the pattern, and never use it to relabel something that already has a correct accessible name. Bad ARIA is worse than no ARIA.' },
 
             { type: 'h2', text: 'How to test your own site' },
-            { type: 'p', text: 'A solid first-pass audit takes about an hour and uses three layers — automated, manual, and assistive.' },
+            { type: 'p', text: 'Combine automated checks, manual task testing, and assistive technology. Include the important pages and interactive states, not just the home page.' },
             { type: 'ol', items: [
                 'Run Lighthouse in Chrome DevTools on your five most important pages. Aim for 95+ on Accessibility, and read the failing audits — Lighthouse explains each one in plain language.',
                 'Install the axe DevTools browser extension and run it on the same pages. Axe catches issues Lighthouse misses, especially around ARIA and form labelling.',
@@ -790,12 +790,12 @@ const posts = [
                 'Turn on your operating system screen reader — VoiceOver on macOS or iOS, Narrator on Windows, TalkBack on Android — and listen to your home page. Confusing or silent links are easy to find this way.',
                 'Spot-check color contrast on any text or button you are unsure of with the WebAIM Contrast Checker.',
             ] },
-            { type: 'p', text: 'Automated tools catch roughly 30 to 40% of WCAG issues on their own. The other 60 to 70% require human judgement, which is why "AI overlay" widgets that promise instant compliance keep ending up in court.' },
-            { type: 'quote', text: 'Accessibility is not a plugin you install. It is a property of how the site is built — and the businesses treating it that way are the ones not getting sued, not losing customers, and quietly outranking everyone else.', cite: 'Orion Automation' },
+            { type: 'p', text: 'Automated tools identify some issues, but cannot determine whether every description is useful or every task is understandable. Review their findings and carry out manual testing before making any accessibility claim.' },
+            { type: 'quote', text: 'Accessibility needs to be part of how a site is built and maintained. Test real tasks, keep a record of issues, and review new content and components as they are added.', cite: 'Orion Automation' },
 
             { type: 'h2', text: 'Where to start this month' },
             { type: 'p', text: 'If you do nothing else, do these three things in the next 30 days. Run Lighthouse and axe on your top five pages and log every issue. Fix color contrast, alt text, and focus states first — they are usually the cheapest and highest-impact. Then write accessibility into your design and development checklist so new pages do not reintroduce the problems you just fixed.' },
-            { type: 'p', text: 'WCAG 2.2 AA is not a ceiling. It is the floor for a site that is legally defensible, search-friendly, and usable by the largest possible audience. In 2026, anything less is a quiet but compounding cost.' },
+            { type: 'p', text: 'Treat accessibility as ongoing work. Record the scope and limits of an assessment, address the issues found, and give visitors a working way to report barriers.' },
             { type: 'cta', text: 'Want a WCAG 2.2 audit and a clear remediation plan for your site?', to: '/website', label: 'Explore Website Services' },
         ],
     },
@@ -804,27 +804,27 @@ const posts = [
         slug: 'answer-engine-optimization-aeo-2026',
         title: 'Answer Engine Optimization (AEO) in 2026: Winning the Zero-Click Search',
         description:
-            'A deep dive into Answer Engine Optimization in 2026 — how to win featured snippets, AI Overviews, voice answers, and Perplexity citations when 65% of searches never produce a click.',
+            'How to organise clear, attributable answers for search results, voice queries, and AI assistants, and review where your content is cited.',
         keywords:
             'answer engine optimization, AEO, zero-click search, featured snippets, AI Overviews, voice search SEO, FAQPage schema, HowTo schema, QAPage schema, speakable markup, Perplexity citations, Orion Automation',
         author: 'Orion Automation Team',
         category: 'Modern Marketing',
         readMinutes: 8,
         publishedAt: '2026-05-14',
-        updatedAt: '2026-05-14',
+        updatedAt: '2026-10-30',
         cover: '#f1daac',
         excerpt:
-            '65% of Google searches now end with zero clicks. AEO is how you still win the customer — by being the answer the engine reads aloud, not the link nobody taps.',
+            'How to write clear answers that remain useful when a search service summarises information instead of sending the reader directly to your site.',
         sections: [
-            { type: 'p', text: 'In 2026, 65% of Google searches end without a single click to an external website, and 83% of searches that trigger an AI Overview never produce a click at all. The "ten blue links" page is no longer the destination — it is a fallback. The answer itself is the destination, and increasingly that answer is being read aloud, summarised, or cited by an engine that decides which source gets the credit.' },
+            { type: 'p', text: 'A search service may answer a question directly or summarise several sources. A clear answer on your site should therefore identify the business or author, state the facts accurately, and make supporting details easy to check.' },
             { type: 'p', text: 'Answer Engine Optimization is the discipline of being that source. It is not the same as ranking, and it is not the same as the broader generative engine playbook. AEO is sharper: structure your content so a machine can lift a clean, attributable answer out of it. Here is how that works in 2026.' },
 
             { type: 'h2', text: 'AEO is not SEO, and it is not GEO' },
             { type: 'p', text: 'Three acronyms get blurred constantly. Traditional SEO optimises for a ranked list of links. GEO (Generative Engine Optimization) optimises for being cited inside long-form AI responses. AEO sits between them and is the most surgical of the three: it optimises for a single, extracted answer — the paragraph Google reads to a Pixel user, the bullet list a Perplexity card displays, the sentence Alexa speaks back when the kitchen timer beeps.' },
             { type: 'p', text: 'The implication: AEO rewards precision. A 2,000-word essay can rank well and still lose AEO because no 40-word block inside it stands alone. The unit of work is not the page — it is the answerable passage.' },
 
-            { type: 'h2', text: 'The zero-click reality is now the default' },
-            { type: 'p', text: 'Mobile zero-click sits at 77%, desktop at 56%. In Google AI Mode the rate jumps to 93%. Most of your future "impressions" will never become sessions in analytics — and pretending otherwise distorts every decision downstream. Three things follow:' },
+            { type: 'h2', text: 'When a search service answers the question directly' },
+            { type: 'p', text: 'A visitor may see your business information without opening the website. Consider the following alongside traffic to your own pages:' },
             { type: 'ul', items: [
                 'Brand exposure is now a primary KPI, not a vanity one. Being named in an AI Overview is worth real money even without a click.',
                 'Conversion has to happen at the SERP. Phone numbers, prices, hours, and short value props need to be inside the answer, not behind it.',
@@ -832,7 +832,7 @@ const posts = [
             ] },
 
             { type: 'h2', text: 'Write the answer first, then the article' },
-            { type: 'p', text: 'Every answerable section should open with a 40-to-60-word direct answer that fully resolves the question, before any context, framing, or storytelling. This is the format featured snippets and AI Overviews preferentially extract, and it forces an editorial discipline that pays off everywhere else too.' },
+            { type: 'p', text: 'Open an answerable section with a short, direct answer before adding context or examples. Write enough to answer the question accurately rather than targeting a fixed word count for an assumed citation benefit.' },
             { type: 'p', text: 'The pattern that works:' },
             { type: 'ol', items: [
                 'H2 phrased as the literal question a customer types or speaks',
@@ -843,21 +843,21 @@ const posts = [
             { type: 'p', text: 'If the existing snippet for your target query is a numbered list, write a numbered list. If it is a table, build a table. AEO is mimicry with intent.' },
 
             { type: 'h2', text: 'Schema that actually moves the needle' },
-            { type: 'p', text: 'Schema.org markup is how you tell engines what kind of answer they are looking at. Three types do the heavy lifting for AEO in 2026, and one has changed status meaningfully:' },
+            { type: 'p', text: 'Structured data should describe the content actually visible on the page. Check the intended use of each type and the current guidance of the platform you want to support:' },
             { type: 'ul', items: [
-                'FAQPage — Google retired the visual rich result in mid-2026, but the markup still drives a measurable citation lift in AI Overviews and Perplexity (one study of 50 domains found a median 22% lift). Keep it.',
-                'HowTo — still produces rich results on desktop and remains the cleanest way to get step-by-step content lifted into AI answers as an ordered list.',
+                'FAQPage: describe questions and answers that are genuinely present on the page, where this type is appropriate; check current platform guidance on supported search features',
+                'HowTo: describe a real step-by-step process where appropriate, without assuming it will create a search feature or AI citation',
                 'QAPage — for pages structured around a single user-submitted question with one or more community answers. Use this for support forums and community Q&A, not your own marketing FAQs.',
-                'Speakable — narrow but powerful for news-style content, and a strong correlation signal for being extracted by AI retrieval systems that need short, audio-ready passages.',
+                'Speakable: check the intended use and current platform support before adding this markup',
             ] },
-            { type: 'p', text: 'Mark up the actual answer, not the wrapper. The answer text inside an FAQPage Question should be the same 40-to-60-word block you wrote for humans. Mismatched schema is worse than no schema — it gets you ignored.' },
+            { type: 'p', text: 'Keep the answer in structured data consistent with the visible answer on the page. Validate the markup, and do not add a type simply because another site uses it.' },
 
             { type: 'h2', text: 'Design for the voice answer' },
-            { type: 'p', text: 'Voice search hit 27% of all queries in 2026, with 8.4 billion voice assistants now active worldwide. Google Assistant, Siri, and Alexa each answer hundreds of millions of users daily, and they all share one trait: they read one answer aloud. There is no second result.' },
+            { type: 'p', text: 'A spoken answer needs to make sense without a page layout or a list of links. Write the essential answer plainly and include the location or service context needed to understand it.' },
             { type: 'p', text: 'Voice-friendly answers obey three rules. Keep the spoken answer to 20-to-30 seconds — roughly two to three sentences. Use conversational phrasing that matches how people actually speak ("how much does it cost to fix" not "cost of repair services"). And resolve location and intent inside the answer itself, because voice queries are overwhelmingly local and immediate.' },
 
             { type: 'h2', text: 'Earn the Perplexity citation' },
-            { type: 'p', text: 'Perplexity and ChatGPT Search both cite sources visibly, and the citation patterns are now well understood. They reward content that is unambiguously authored, dated, and dense with extractable claims. The practical checklist:' },
+            { type: 'p', text: 'Where an assistant shows supporting sources, check the pages it actually cites for questions relevant to your business. The following editorial checks also make content easier for readers to assess:' },
             { type: 'ul', items: [
                 'Visible author byline with a real bio and a linked profile, not "Admin"',
                 'Published and updated dates on every post, in both visible text and Article schema',
@@ -872,7 +872,7 @@ const posts = [
             { type: 'quote', text: 'In a zero-click world, the brand mentioned in the answer wins the customer. The brand ranked tenth on a page nobody scrolled to has already lost.', cite: 'Orion Automation' },
 
             { type: 'h2', text: 'A 30-day AEO playbook you can actually run' },
-            { type: 'p', text: 'If you want to move from theory to results inside a month, work in this order. It is the same sequence we run for clients, and it compounds quickly because each step makes the next one cheaper.' },
+            { type: 'p', text: 'Use the following as a first-month work plan. Adjust the number of pages and queries to the time available, and measure the results rather than promising a change in visibility.' },
             { type: 'ol', items: [
                 'Audit your top 20 commercial queries — which already trigger an AI Overview, featured snippet, or PAA box, and which competitors are being cited',
                 'Rewrite the matching pages so each section opens with a 40-to-60-word direct answer that mirrors the question wording',
@@ -881,7 +881,7 @@ const posts = [
                 'Set up a weekly citation check — pose your top 20 queries to Google AI Mode, Perplexity, ChatGPT Search, and Copilot, and log who they name',
                 'Repeat monthly, prioritising the queries where you are absent or out-ranked by competitors with thinner content',
             ] },
-            { type: 'p', text: 'Most teams find that the rewrite alone — answer-first sections with matching schema — moves the needle inside two to three weeks. The hub and the citation tracking turn it into a durable advantage.' },
+            { type: 'p', text: 'Keep a record of content changes and citation checks over time. Assistant responses can vary, so use repeated checks and actual enquiries alongside any change in visibility.' },
             { type: 'cta', text: 'Ready to win the answer, not just the rank?', to: '/marketing', label: 'Explore Modern Marketing' },
         ],
     },
@@ -897,7 +897,7 @@ const posts = [
         category: 'Modern Marketing',
         readMinutes: 9,
         publishedAt: '2026-05-13',
-        updatedAt: '2026-05-13',
+        updatedAt: '2026-10-30',
         cover: '#dac4b3',
         excerpt:
             'Ranking on page one is no longer the prize. The prize is being the brand a generative AI names when a buyer asks for a recommendation. Here is the 2026 playbook for getting there.',
@@ -906,7 +906,7 @@ const posts = [
             { type: 'p', text: 'Generative Engine Optimization (GEO) is the practice of becoming the brand the model names. It is not a rebrand of SEO, and it is not the same as optimising for zero-click snippets. It is a strategic problem about brand entity, citation footprint, and the signals a language model uses to decide whose name to put in its answer. Here is what is actually working.' },
 
             { type: 'h2', text: 'What GEO is, and what it is not' },
-            { type: 'p', text: 'The term was coined in a 2024 paper from Princeton, Georgia Tech, and Allen Institute researchers (Aggarwal et al., ACM KDD 2024) that ran 10,000 queries across generative engines and tested which content tweaks moved citation visibility. Adding statistics improved visibility by 41%, adding quotations by 28%, and citing sources lifted visibility by up to 115% for pages not already dominating traditional search.' },
+            { type: 'p', text: 'GEO is used to describe work intended to improve how a business or its content appears in generative search answers. A useful starting point is accurate business information, understandable content, and sources a reader can check.' },
             { type: 'p', text: 'But GEO is broader than on-page tweaks. Classic SEO optimises a URL to rank. Answer Engine Optimization optimises a snippet to be lifted. GEO optimises a brand entity so a generative model, having read tens of thousands of pages about your category, decides your name belongs in the recommendation set. The unit of work is not a page. It is a reputation.' },
 
             { type: 'h2', text: 'Why being mentioned beats being linked' },
@@ -919,13 +919,13 @@ const posts = [
             { type: 'p', text: 'You cannot fake any of these three at scale. You can, however, deliberately seed them in the places models read most.' },
 
             { type: 'h2', text: 'The sources LLMs actually cite' },
-            { type: 'p', text: 'The citation graph is narrower than most teams assume. Reddit and Wikipedia dominate general queries — Reddit citation frequency hit roughly 40% across major LLMs in mid-2025 — but the picture flips hard for commercial queries. A Grow and Convert study found that for product-specific prompts, LLMs sourced industry-specific sites 86% of the time and generic sites like Reddit just 16%.' },
+            { type: 'p', text: 'The sources cited by an assistant vary with the question, product, and available information. Check the actual sources shown for the queries relevant to your business instead of assuming one platform or publication dominates every topic.' },
             { type: 'p', text: 'Translation for a brand building share of voice:' },
             { type: 'ul', items: [
                 'A clean Wikipedia entity for your company, founder, or category-defining product is a force multiplier',
                 'Sustained, non-spammy participation in the two or three subreddits your buyers actually read shows up in answers',
                 'A presence in the top three to five trade publications in your category is worth more than ten generic guest posts',
-                'Review platforms (G2, Capterra, Trustpilot) are validation layers — active profiles see roughly 3x higher ChatGPT citation rates',
+                'Review platforms: maintain accurate profiles on services relevant to your business and request honest feedback without promising a citation benefit',
             ] },
 
             { type: 'h2', text: 'Brand entity strength: the foundation' },
@@ -933,21 +933,21 @@ const posts = [
             { type: 'ol', items: [
                 'A single canonical brand name, used identically on your site, Google Business Profile, LinkedIn, Crunchbase, and every directory you appear in',
                 'Organization and Person schema with sameAs links to every legitimate profile you own',
-                'A Wikidata entry — easier to get than a Wikipedia page, and read by every major model',
+                'Public knowledge profiles: use them only where the business meets the platform rules, and do not invent entries to imply recognition',
                 'Founder and key-personnel pages that disambiguate you from anyone else with the same name',
                 'A clear, repeated one-line description of what you do and who you do it for, mirrored across every property',
             ] },
             { type: 'p', text: 'Most teams skip this and wonder why the model hallucinates their category. The fix is not clever prompting — it is fixing the entity.' },
 
             { type: 'h2', text: 'llms.txt and the emerging access stack' },
-            { type: 'p', text: 'llms.txt is a markdown file at the root of your domain that gives language models a curated map of the content you most want them to read — proposed in late 2024 and now shipped by Stripe, Vercel, Cloudflare, Anthropic, and most modern API products. By Q1 2026 adoption sat around 10% of indexed domains, with stronger uptake in technical and SaaS categories.' },
-            { type: 'p', text: 'No major model has formally committed to reading the file in production, but the signal value is real: AI coding assistants like Cursor and Copilot already retrieve it, your competitors in technical categories are already publishing it, and the exercise forces you to identify which pages are canonical for a model to cite. Treat it as cheap insurance, not a silver bullet.' },
+            { type: 'p', text: 'An llms.txt file is a proposed way to provide a short, curated guide to website content for language-model tools. Check whether a tool you intend to support actually uses it before prioritising the work.' },
+            { type: 'p', text: 'Publishing this file does not guarantee that an assistant will read or cite it. Keep normal navigation, crawl access, accurate page content, and the sitemap working first.' },
 
-            { type: 'h2', text: 'Content that LLMs preferentially cite' },
-            { type: 'p', text: 'The Princeton study and every credible follow-up agree on the structural traits of citation-worthy content. None of it is surprising — almost none of it is what marketing teams default to.' },
+            { type: 'h2', text: 'Make content easier to understand and check' },
+            { type: 'p', text: 'These content checks can help readers understand and verify a page. They are useful editorial practices, rather than a formula for receiving AI citations:' },
             { type: 'ul', items: [
-                'Recent — content updated within the last 12 months is cited at multiples of older content, even when the older content ranks higher in Google',
-                'Source-rich — original statistics, primary research, and named expert quotes get cited; recycled opinions do not',
+                'Current: review time-sensitive details and show a meaningful update date only when the content has actually been reviewed or changed',
+                'Source-rich: cite the evidence behind factual claims, use permissioned quotations, and distinguish research from opinion',
                 'Structurally clean — clear H2 questions, direct two-to-three sentence answers, and bulleted summaries that a model can lift cleanly',
                 'Author-attributed — bylines from a real, traceable expert with a track record in the topic',
                 'Self-contained — answers that do not require clicking three other pages to make sense',
@@ -962,23 +962,23 @@ const posts = [
                 'Position — whether you are named first, second, or buried in a long list',
                 'Share of voice — your mention rate divided by the combined mention rate of your defined competitor set',
             ] },
-            { type: 'p', text: 'A free starting point: write 30 to 50 exact prompts your buyers would ask, run them against the four major assistants monthly, and log who gets named. Within a quarter, the pattern of where you are invisible — and which competitor is eating your share — becomes obvious.' },
+            { type: 'p', text: 'A manual starting point is to write a small set of questions your customers ask, run them in the tools you already use, and record the answers and cited sources. Repeat the same checks over time, noting that responses can vary.' },
             { type: 'quote', text: 'Backlinks were the currency of the last decade of search. Brand mentions, in the right places, by the right voices, are the currency of generative AI. You cannot buy your way in; you have to be worth talking about.', cite: 'Orion Automation' },
 
-            { type: 'h2', text: 'A 90-day GEO program that actually moves the needle' },
+            { type: 'h2', text: 'An example 90-day GEO work plan' },
             { type: 'p', text: 'Most GEO advice is 40 tactics with no sequence. Here is the order that compounds.' },
             { type: 'ol', items: [
-                'Weeks 1-2: Fix your entity — canonical name, schema, sameAs links, Wikidata entry, founder pages',
+                'Weeks 1-2: review the business name, contact details, relevant structured data, and genuine public profiles',
                 'Weeks 3-4: Audit 20 buyer prompts across ChatGPT, Claude, Gemini, and Perplexity; baseline your share of voice',
                 'Weeks 5-8: Refresh your ten most strategic pages — recency, original stats, named author, clean structure, self-contained answers',
-                'Weeks 6-10: Earn three to five citations in genuine industry publications and one strong primary-research piece',
+                'Weeks 6-10: approach relevant publications with useful, evidence-based contributions, without assuming they will publish or cite them',
                 'Weeks 8-12: Activate review platforms (G2, Capterra, Trustpilot) and the two subreddits your buyers actually read',
                 'Week 12: Re-run the prompt audit, compare to baseline, and double down on the two tactics that moved your share most',
             ] },
-            { type: 'p', text: 'Entity work and citation earning are slow signals — typically six to twelve months before gains fully compound. Start now, measure monthly, and ignore whatever is trending on LinkedIn this week.' },
+            { type: 'p', text: 'Review progress over time without promising a fixed result or deadline. Record the queries used, the responses observed, the sources cited, and any change in relevant enquiries.' },
 
             { type: 'h2', text: 'Where GEO is heading' },
-            { type: 'p', text: 'Three shifts are already underway. Retrieval-augmented assistants are pulling fresher content into answers in near real time, so recency and source-richness will keep gaining weight against domain age. Major models are quietly building filters that suppress brands with weak or contradictory entity signals — companies without a clean identity get silently skipped. And share of voice in AI answers is becoming a board-level metric: Similarweb\'s 2026 AI Brand Visibility Index tracks mention share across the four major assistants, and the leaders are pulling decisively ahead in pipeline.' },
+            { type: 'p', text: 'Assistant products and their source selection can change. Keep checking what they say about the business, correct inaccurate information on properties you control, and avoid treating an isolated mention as a permanent ranking.' },
             { type: 'p', text: 'The winners in 2026 will not be the loudest or the most heavily backlinked. They will be the brands a model can confidently identify, the brands the right third parties keep talking about, and the brands whose content is structured to be lifted into an answer. That is what GEO is for.' },
             { type: 'cta', text: 'Want a GEO audit of your brand\'s share of voice in ChatGPT, Claude, Gemini, and Perplexity?', to: '/marketing', label: 'Explore Modern Marketing' },
         ],
@@ -995,60 +995,60 @@ const posts = [
         category: 'Modern Marketing',
         readMinutes: 8,
         publishedAt: '2026-05-12',
-        updatedAt: '2026-05-12',
+        updatedAt: '2026-10-30',
         cover: '#c8c1af',
         excerpt:
-            'The Google 3-Pack still drives 90% of local clicks, but the real shift in 2026 is that ChatGPT, Perplexity, and Apple Maps now decide who gets the call. Here is the playbook for showing up everywhere a customer can ask "near me".',
+            'A practical review of business listings, contact information, genuine reviews, and local pages that help customers find and check a business.',
         sections: [
-            { type: 'p', text: 'Local search used to mean one thing: rank in Google\'s 3-Pack and the phone rings. In 2026 the playing field looks completely different. 46% of all Google searches now carry local intent, AI Overviews appear on more than 40% of local business queries, and the use of generative AI for local recommendations jumped from 6% to 45% in a single year. A customer asking "best dim sum near KLCC" might be talking to Google, Siri, ChatGPT, or Perplexity — and each one picks a winner using a different set of signals.' },
+            { type: 'p', text: 'A customer looking for a nearby business may use a search engine, map, directory, or AI assistant. Accurate details on your own website and business profiles help them check what you offer and how to contact you.' },
             { type: 'p', text: 'The good news for small and mid-sized businesses: the fundamentals still pay, but they now compound across more surfaces. This is the operator\'s playbook for owning local visibility in 2026 — from Google Business Profile mastery to AI map overlays, with concrete next steps you can ship this quarter.' },
 
-            { type: 'h2', text: 'The 2026 local ranking algorithm, in one chart' },
-            { type: 'p', text: 'Industry surveys this year break down the local pack signal weights as follows. Memorise this — it tells you where every hour of effort should go:' },
+            { type: 'h2', text: 'Areas to review in local search' },
+            { type: 'p', text: 'Do not treat an estimated ranking-factor percentage as a rule for your business. Review these areas together and measure the enquiries they support:' },
             { type: 'ul', items: [
-                'Google Business Profile signals — 32% (the single biggest lever)',
-                'On-page signals on your website — 19%',
-                'Review signals (volume, velocity, recency, response) — 16% to 20%',
-                'Link signals (local and topical backlinks) — 15%',
-                'Behavioural signals (clicks, calls, direction requests) — 8%',
-                'Citation signals (NAP consistency across the web) — 7%',
-                'Personalisation — 3%',
+                'Google Business Profile: accurate categories, business details, services, and eligible location information',
+                'Website content: useful service and location information with working navigation',
+                'Reviews: genuine customer feedback and helpful responses',
+                'Links: relevant mentions from real local organisations and publications',
+                'Customer actions: calls, bookings, direction requests, and enquiries that you can measure',
+                'Business listings: consistent name, address where public, phone number, and website',
+                'Search context: results can differ by the query and the location of the person searching',
             ] },
-            { type: 'p', text: 'Two things jump out. First, your GBP is roughly a third of the algorithm — if it is half-filled, you are leaving 32% on the table. Second, reviews and behavioural signals together are nearly as heavy as GBP. The businesses winning in 2026 treat their profile as a living product, not a one-time setup.' },
+            { type: 'p', text: 'Keep the profile complete and review it when services, hours, or contact details change. Use actual customer questions and enquiry records to decide which information needs attention.' },
 
-            { type: 'h2', text: 'Google Business Profile mastery (the 32% you control today)' },
-            { type: 'p', text: 'GBP actions — calls, direction requests, website visits, bookings — surged 41% year over year between 2025 and 2026. That is the bar your profile has to clear. A profile that ranks but does not convert is a leaky bucket.' },
+            { type: 'h2', text: 'Keep your Google Business Profile accurate' },
+            { type: 'p', text: 'A useful profile helps someone decide whether the business meets their needs and how to take the next step. Check the details rather than assuming visibility alone will create enquiries.' },
             { type: 'p', text: 'Run this checklist on every location you operate:' },
             { type: 'ol', items: [
                 'Primary and secondary categories are precise — "Halal Restaurant" beats "Restaurant" for a halal kitchen in Shah Alam',
                 'Services and products are fully populated with descriptions, prices, and photos',
                 'Hours are accurate for every public holiday — Malaysia\'s calendar is dense, and one wrong Hari Raya entry costs you a week of trust',
-                'At least 30 photos uploaded, including exterior, interior, team, and product shots',
+                'Use genuine, current photos of the business, work, team, or products where you have permission to publish them',
                 'Q&A section seeded with your real top 10 questions — and answered by you, not strangers',
-                'Posts published weekly (offers, events, updates) — Google rewards profile activity',
+                'Publish relevant updates when there is something useful to tell customers, rather than posting to meet a ranking target',
                 'Booking, menu, or quote link wired up if your industry supports it',
-                'Messaging turned on with a documented response-time SLA',
+                'Use the contact and booking options currently supported by the platform, with a clear plan for handling enquiries',
             ] },
 
-            { type: 'h2', text: 'NAP consistency and citations: the boring 7% that breaks everything' },
-            { type: 'p', text: 'NAP — Name, Address, Phone — has to match exactly across every directory, social profile, and mention of your business. Citations only carry 7% of the ranking weight on their own, but inconsistent NAP poisons everything else: Google loses confidence, AI assistants get confused, and your reviews start fragmenting across duplicate listings.' },
+            { type: 'h2', text: 'Keep contact information consistent' },
+            { type: 'p', text: 'NAP means name, address, and phone number. Use consistent, accurate business details on the website and the listings you control, and check for outdated or duplicate profiles.' },
             { type: 'p', text: 'For a Malaysia or SE Asia SMB, the minimum citation footprint is Google Business Profile, Apple Business Connect, Bing Places, Facebook, Instagram, your industry directory (Foodpanda, Lazada, Carousell, Atlas Obscura, whatever applies), and your own website schema markup. Pick one source of truth — a master spreadsheet or a tool like Yext, BrightLocal, or PinMeTo — and push from there.' },
 
-            { type: 'h2', text: 'Reviews: velocity beats volume' },
-            { type: 'p', text: 'Top-3 local pack businesses average 47 Google reviews. Positions 7-10 average 38. Nine reviews separate the top of the page from the second screen of a phone. But raw count is the lagging indicator — velocity is what Google actually watches.' },
-            { type: 'p', text: 'A business that earns five reviews a week looks alive. A business that got 50 reviews two years ago and nothing since looks abandoned. Worse, a sudden spike — 30 reviews in a week after silence — trips Google\'s spam filters and suppresses the lot. Build a steady, boring drumbeat:' },
+            { type: 'h2', text: 'Request and respond to genuine reviews' },
+            { type: 'p', text: 'Reviews should come from genuine customers. Ask for feedback through an ordinary follow-up process, without paying for positive ratings or writing reviews on a customer\'s behalf.' },
+            { type: 'p', text: 'Avoid setting a review quota that encourages staff to pressure customers or fabricate activity. Make requests consistently and follow the review platform\'s current rules:' },
             { type: 'ul', items: [
                 'Trigger a review request at the moment of peak customer happiness — invoice paid, dish finished, project delivered',
                 'Use a short link (g.page/r/...) so customers land directly on the review form',
-                'Aim for two to ten new reviews per week, every week — consistency over spikes',
+                'Ask genuine customers for feedback at a suitable point in the service, without requiring a positive rating',
                 'Respond to 100% of reviews within 48 hours, including the five-star ones',
-                'When you respond, mention the service or product by name — those keywords feed the algorithm',
+                'Respond to the actual feedback and respect the customer\'s privacy',
                 'For negative reviews, respond publicly with a fix and take the detail offline',
             ] },
             { type: 'quote', text: 'In 2026, your review pipeline is a product. If it is not running on a schedule with named owners and weekly metrics, it is not running at all.', cite: 'Orion Automation' },
 
-            { type: 'h2', text: 'Voice search and "near me": the 76% you cannot ignore' },
-            { type: 'p', text: '76% of voice searches now carry local intent, and "near me" voice queries have grown 150% since 2020. In Malaysia specifically, "near me" searches have grown roughly 250% over the past few years, concentrated in KL, Penang, and Johor Bahru. Over 80% of those local mobile searches lead to an offline purchase within 24 hours.' },
+            { type: 'h2', text: 'Voice search and nearby queries' },
+            { type: 'p', text: 'A nearby search may include a service, location, opening time, or other practical condition. Make those details clear and accurate instead of relying on a general claim about search volume.' },
             { type: 'p', text: 'Voice queries are longer, more conversational, and more specific. "Where can I get my phone screen repaired in Bangsar before 7pm" is a different beast from "phone repair". Three things make your business voice-friendly:' },
             { type: 'ul', items: [
                 'A clean FAQ page on your site, written in the exact language a customer would say out loud',
@@ -1057,7 +1057,7 @@ const posts = [
             ] },
 
             { type: 'h2', text: 'Getting recommended by ChatGPT, Perplexity, and AI Overviews' },
-            { type: 'p', text: 'Here is the uncomfortable number: only 1.2% of locations get recommended by ChatGPT, 11% by Gemini, and 7.4% by Perplexity. AI local visibility is three to 30 times harder than ranking in the Google 3-Pack. The bar is higher because AI assistants do not just check a directory — they synthesise mentions from across the web and decide which businesses earned their citation.' },
+            { type: 'p', text: 'Check the responses to questions relevant to your own services and area. Record which businesses and sources appear, and whether the details about your business are correct. These results can vary between assistants and over time.' },
             { type: 'p', text: 'The play is different from classic SEO. You are not chasing keywords; you are chasing being mentioned, in context, on sources the model trusts:' },
             { type: 'ol', items: [
                 'Map the questions your customers ask AI assistants — "best ramen near Mont Kiara", "cheapest car wash open Sunday in PJ" — and make sure your site answers them directly',
@@ -1068,12 +1068,12 @@ const posts = [
             ] },
 
             { type: 'h2', text: 'Apple Maps and Bing Places: the surfaces everyone ignores' },
-            { type: 'p', text: 'In April 2026 Apple unified Business Connect, Business Manager, and Business Essentials into a single Apple Business platform across 200+ countries, and Apple Maps Ads launched this summer. iOS users default to Apple Maps. Siri answers with Apple data. CarPlay routes from Apple Maps. If you are not on it, you do not exist for that audience.' },
-            { type: 'p', text: 'Bing Places matters for two reasons. First, Bing powers ChatGPT search and Copilot — your Bing presence quietly feeds the AI surfaces. Second, it takes about twenty minutes and competitors usually skip it.' },
-            { type: 'p', text: 'Both platforms accept a bulk upload of your GBP data, so the marginal effort is small. The marginal upside is showing up on every device a customer owns.' },
+            { type: 'p', text: 'Review your Apple Maps listing if customers use it to find the business. Check the current business-management service and its eligibility rules, and keep public contact and location details accurate.' },
+            { type: 'p', text: 'Review Bing Places where it is relevant to your customers. Check its current listing process and keep the information consistent with your website.' },
+            { type: 'p', text: 'Check the current import and verification options on each platform. Review any imported information before publishing it.' },
 
             { type: 'h2', text: 'Hyper-local content that earns clicks and citations' },
-            { type: 'p', text: 'A generic "About Us" page does not rank and does not get cited. Hyper-local content does both. For every neighbourhood, mall, or landmark you serve, publish a page that proves you actually operate there:' },
+            { type: 'p', text: 'Create location pages only for areas you genuinely serve. Include useful details you can verify rather than duplicating a generic page with a different place name:' },
             { type: 'ul', items: [
                 'Location pages with unique copy, embedded map, parking directions, public transport options, and neighbourhood-specific testimonials',
                 '"Best of [neighbourhood]" guides written from your team\'s point of view — these earn backlinks and AI citations',
@@ -1086,7 +1086,7 @@ const posts = [
             { type: 'p', text: 'You cannot do all of this at once, and you should not try. Sequence the work:' },
             { type: 'ol', items: [
                 'Days 1-14 — full audit of GBP, Apple Business Connect, Bing Places, and NAP across the top 20 directories',
-                'Days 15-30 — fix categories, services, photos, hours, and schema; turn on messaging; publish first weekly GBP post',
+                'Days 15-30: correct categories, services, photos, hours, and relevant structured data, and test the available contact routes',
                 'Days 31-60 — launch the review pipeline with an SOP, a request automation, and a response-time SLA',
                 'Days 61-90 — ship three hyper-local content pages, run the first AI-visibility audit across ChatGPT, Perplexity, and Gemini, and lock in monthly reporting',
             ] },

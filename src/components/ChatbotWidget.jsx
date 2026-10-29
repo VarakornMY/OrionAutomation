@@ -71,10 +71,10 @@ const ChatbotWidget = () => {
             if (error.status === 429) {
                 errorMessage = "You're sending messages a little too fast. Please wait a moment and try again.";
             } else if (error.status === 503) {
-                errorMessage = "The chatbot is temporarily unavailable. Please reach us at marketing@orionautomation.xyz.";
+                errorMessage = "The chatbot is temporarily unavailable. Please reach us at orionaiautomation@gmail.com.";
                 setApiError(true);
             } else {
-                errorMessage += "Please try asking your question again, or contact us at marketing@orionautomation.xyz";
+                errorMessage += "Please try asking your question again, or contact us at orionaiautomation@gmail.com";
             }
 
             setMessages(prev => [...prev, { type: 'bot', text: errorMessage }]);

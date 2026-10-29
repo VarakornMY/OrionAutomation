@@ -1,9 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { business, organizationSchema } from '../data/business';
 
 const SEO = ({ title, description, keywords, canonical, structuredData, robots }) => {
-    const siteUrl = 'https://orionautomation.my';
+    const siteUrl = business.url;
     const fullUrl = canonical ? (canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`) : siteUrl;
+    const schemas = [organizationSchema, ...(structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [])];
 
     return (
         <Helmet>
@@ -30,8 +32,7 @@ const SEO = ({ title, description, keywords, canonical, structuredData, robots }
             <meta property="twitter:image" content={`${siteUrl}/brand/orion-logo.jpg`} />
 
             {/* Structured Data (JSON-LD) — accepts a single object or an array of objects */}
-            {structuredData &&
-                (Array.isArray(structuredData) ? structuredData : [structuredData]).map((schema, i) => (
+            {schemas.map((schema, i) => (
                     <script key={i} type="application/ld+json">
                         {JSON.stringify(schema)}
                     </script>

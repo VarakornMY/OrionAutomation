@@ -78,7 +78,7 @@ const Navbar = () => {
                     <NavLink to="/blog" className="nav-link">Journal</NavLink>
                     <NavLink to="/about-us" className="nav-link">About us</NavLink>
                 </nav>
-                <a className="button button-primary header-contact" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Contact</a>
+                <NavLink className="button button-primary header-contact" to="/contact">Contact</NavLink>
                 <button type="button" className="mobile-menu-toggle" ref={menuButtonRef} onClick={() => { setMenuOpen(!menuOpen); setServicesOpen(false); }} aria-expanded={menuOpen} aria-controls="mobile-navigation" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}>
                     <span>{menuOpen ? 'Close' : 'Menu'}</span><span className={`menu-lines ${menuOpen ? 'is-open' : ''}`} aria-hidden="true"><span /><span /></span>
                 </button>
@@ -87,7 +87,7 @@ const Navbar = () => {
                 <div className="container">
                     {services.map(([to, label]) => <NavLink to={to} key={to} className="mobile-navigation-link">{label}</NavLink>)}
                     <div className="mobile-navigation-secondary"><NavLink to="/blog">Journal</NavLink><NavLink to="/about-us">About us</NavLink></div>
-                    <a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Contact Orion</a>
+                    <NavLink className="button button-primary" to="/contact">Contact Orion</NavLink>
                 </div>
             </nav>}
         </header>

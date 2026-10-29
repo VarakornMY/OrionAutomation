@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { business } from '../data/business';
 import '../styles/home.css';
 
 const services = [
@@ -27,13 +28,13 @@ export default function Home() {
     const [activeService, setActiveService] = useState(null);
     return (
         <div className="home-page">
-            <SEO title="Websites & automation" description="Website development, business automation, AI chatbots, and search marketing from Orion Automation, Malaysia." canonical="/" structuredData={{ '@context': 'https://schema.org', '@type': 'Organization', name: 'Orion Automation', url: 'https://orionautomation.my', logo: 'https://orionautomation.my/brand/orion-logo.jpg', contactPoint: { '@type': 'ContactPoint', telephone: '+601117993797', contactType: 'customer service' } }} />
+            <SEO title="Websites & automation" description={business.description} canonical="/" />
             <section className="studio-hero">
                 <div className="container studio-hero-layout">
                     <div>
                         <h1>Websites &<br /><em>automation.</em></h1>
                         <div className="studio-actions">
-                            <a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Start a project</a>
+                            <Link className="button button-primary" to="/contact">Start a project</Link>
                             <a className="text-link" href="#services">Services</a>
                         </div>
                     </div>
@@ -77,7 +78,7 @@ export default function Home() {
 
             <section className="studio-contact container" aria-labelledby="contact-title">
                 <h2 id="contact-title">Let’s talk.</h2>
-                <div><a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">WhatsApp</a><a className="text-link" href="mailto:marketing@orionautomation.xyz">Email Orion</a></div>
+                <div><Link className="button button-primary" to="/contact">Contact Orion</Link><a className="text-link" href={`mailto:${business.email}`}>Email Orion</a></div>
             </section>
         </div>
     );

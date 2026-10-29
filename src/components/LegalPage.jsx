@@ -16,7 +16,7 @@ const LegalPage = ({ title, description, path, introduction, sections, children 
                 <header className="legal-header">
                     <Link to="/" className="legal-back">Back to home</Link>
                     <h1>{title}</h1>
-                    <p className="legal-date">Effective date: <time dateTime="2026-10-01">1 October 2026</time></p>
+                    <p className="legal-date">Effective date: <time dateTime="2026-10-30">30 October 2026</time></p>
                     <p className="legal-introduction">{introduction}</p>
                 </header>
                 <div className="legal-layout">
@@ -43,7 +43,7 @@ const LegalPage = ({ title, description, path, introduction, sections, children 
                 <div className="legal-related">
                     <Link to="/privacy-policy">Privacy Policy</Link>
                     <Link to="/terms-and-conditions">Terms &amp; Conditions</Link>
-                    <a href="mailto:marketing@orionautomation.xyz">Contact our team</a>
+                    <a href="mailto:orionaiautomation@gmail.com">Contact our team</a>
                 </div>
             </div>
         </div>

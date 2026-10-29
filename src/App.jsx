@@ -21,6 +21,7 @@ import NotFound from './pages/NotFound';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import AboutUs from './pages/AboutUs';
+import Contact from './pages/Contact';
 
 // The CMS has its own chrome — hide the public Navbar/Footer/widget there.
 const Shell = () => {
@@ -60,6 +61,7 @@ const Shell = () => {
                     <Route path="/blog" element={<Blog />} />
                     <Route path="/blog/:slug" element={<BlogPost />} />
                     <Route path="/about-us" element={<AboutUs />} />
+                    <Route path="/contact" element={<Contact />} />
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                     <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                     <Route path="/admin" element={<AdminBlog />} />
@@ -73,18 +75,20 @@ const Shell = () => {
     );
 };
 
-function App() {
+export function Site() {
     return (
         <ThemeProvider>
             <UserProvider>
                 <AdminProvider>
-                    <Router>
-                        <Shell />
-                    </Router>
+                    <Shell />
                 </AdminProvider>
             </UserProvider>
         </ThemeProvider>
     );
+}
+
+function App() {
+    return <Router><Site /></Router>;
 }
 
 export default App;

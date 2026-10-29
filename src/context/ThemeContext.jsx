@@ -13,7 +13,7 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }) => {
     const [theme, setTheme] = useState(() => {
         // Get theme from localStorage or default to 'classic' (original)
-        return localStorage.getItem('orion-theme') || 'classic';
+        return typeof window === 'undefined' ? 'classic' : localStorage.getItem('orion-theme') || 'classic';
     });
 
     useEffect(() => {
