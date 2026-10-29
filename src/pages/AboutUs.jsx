@@ -7,9 +7,23 @@ export default function AboutUs() {
     return (
         <div className="page-shell about-page">
             <SEO title="About Orion Automation" description="We help businesses simplify their operations with thoughtful websites, automation and digital marketing." canonical="/about-us" />
-            <section className="page-hero container"><p className="eyebrow">About Orion</p><h1 className="page-title">Technology that makes<br />business feel simpler.</h1><p className="page-description">We bring websites, automation and digital marketing together to help businesses spend less time on repetitive work and more time on what matters.</p></section>
-            <section className="section container about-layout"><div><p className="eyebrow">Our approach</p><h2>Start with the business.<br />Build with purpose.</h2></div><div><p>Good technology should serve a clear purpose. We take time to understand how your business works, where your customers need help and what your team wants to improve.</p><p>From a new website to a connected workflow, our focus is on practical solutions that are clear to use and easy to build on.</p><Link className="button button-secondary" to="/ai-automation">Explore our services <span aria-hidden="true">↗</span></Link></div></section>
-            <section className="section container"><div className="feature-grid">{[{n:'01',title:'Clarity first',text:'A clear scope, understandable design and straightforward communication.'},{n:'02',title:'Useful by design',text:'Thoughtful experiences that help customers and make everyday work easier.'},{n:'03',title:'Room to grow',text:'Solutions shaped around the way your business works today and where it wants to go.'}].map(item=><article className="surface-card about-value" key={item.n}><span>{item.n}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div></section>
+            <section className="page-hero container"><h1 className="page-title">About Orion</h1></section>
+            <section className="section container about-layout">
+                <div className="about-copy">
+                    <p>Orion Automation helps businesses with websites, workflow automation, AI chatbots and digital marketing.</p>
+                    <p>We start by understanding how your business works, where customers need help and which tasks take up your team's time. That gives each project a clear purpose and scope.</p>
+                    <a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Discuss a project</a>
+                </div>
+                <div className="about-services">
+                    <h2>Services</h2>
+                    <ul>
+                        <li><Link to="/website">Website development</Link></li>
+                        <li><Link to="/ai-automation">AI automation</Link></li>
+                        <li><Link to="/ai-chatbot">AI chatbots</Link></li>
+                        <li><Link to="/marketing">Digital marketing</Link></li>
+                    </ul>
+                </div>
+            </section>
         </div>
     );
 }

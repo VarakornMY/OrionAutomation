@@ -89,29 +89,30 @@ const ChatbotWidget = () => {
             <button
                 id="chatbot-widget"
                 onClick={() => setIsOpen(!isOpen)}
+                aria-expanded={isOpen}
+                aria-label={isOpen ? 'Close chat' : 'Open chat'}
                 style={{
                     position: 'fixed',
                     bottom: '1.5rem',
                     right: '1.5rem',
-                    width: window.innerWidth <= 768 ? '55px' : '60px',
+                    minWidth: '72px',
+                    padding: '0 18px',
                     height: window.innerWidth <= 768 ? '55px' : '60px',
-                    borderRadius: '50%',
+                    borderRadius: '4px',
                     background: 'var(--color-merlot)',
                     border: '2px solid var(--color-gold)',
-                    color: 'var(--color-gold)',
-                    fontSize: '1.5rem',
+                    color: 'var(--color-highlight)',
+                    fontSize: '.9rem',
                     cursor: 'pointer',
                     zIndex: 1000,
-                    boxShadow: '0 0 20px rgba(115, 0, 0, 0.5)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     transition: 'all 0.3s ease',
-                    transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
                 }}
                 className="hover-lift"
             >
-                {isOpen ? '✕' : '💬'}
+                {isOpen ? 'Close' : 'Chat'}
             </button>
 
             {/* Chat Window */}
@@ -247,17 +248,18 @@ const ChatbotWidget = () => {
                             disabled={isLoading}
                             style={{
                                 background: isLoading ? 'rgba(197, 168, 128, 0.5)' : 'var(--color-gold)',
+                                color: 'var(--color-highlight)',
                                 border: 'none',
-                                borderRadius: '50%',
-                                width: '35px',
-                                height: '35px',
+                                borderRadius: '4px',
+                                minWidth: '55px',
+                                height: '44px',
                                 cursor: isLoading ? 'not-allowed' : 'pointer',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
                             }}
                         >
-                            ➤
+                            Send
                         </button>
                     </form>
                 </div>

@@ -9,9 +9,8 @@ export default function NotFound() {
             <SEO title="Page not found" description="We couldn't find this page. Explore Orion Automation's services or return to the homepage." robots="noindex, follow" />
             <section className="container support-state-wrap">
                 <div className="support-state-card">
-                    <p className="eyebrow">404 / Page not found</p>
-                    <h1>Let's get you<br />back on track.</h1>
-                    <p>This page may have moved, or the link may be out of date. You can return home or explore what we do.</p>
+                    <h1>Page not found</h1>
+                    <p>The address may be incorrect or the page has moved.</p>
                     <div className="support-actions"><Link className="button button-primary" to="/">Back to home</Link><Link className="button button-secondary" to="/ai-automation">Explore our services</Link></div>
                 </div>
             </section>

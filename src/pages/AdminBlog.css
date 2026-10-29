@@ -1,6 +1,15 @@
 /* Admin CMS — sits inside .blog-scope, mobile-first */
 
 .admin-shell {
+    --blog-brown: #30231f;
+    --blog-gold: #9f0606;
+    --blog-cream: #eee5d1;
+    --blog-paper: #e0d5be;
+    --blog-border: #c0ad91;
+    --blog-border-strong: #a58a70;
+    --blog-radius: 10px;
+    --blog-radius-sm: 6px;
+    --blog-shadow-md: 0 12px 35px #30231f09;
     min-height: 100vh;
     padding-bottom: 4rem;
 }
@@ -553,6 +562,7 @@
 .admin-section__controls {
     display: flex;
     gap: 0.35rem;
+    flex-wrap: wrap;
 }
 
 .admin-section__controls button {
@@ -802,7 +812,6 @@
 .admin-shell .admin-login { padding: 48px 20px; background: #c8c1af; }
 .admin-shell .admin-login__card { background: #eee5d1; border: 1px solid #c0ad91; border-radius: 18px; padding: 36px; box-shadow: 0 8px 36px #30231f08; }
 .admin-shell .admin-login__title { color: #30231f; letter-spacing: -.04em; }
-.admin-shell .admin-login__sub { color: #5b4941; line-height: 1.7; }
 .admin-shell .admin-nav__section[data-active="true"] { background: #9f0606; color: #eee5d1; box-shadow: none; }
 .admin-shell .admin-field input, .admin-shell .admin-field select, .admin-shell .admin-field textarea { color: #30231f; background: #eee5d1; border: 1px solid #a58a70; font-size: 1rem; border-radius: 8px; min-height: 44px; }
 .admin-shell .admin-field input:focus, .admin-shell .admin-field select:focus, .admin-shell .admin-field textarea:focus { border-color: #9f0606; box-shadow: 0 0 0 3px #9f060614; }
@@ -810,7 +819,6 @@
 .admin-shell .admin-editor__actions { gap: 10px; flex-wrap: wrap; }
 .admin-shell .admin-field label, .admin-shell .admin-field > span { color: #49372e; }
 .admin-deferred { min-height: 100svh; display: grid; place-items: center; background: #c8c1af; }
-.admin-deferred .eyebrow { color: #9f0606; }
 .admin-deferred__brand { display: flex; gap: 8px; align-items: baseline; text-decoration: none; color: #30231f; font-size: 1.1rem; font-weight: 800; letter-spacing: .06em; margin-bottom: 52px; }
 .admin-deferred__brand span { font-size: .58rem; color: #5b4941; font-weight: 500; letter-spacing: .16em; }
 @media (max-width: 600px) {

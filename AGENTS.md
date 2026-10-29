@@ -12,3 +12,7 @@
   or references in production source.
 - Keep hosting static and free. The Python/admin/chatbot backend is deferred;
   do not enable Containers, paid APIs, or subscriptions without user approval.
+- Keep the interface plain and direct: no promotional eyebrow labels,
+  repetitive subtitles, decorative emoji or arrow glyphs, fake dashboards,
+  or fabricated statistics. Prefer clear headings and useful content.
+  Motion should respond to interaction and honour reduced-motion settings.

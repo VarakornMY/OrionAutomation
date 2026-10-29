@@ -45,7 +45,7 @@ const renderSection = (section, idx) => {
                 <div key={idx} className="blog-inline-cta">
                     <p>{section.text}</p>
                     <Link to={section.to || '/'} className="blog-btn">
-                        {section.label || 'Learn more'} →
+                        {section.label || 'Learn more'}
                     </Link>
                 </div>
             );
@@ -151,9 +151,7 @@ const BlogPost = () => {
             <SEO title="Article not found" description="Explore the latest ideas and guides from Orion Automation." canonical={`/blog/${slug}`} robots="noindex, follow" />
             <header className="blog-hero">
                 <div className="blog-wrap">
-                    <span className="blog-hero__eyebrow">The Orion Journal</span>
-                    <h1 className="blog-hero__title">This article isn't here.</h1>
-                    <p className="blog-hero__subtitle">The link may have changed. Browse the journal for more ideas on websites, automation, and marketing.</p>
+                    <h1 className="blog-hero__title">Article not found</h1>
                     <Link to="/blog" className="blog-btn" style={{ marginTop: '28px' }}>Back to all articles</Link>
                 </div>
             </header>
@@ -240,9 +238,7 @@ const BlogPost = () => {
                             <span className="blog-crumbs__current">{post.category}</span>
                         </nav>
 
-                        <span className="blog-article__category">{post.category}</span>
                         <h1 className="blog-article__title">{post.title}</h1>
-                        {post.excerpt && <p className="blog-article__lede">{post.excerpt}</p>}
 
                         <div className="blog-article__meta">
                             <span className="blog-article__meta-author">By {post.author}</span>
@@ -287,7 +283,7 @@ const BlogPost = () => {
                     )}
                     <div className="blog-article__body">
                         {(post.sections || []).map((section, idx) => renderSection(section, idx))}
-                        <Link to="/blog" className="blog-back-link">← Back to all articles</Link>
+                        <Link to="/blog" className="blog-back-link">Back to all articles</Link>
                     </div>
                 </div>
             </article>
@@ -304,11 +300,8 @@ const BlogPost = () => {
                                     key={p.slug}
                                     to={`/blog/${p.slug}`}
                                     className="blog-card"
-                                    style={{ '--cover': p.cover || '#E6A520' }}
                                 >
-                                    <div className="blog-card__cover" aria-hidden="true"><span>THE ORION JOURNAL</span><span>READ NEXT</span></div>
                                     <div className="blog-card__body">
-                                        <span className="blog-card__category">{p.category}</span>
                                         <h3 className="blog-card__title">{p.title}</h3>
                                         <p className="blog-card__excerpt">{p.excerpt}</p>
                                         <div className="blog-card__meta">
@@ -321,7 +314,7 @@ const BlogPost = () => {
                         </div>
                         <div className="blog-related__footer">
                             <Link to="/blog" className="blog-btn blog-btn--ghost">
-                                ← Back to all posts
+                                Back to all articles
                             </Link>
                         </div>
                     </div>

@@ -27,7 +27,7 @@ const AccessibleModal = ({ isOpen, onClose, titleId, children }) => {
             onCancel={(event) => { event.preventDefault(); onClose(); }}
             onClick={(event) => { if (event.target === event.currentTarget) onClose(); }}>
             <div className="support-dialog__content">
-                <button className="support-dialog__close" type="button" onClick={onClose} aria-label="Close dialog" autoFocus>×</button>
+                <button className="support-dialog__close" type="button" onClick={onClose} aria-label="Close dialog" autoFocus><span aria-hidden="true" /></button>
                 {children}
             </div>
         </dialog>

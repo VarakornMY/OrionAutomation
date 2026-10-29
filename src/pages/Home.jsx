@@ -1,51 +1,84 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Icon from '../components/Icons';
 import SEO from '../components/SEO';
+import '../styles/home.css';
 
-const serviceItems = [
-    { icon: 'sync', number: '01', title: 'Business automation', copy: 'Connect your tools and simplify repetitive work, from lead capture to everyday operations.', path: '/ai-automation', tags: 'Workflows · Integrations · Internal systems' },
-    { icon: 'website', number: '02', title: 'Website development', copy: 'A considered digital presence that makes your business clear, credible, and easy to engage with.', path: '/website', tags: 'Business websites · E-commerce · SEO' },
-    { icon: 'chatbot', number: '03', title: 'AI chatbots', copy: 'Help customers get answers, book appointments, and take the next step in their own time.', path: '/ai-chatbot', tags: 'WhatsApp · Customer support · Booking' },
-    { icon: 'search', number: '04', title: 'Search & marketing', copy: 'Build a stronger presence across search engines, answer engines, and AI-powered discovery.', path: '/marketing', tags: 'SEO · AEO · GEO' },
-];
-const workflows = [
-    { title: 'Enquiries', description: 'A more connected customer journey.', steps: [['chatbot', 'A new enquiry comes in', 'Website, WhatsApp, or social media'], ['calendar', 'The next step is organised', 'Answers, appointments, and routing'], ['sync', 'Your team stays in the loop', 'A clear handoff to the right person']] },
-    { title: 'Operations', description: 'Less repetitive work between your tools.', steps: [['code', 'Your tools connect', 'Bring the right information together'], ['sync', 'Routine work moves forward', 'Triggers, checks, and approval steps'], ['chart', 'Your team has a clearer view', 'Reporting that supports decisions']] },
-    { title: 'Websites', description: 'A clearer path from browsing to action.', steps: [['search', 'The right person finds you', 'A considered search presence'], ['website', 'Your business makes sense', 'Clear content on every screen'], ['chatbot', 'A conversation starts', 'Straightforward ways to get in touch']] },
+const services = [
+    { title: 'Websites', path: '/website', link: 'Website packages', items: ['Custom design', 'Mobile layouts', 'Content and SEO setup'] },
+    { title: 'Automation', path: '/ai-automation', link: 'Automation packages', items: ['Workflow design', 'Connected tools', 'Internal systems'] },
+    { title: 'AI chatbots', path: '/ai-chatbot', link: 'Chatbot plans', items: ['Customer enquiries', 'Appointment booking', 'CRM follow-up'] },
+    { title: 'Search marketing', path: '/marketing', link: 'Search marketing services', items: ['Technical SEO', 'Answer engine optimisation', 'Generative search'] },
 ];
 
-const Home = () => {
-    const [workflow, setWorkflow] = useState(0);
-    const selected = workflows[workflow];
+function moveLogo(event) {
+    if (event.pointerType !== 'mouse' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const element = event.currentTarget;
+    const bounds = element.getBoundingClientRect();
+    element.style.setProperty('--turn-x', `${((event.clientY - bounds.top) / bounds.height - .5) * -8}deg`);
+    element.style.setProperty('--turn-y', `${((event.clientX - bounds.left) / bounds.width - .5) * 8}deg`);
+}
+
+function resetLogo(event) {
+    event.currentTarget.style.setProperty('--turn-x', '0deg');
+    event.currentTarget.style.setProperty('--turn-y', '0deg');
+}
+
+export default function Home() {
+    const [activeService, setActiveService] = useState(null);
     return (
         <div className="home-page">
-            <SEO title="Smarter workflows. Better websites." description="Orion Automation helps Malaysian businesses grow with thoughtful websites, practical business automation, AI chatbots, and search marketing." canonical="/" structuredData={{ '@context': 'https://schema.org', '@type': 'Organization', name: 'Orion Automation', url: 'https://orionautomation.my', logo: 'https://orionautomation.my/brand/orion-logo.jpg', contactPoint: { '@type': 'ContactPoint', telephone: '+601117993797', contactType: 'customer service' } }} />
-            <section className="home-hero">
-                <div className="container hero-grid">
-                    <div className="hero-copy">
-                        <p className="eyebrow"><span className="eyebrow-line" /> Built for the way you work</p>
-                        <h1>Less busywork.<br />More room<br className="desktop-break" /> <span>to grow.</span></h1>
-                        <p className="hero-description">Thoughtful websites, practical automation, and AI chatbots. We help your business work better, so you can focus on what’s next.</p>
-                        <div className="hero-actions"><a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Let’s talk about your project <span aria-hidden="true">↗</span></a><a className="button button-secondary" href="#services">Explore our services <span aria-hidden="true">→</span></a></div>
-                        <div className="hero-footnote"><span className="location-dot" /> Based in Malaysia <span className="footnote-divider" /> Built around your business</div>
+            <SEO title="Websites & automation" description="Website development, business automation, AI chatbots, and search marketing from Orion Automation, Malaysia." canonical="/" structuredData={{ '@context': 'https://schema.org', '@type': 'Organization', name: 'Orion Automation', url: 'https://orionautomation.my', logo: 'https://orionautomation.my/brand/orion-logo.jpg', contactPoint: { '@type': 'ContactPoint', telephone: '+601117993797', contactType: 'customer service' } }} />
+            <section className="studio-hero">
+                <div className="container studio-hero-layout">
+                    <div>
+                        <h1>Websites &<br /><em>automation.</em></h1>
+                        <div className="studio-actions">
+                            <a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Start a project</a>
+                            <a className="text-link" href="#services">Services</a>
+                        </div>
                     </div>
-                    <div className="workflow-illustration">
-                        <div className="workflow-topline"><img className="workflow-monogram" src="/brand/orion-logo.jpg" alt="" width="32" height="32" /><span>A simpler way to work</span><span className="workflow-label">THE ORION APPROACH</span></div>
-                        <div className="workflow-tabs" aria-label="Explore example workflows">{workflows.map((item, index) => <button type="button" key={item.title} aria-pressed={index === workflow} onClick={() => setWorkflow(index)}>{item.title}</button>)}</div>
-                        <div className="workflow-canvas" aria-live="polite" aria-atomic="true"><p className="workflow-caption">{selected.description}</p>{selected.steps.map(([icon, title, caption], index) => <React.Fragment key={`${workflow}-${index}`}><div className="workflow-step"><span className="workflow-icon"><Icon name={icon} size={22} color="currentColor" /></span><div><h2>{title}</h2><p>{caption}</p></div><span className="workflow-check" aria-hidden="true">✓</span></div>{index < 2 && <div className="workflow-connector" aria-hidden="true"><span /></div>}</React.Fragment>)}</div>
-                        <div className="workflow-footer"><span className="location-dot" /> Connected tools. Clear next steps.<span className="workflow-example">Illustrative workflow</span></div>
-                        <div className="workflow-note"><span aria-hidden="true">↗</span><span>Designed around people.<br /><strong>Powered by the right technology.</strong></span></div>
+                    <div className="studio-logo-stage" aria-hidden="true" onPointerMove={moveLogo} onPointerLeave={resetLogo}>
+                        <img src="/brand/orion-logo.jpg" alt="" width="500" height="500" draggable="false" />
                     </div>
                 </div>
             </section>
-            <div className="capability-strip"><div className="container"><span>Your next chapter, made practical.</span><div><span>Strategy</span><span aria-hidden="true">/</span><span>Design</span><span aria-hidden="true">/</span><span>Development</span><span aria-hidden="true">/</span><span>Automation</span></div></div></div>
-            <section className="section" id="services" aria-labelledby="home-services"><div className="container"><div className="section-heading-row"><div><p className="eyebrow">What we do</p><h2 id="home-services" className="section-heading">Good technology.<br />Better business.</h2></div><p className="section-description">Whether you need a stronger website or a smoother way to work, we turn the complex into something useful.</p></div><div className="home-services">{serviceItems.map(item => <Link to={item.path} className="home-service-card" key={item.path}><div className="service-card-top"><span className="service-card-icon"><Icon name={item.icon} size={28} color="currentColor" /></span><span className="card-index">{item.number}</span></div><h3>{item.title}</h3><p>{item.copy}</p><div className="service-card-bottom"><small>{item.tags}</small><span className="circle-arrow" aria-hidden="true">↗</span></div></Link>)}</div></div></section>
-            <section className="section home-process-section" aria-labelledby="home-process"><div className="container home-process-layout"><div><p className="eyebrow">How we work</p><h2 id="home-process" className="section-heading">A clear process.<br />From idea to launch.</h2><p className="section-description">You bring the business context. We bring the technical thinking. Together, we build something that fits.</p><a href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer" className="text-link">Tell us what you have in mind <span aria-hidden="true">↗</span></a></div><ol className="process-list">{[['Understand', 'We start with your goals, your team, and the work you want to improve.'], ['Plan', 'We agree on the scope, the right approach, and the next steps.'], ['Build', 'We design and develop your solution, with feedback along the way.'], ['Launch & refine', 'We help you launch and make the experience work in practice.']].map(([title, copy], index) => <li key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{copy}</p></div></li>)}</ol></div></section>
-            <section className="section home-faq-section" aria-labelledby="home-questions"><div className="container faq-layout"><div><p className="eyebrow">Before we begin</p><h2 id="home-questions" className="section-heading">A few good<br />questions.</h2><p className="section-description">Not sure where to start?<br />A conversation is a good first step.</p></div><div className="faq-list"><details><summary>What can you help my business with?</summary><p>We build websites, business automations, and AI chatbots, and help improve your visibility through SEO, AEO, and GEO. Start with the challenge you want to solve and we’ll help you explore the options.</p></details><details><summary>Can you work with tools we already use?</summary><p>Our automation work connects tools such as CRMs, calendars, email, and spreadsheets. We’ll review your current setup and the available integrations before recommending an approach.</p></details><details><summary>How much does a project cost?</summary><p>Our service pages include starting prices and package details. The final scope depends on what your business needs. <Link to="/website">Explore website packages</Link> or <Link to="/ai-automation">compare automation options</Link>.</p></details><details><summary>How do we get started?</summary><p>Send us a message on WhatsApp with a little about your business and what you’d like to improve. We’ll discuss the goals and help define a practical next step.</p></details></div></div></section>
-            <section className="section home-contact-section"><div className="container"><div className="contact-band"><div><p className="eyebrow">Your next step</p><h2>Let’s make work<br />work better.</h2><p>Tell us about your business. We’ll start with what matters to you.</p></div><div className="contact-band-actions"><a className="button button-light" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Start a conversation <span aria-hidden="true">↗</span></a><a href="mailto:marketing@orionautomation.xyz">Prefer email? Get in touch <span aria-hidden="true">→</span></a></div></div></div></section>
+
+            <section className="studio-services container" id="services" aria-labelledby="services-title">
+                <h2 className="studio-section-title" id="services-title">Services</h2>
+                <div className="service-directory">
+                    {services.map((service, index) => {
+                        const open = activeService === index;
+                        return <div className={`service-entry ${open ? 'is-open' : ''}`} key={service.path}>
+                            <h3>
+                                <button type="button" className="service-entry-toggle" aria-expanded={open} aria-controls={`service-panel-${index}`} onClick={() => setActiveService(open ? null : index)}>
+                                    <span>{service.title}</span>
+                                    <span className="disclosure-mark" aria-hidden="true" />
+                                </button>
+                            </h3>
+                            <div className="service-entry-panel" id={`service-panel-${index}`} aria-hidden={!open} inert={open ? undefined : ''}>
+                                <div className="service-entry-clip"><div className="service-entry-content">
+                                    <ul>{service.items.map(item => <li key={item}>{item}</li>)}</ul>
+                                    <Link to={service.path} className="text-link">{service.link}</Link>
+                                </div></div>
+                            </div>
+                        </div>;
+                    })}
+                </div>
+            </section>
+
+            <section className="studio-questions container" aria-labelledby="questions-title">
+                <h2 className="studio-section-title" id="questions-title">Questions</h2>
+                <div className="studio-question-list">
+                    <details><summary>How much does a project cost?<span className="disclosure-mark" aria-hidden="true" /></summary><div className="question-answer"><p>Our <Link to="/website">website packages</Link> and <Link to="/ai-automation">automation packages</Link> list starting prices and inclusions. We’ll confirm the scope with you before work begins.</p></div></details>
+                    <details><summary>Can you work with our existing tools?<span className="disclosure-mark" aria-hidden="true" /></summary><div className="question-answer"><p>We work with CRMs, calendars, email, and spreadsheets. We’ll check your current setup and the available integrations first.</p></div></details>
+                    <details><summary>How do we start?<span className="disclosure-mark" aria-hidden="true" /></summary><div className="question-answer"><p>Send us a message about your business and what you need. We’ll discuss the work, the scope, and the next steps.</p></div></details>
+                </div>
+            </section>
+
+            <section className="studio-contact container" aria-labelledby="contact-title">
+                <h2 id="contact-title">Let’s talk.</h2>
+                <div><a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">WhatsApp</a><a className="text-link" href="mailto:marketing@orionautomation.xyz">Email Orion</a></div>
+            </section>
         </div>
     );
-};
-
-export default Home;
+}

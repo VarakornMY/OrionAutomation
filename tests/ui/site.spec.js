@@ -56,7 +56,7 @@ test('removed restaurant demos have no public routes or promotion', async ({ pag
 
     for (const route of ['/website-portfolio', '/sumika', '/hotzilla', '/benjy-cafe', '/SUMI-KA/index.html', '/HOTZILLA/index.html', '/benjy-cafe/index.html']) {
         await page.goto(route, { waitUntil: 'domcontentloaded' });
-        await expect(page.getByRole('heading', { level: 1, name: /Let's get you back on track/ })).toBeVisible();
+        await expect(page.getByRole('heading', { level: 1, name: 'Page not found' })).toBeVisible();
         await expect(page.getByRole('link', { name: 'Back to home', exact: true })).toBeVisible();
         await expect(page.locator('iframe')).toHaveCount(0);
     }
@@ -73,7 +73,7 @@ test('navigation works with keyboard and closes after route changes', async ({ p
         await expect(toggle).toHaveAttribute('aria-expanded', 'false');
         await expect(toggle).toBeFocused();
         await toggle.click();
-        await page.getByRole('link', { name: /AI chatbots Make every customer/ }).click();
+        await page.locator('.services-popover').getByRole('link', { name: 'AI chatbots', exact: true }).click();
         await expect(page).toHaveURL('/ai-chatbot');
     } else {
         await page.getByRole('button', { name: 'Open navigation menu' }).click();
@@ -88,13 +88,30 @@ test('navigation works with keyboard and closes after route changes', async ({ p
     }
 });
 
-test('home workflow selection and questions work', async ({ page }) => {
+test('service selection and questions work with keyboard', async ({ page }) => {
     await page.goto('/');
-    await page.getByRole('button', { name: 'Operations', exact: true }).click();
-    await expect(page.getByRole('button', { name: 'Operations', exact: true })).toHaveAttribute('aria-pressed', 'true');
-    await expect(page.getByRole('heading', { name: 'Your tools connect' })).toBeVisible();
+    const websites = page.getByRole('button', { name: 'Websites', exact: true });
+    await websites.focus();
+    await page.keyboard.press('Enter');
+    await expect(websites).toHaveAttribute('aria-expanded', 'true');
+    await expect(page.locator('#service-panel-0').getByRole('link', { name: 'Website packages' })).toBeVisible();
+    await page.getByRole('button', { name: 'Automation', exact: true }).click();
+    await expect(websites).toHaveAttribute('aria-expanded', 'false');
+    await expect(page.locator('#service-panel-1').getByRole('link', { name: 'Automation packages' })).toBeVisible();
     await page.getByText('How much does a project cost?', { exact: true }).click();
-    await expect(page.getByRole('link', { name: 'compare automation options' })).toBeVisible();
+    await expect(page.locator('.question-answer').getByRole('link', { name: 'automation packages' })).toBeVisible();
+});
+
+test('interaction motion respects reduced-motion preferences', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto('/');
+    await page.getByRole('button', { name: 'Websites', exact: true }).click();
+    await expect(page.locator('#service-panel-0').getByRole('link', { name: 'Website packages' })).toBeVisible();
+    const transition = await page.locator('#service-panel-0').evaluate(element => parseFloat(getComputedStyle(element).transitionDuration));
+    expect(transition).toBeLessThanOrEqual(.001);
+    await expect(page.locator('.studio-logo-stage img')).toHaveCSS('transform', 'none');
+    await expect(page.locator('.studio-hero p')).toHaveCount(0);
+    await expect(page.locator('.eyebrow, .page-description, .section-description')).toHaveCount(0);
 });
 
 test('company artwork is used and package navigation reaches the right section', async ({ page }) => {

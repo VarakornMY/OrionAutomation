@@ -15,7 +15,6 @@ const LegalPage = ({ title, description, path, introduction, sections, children 
             <div className="container legal-container">
                 <header className="legal-header">
                     <Link to="/" className="legal-back">Back to home</Link>
-                    <p className="legal-eyebrow">ORION / LEGAL</p>
                     <h1>{title}</h1>
                     <p className="legal-date">Effective date: <time dateTime="2026-10-01">1 October 2026</time></p>
                     <p className="legal-introduction">{introduction}</p>

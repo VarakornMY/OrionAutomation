@@ -83,9 +83,6 @@ const LoginPanel = () => {
         <div className="admin-login">
             <form onSubmit={onSubmit} className="admin-login__card">
                 <h1 className="admin-login__title">Admin sign-in</h1>
-                <p className="admin-login__sub">
-                    Sign in to manage posts and generate MCP API keys.
-                </p>
                 <label className="admin-field">
                     <span>Username</span>
                     <input
@@ -112,7 +109,7 @@ const LoginPanel = () => {
                     {loading ? 'Signing in…' : 'Sign in'}
                 </button>
                 <Link to="/blog" className="admin-back">
-                    ← Back to blog
+                    Back to blog
                 </Link>
             </form>
         </div>
@@ -423,8 +420,8 @@ const SectionEditor = ({ section, index, onChange, onRemove, onMove, isFirst, is
                     {SECTION_TYPES.find((t) => t.type === section.type)?.label || section.type}
                 </span>
                 <div className="admin-section__controls">
-                    <button onClick={() => onMove(index, -1)} disabled={isFirst} title="Move up">↑</button>
-                    <button onClick={() => onMove(index, 1)} disabled={isLast} title="Move down">↓</button>
+                    <button onClick={() => onMove(index, -1)} disabled={isFirst}>Move up</button>
+                    <button onClick={() => onMove(index, 1)} disabled={isLast}>Move down</button>
                     <button onClick={() => onRemove(index)} className="admin-section__remove">
                         Remove
                     </button>
@@ -653,7 +650,7 @@ const Editor = ({ initial, isNew, onCancel, onSaved }) => {
             <header className="admin-editor__head">
                 <div>
                     <button onClick={onCancel} className="admin-back" type="button">
-                        ← Back to list
+                        Back to list
                     </button>
                     <h1>{isNew ? 'New post' : 'Edit post'}</h1>
                 </div>
@@ -896,11 +893,10 @@ const AdminBlog = () => {
                 <section className="container support-state-wrap">
                     <div className="support-state-card">
                         <Link to="/" className="admin-deferred__brand">ORION<span>AUTOMATION</span></Link>
-                        <p className="eyebrow">Content management</p>
-                        <h1>The admin portal<br />isn't available yet.</h1>
-                        <p>The public website and articles are available to explore. If you need help with content or a project, please contact our team.</p>
+                        <h1>Content management</h1>
+                        <p>The admin portal is not available yet. Contact our team for help with content or a project.</p>
                         <div className="support-actions"><Link to="/" className="button button-primary">Back to website</Link><Link to="/blog" className="button button-secondary">Read the journal</Link></div>
-                        <a className="support-text-link" href="mailto:marketing@orionautomation.xyz">Contact the team <span aria-hidden="true">↗</span></a>
+                        <a className="support-text-link" href="mailto:marketing@orionautomation.xyz">Contact the team</a>
                     </div>
                 </section>
             </div>
@@ -923,7 +919,7 @@ const AdminBlog = () => {
             ) : (
                 <div className="admin-wrap">
                     <nav className="admin-nav">
-                        <Link to="/" className="admin-nav__brand">← Orion</Link>
+                        <Link to="/" className="admin-nav__brand">Orion</Link>
                         <div className="admin-nav__sections">
                             <button
                                 data-active={section === 'posts'}
@@ -934,7 +930,7 @@ const AdminBlog = () => {
                                 }}
                                 className="admin-nav__section"
                             >
-                                📝 Posts
+                                Posts
                             </button>
                             <button
                                 data-active={section === 'keys'}
@@ -945,7 +941,7 @@ const AdminBlog = () => {
                                 }}
                                 className="admin-nav__section"
                             >
-                                🔑 API Keys
+                                API Keys
                             </button>
                         </div>
                         <div className="admin-nav__right">
