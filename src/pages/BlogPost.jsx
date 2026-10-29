@@ -155,7 +155,7 @@ const BlogPost = () => {
         );
     }
 
-    const url = `https://orionautomation.xyz/blog/${post.slug}`;
+    const url = `https://orionautomation.my/blog/${post.slug}`;
 
     const articleStructuredData = {
         '@context': 'https://schema.org',
@@ -165,15 +165,15 @@ const BlogPost = () => {
         author: {
             '@type': 'Organization',
             name: post.author,
-            url: 'https://orionautomation.xyz',
+            url: 'https://orionautomation.my',
         },
         publisher: {
             '@type': 'Organization',
             name: 'Orion Automation',
-            url: 'https://orionautomation.xyz',
+            url: 'https://orionautomation.my',
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://orionautomation.xyz/favicon.png',
+                url: 'https://orionautomation.my/favicon.png',
             },
         },
         datePublished: post.publishedAt,
@@ -187,8 +187,8 @@ const BlogPost = () => {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://orionautomation.xyz/' },
-            { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://orionautomation.xyz/blog' },
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://orionautomation.my/' },
+            { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://orionautomation.my/blog' },
             { '@type': 'ListItem', position: 3, name: post.title, item: url },
         ],
     };

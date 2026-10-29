@@ -36,8 +36,8 @@ const Home = () => {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Orion Automation",
-        "url": "https://orionautomation.xyz",
-        "logo": "https://orionautomation.xyz/favicon.png",
+        "url": "https://orionautomation.my",
+        "logo": "https://orionautomation.my/favicon.png",
         "sameAs": [
             "https://www.facebook.com/orionautomation",
             "https://twitter.com/orionautomation"

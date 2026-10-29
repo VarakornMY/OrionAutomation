@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, keywords, canonical, structuredData, robots }) => {
-    const siteUrl = 'https://orionautomation.xyz';
+    const siteUrl = 'https://orionautomation.my';
     const fullUrl = canonical ? (canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`) : siteUrl;
 
     return (

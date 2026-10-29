@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://orionautomation.xyz/sitemap.xml
+Sitemap: https://orionautomation.my/sitemap.xml

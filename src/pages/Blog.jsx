@@ -62,11 +62,11 @@ const Blog = () => {
         name: 'Orion Automation Blog',
         description:
             'Practical guides on AI chatbots, modern websites, marketing automation, and SEO for small businesses.',
-        url: 'https://orionautomation.xyz/blog',
+        url: 'https://orionautomation.my/blog',
         publisher: {
             '@type': 'Organization',
             name: 'Orion Automation',
-            url: 'https://orionautomation.xyz',
+            url: 'https://orionautomation.my',
         },
         blogPost: allPosts.map((p) => ({
             '@type': 'BlogPosting',
@@ -74,7 +74,7 @@ const Blog = () => {
             description: p.description,
             datePublished: p.publishedAt,
             dateModified: p.updatedAt || p.publishedAt,
-            url: `https://orionautomation.xyz/blog/${p.slug}`,
+            url: `https://orionautomation.my/blog/${p.slug}`,
             author: { '@type': 'Organization', name: p.author },
         })),
     };

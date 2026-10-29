@@ -1,4 +1,4 @@
-﻿# Cloudflare website-only deployment
+# Cloudflare website-only deployment
 
 The public website deploys to Workers Static Assets. There is no executable
 Worker backend, Container, Durable Object binding, database, or paid AI call in
@@ -17,7 +17,10 @@ Do not add a Container or upgrade the account to deploy this website.
 - Deploy: `npm run deploy` (or `npx wrangler deploy`)
 
 `assets.not_found_handling` serves `index.html` for React Router navigation.
-The generated site is served at https://orionautomation.varakornm0403.workers.dev.
+The production domain is https://orionautomation.my. Both the root domain and
+www.orionautomation.my use Worker routes through their existing proxied DNS
+records. The workers.dev address remains available at
+https://orionautomation.varakornm0403.workers.dev.
 No backend runtime secrets are needed for this deployment.
 
 ## Deferred features
@@ -42,5 +45,5 @@ npm run deploy
 
 The dry run must show `No bindings found` and must not build a Docker image.
 After deployment, verify the home, services, portfolio and blog URLs, and test
-refreshing a nested route. Custom-domain routing is separate from deployment;
-use the workers.dev address to confirm the website first.
+refreshing a nested route. The domain routes are saved in `wrangler.jsonc` so subsequent deployments
+retain them. Keep the existing root and www DNS records proxied in Cloudflare.
