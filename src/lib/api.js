@@ -6,6 +6,7 @@
 const RAW_BASE =
     import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:8000' : '');
 export const API_BASE = RAW_BASE.replace(/\/+$/, '');
+export const BACKEND_ENABLED = import.meta.env.DEV || import.meta.env.VITE_BACKEND_ENABLED === 'true';
 
 const TOKEN_KEY = 'orion_admin_token';
 
@@ -22,6 +23,11 @@ export const resolveImageUrl = (src) => {
 };
 
 async function request(path, { method = 'GET', body, admin = false, formData } = {}) {
+    if (!BACKEND_ENABLED) {
+        const err = new Error('The admin and chatbot backend has not been deployed yet.');
+        err.status = 503;
+        throw err;
+    }
     const headers = {};
     if (admin) {
         const token = getAdminToken();

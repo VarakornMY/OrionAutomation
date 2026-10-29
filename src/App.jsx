@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import LightweightBackground from './components/LightweightBackground';
 import Footer from './components/Footer';
 import ChatbotWidget from './components/ChatbotWidget';
+import { BACKEND_ENABLED } from './lib/api';
 import Home from './pages/Home';
 import AIChatbot from './pages/AIChatbot';
 import AIAutomation from './pages/AIAutomation';
@@ -63,7 +64,7 @@ const Shell = () => {
                 </Routes>
             </main>
             {!isAdmin && <Footer />}
-            {!isAdmin && <ChatbotWidget />}
+            {!isAdmin && BACKEND_ENABLED && <ChatbotWidget />}
         </div>
     );
 };
