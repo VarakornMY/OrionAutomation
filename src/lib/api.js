@@ -1,10 +1,10 @@
 // Thin API client for the Orion blog backend.
 //
-// Set VITE_API_URL in your .env to point at the backend. Falls back to
-// http://localhost:8000 for local dev.
+// Cloudflare routes production /api requests to FastAPI on the same origin.
+// VITE_API_URL can override this for a separately hosted API.
 
 const RAW_BASE =
-    (import.meta.env && import.meta.env.VITE_API_URL) || 'http://localhost:8000';
+    import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:8000' : '');
 export const API_BASE = RAW_BASE.replace(/\/+$/, '');
 
 const TOKEN_KEY = 'orion_admin_token';

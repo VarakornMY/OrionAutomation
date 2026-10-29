@@ -36,6 +36,7 @@ import re
 import time
 import unicodedata
 from collections import defaultdict, deque
+from contextlib import asynccontextmanager
 from datetime import date
 from pathlib import Path
 from typing import Any, Literal
@@ -67,10 +68,17 @@ from backend.mcp_server import mcp as mcp_server, mcp_asgi_app
 
 # ─── App ──────────────────────────────────────────────────────────────────────
 
+@asynccontextmanager
+async def lifespan(_app: FastAPI):
+    async with mcp_server.session_manager.run():
+        yield
+
+
 app = FastAPI(
     title="Orion Blog API",
     description="Blog backend with admin CMS and MCP automation interface, backed by Google Drive.",
     version="2.0.0",
+    lifespan=lifespan,
 )
 
 app.add_middleware(

@@ -25,16 +25,28 @@ Tools exposed
 from __future__ import annotations
 
 import base64
+import os
 from datetime import date
 from typing import Any
 
 from mcp.server.fastmcp import FastMCP
+from mcp.server.transport_security import TransportSecuritySettings
 from starlette.types import ASGIApp, Receive, Scope, Send
 
 from backend import keys
 from backend.drive_storage import get_storage
 
-mcp = FastMCP("orion-blog")
+mcp = FastMCP(
+    "orion-blog",
+    streamable_http_path="/",
+    transport_security=TransportSecuritySettings(
+        allowed_hosts=[
+            "localhost:*", "127.0.0.1:*", "orionautomation.xyz", "www.orionautomation.xyz",
+            *[host.strip() for host in os.environ.get("MCP_ALLOWED_HOSTS", "").split(",") if host.strip()],
+        ],
+        allowed_origins=["https://orionautomation.xyz", "https://www.orionautomation.xyz"],
+    ),
+)
 
 
 # ─── Tools ────────────────────────────────────────────────────────────────────

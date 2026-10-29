@@ -10,6 +10,9 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+.wrangler/
+.dev.vars
+.dev.vars.*
 *.local
 
 # Editor directories and files
@@ -41,5 +44,6 @@ __pycache__/
 MD FIles
 *.md
 *.markdown
+!CLOUDFLARE.md
 AUDIT.md
 POLISH-GUIDE.md

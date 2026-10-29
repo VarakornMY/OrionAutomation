@@ -53,6 +53,10 @@ POST_MIME = "application/json"
 
 
 def _build_service():
+    key_json = os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON_CONTENT")
+    if key_json:
+        creds = service_account.Credentials.from_service_account_info(json.loads(key_json), scopes=SCOPES)
+        return build("drive", "v3", credentials=creds, cache_discovery=False)
     key_path = os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON")
     if not key_path or not os.path.exists(key_path):
         raise RuntimeError(

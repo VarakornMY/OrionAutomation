@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "orionautomation",
+  "main": "cloudflare/worker.js",
+  "compatibility_date": "2026-10-29",
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api", "/api/*", "/mcp", "/mcp/*", "/healthz", "/docs", "/docs/*", "/redoc", "/openapi.json"]
+  },
+  "containers": [
+    {
+      "class_name": "OrionBackend",
+      "image": "./Dockerfile",
+      "instance_type": "lite",
+      "max_instances": 1
+    }
+  ],
+  "durable_objects": {
+    "bindings": [{ "name": "BACKEND", "class_name": "OrionBackend" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["OrionBackend"] }]
+}

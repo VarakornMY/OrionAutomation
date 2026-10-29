@@ -8,6 +8,7 @@ in `backend/.mcp_key.json` (gitignored) so it survives restarts and deploys.
 from __future__ import annotations
 
 import json
+import os
 import secrets
 import threading
 from datetime import datetime, timezone
@@ -28,7 +29,11 @@ def _load() -> dict | None:
             return _cached
         except Exception:
             return None
-    return None
+    # Cloudflare restores the durable record when starting a fresh container.
+    record_json = os.environ.get("MCP_KEY_RECORD_JSON")
+    if record_json:
+        _cached = json.loads(record_json)
+    return _cached
 
 
 def get_key() -> str | None:
