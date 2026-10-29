@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node --test tests/brand-removal.test.js && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "preview:cloudflare": "npm run build && wrangler dev",

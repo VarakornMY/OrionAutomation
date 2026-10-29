@@ -5,12 +5,12 @@ import { getAllPosts } from '../../src/data/blogPosts.js';
 
 const routes = [
     '/', '/ai-automation', '/ai-chatbot', '/website', '/marketing',
-    '/website-portfolio', '/sumika', '/hotzilla', '/benjy-cafe', '/blog',
+    '/blog',
     ...getAllPosts().map(post => `/blog/${post.slug}`), '/about-us', '/privacy-policy',
     '/terms-and-conditions', '/auth', '/profile', '/admin', '/admin/blog',
     '/not-a-page', '/blog/not-an-article',
 ];
-const tabletRoutes = ['/', '/website', '/blog', '/website-portfolio', '/privacy-policy'];
+const tabletRoutes = ['/', '/website', '/blog', '/privacy-policy'];
 const auditRoutes = ['/', '/website', '/blog', '/blog/ai-chatbots-for-small-business-2026', '/privacy-policy', '/admin'];
 
 test.beforeEach(async ({ page }) => {
@@ -28,11 +28,9 @@ for (const route of routes) {
         await page.goto(route, { waitUntil: 'domcontentloaded' });
         if (route === '/profile') {
             await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
-        } else if (!['/sumika', '/hotzilla', '/benjy-cafe'].includes(route)) {
+        } else {
             await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
             await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
-        } else {
-            await expect(page.locator('.project-preview__frame')).toBeVisible();
         }
         const bounds = await page.evaluate(() => ({ width: document.documentElement.clientWidth, content: document.documentElement.scrollWidth }));
         expect(bounds.content, `horizontal overflow on ${route}`).toBeLessThanOrEqual(bounds.width + 1);
@@ -42,13 +40,27 @@ for (const route of routes) {
             const result = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
             expect(result.violations.map(item => ({ id: item.id, nodes: item.nodes.map(node => node.target) }))).toEqual([]);
         }
-        if (['/', '/website', '/blog', '/blog/ai-chatbots-for-small-business-2026', '/privacy-policy', '/website-portfolio'].includes(route)) {
+        if (['/', '/website', '/blog', '/blog/ai-chatbots-for-small-business-2026', '/privacy-policy'].includes(route)) {
             await mkdir('artifacts/ui-review', { recursive: true });
             const name = route === '/' ? 'home' : route.replaceAll('/', '-').slice(1);
             await page.screenshot({ path: `artifacts/ui-review/${testInfo.project.name}-${name}.png` });
         }
     });
 }
+
+test('removed restaurant demos have no public routes or promotion', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.getByRole('link').filter({ hasText: /sumi.?ka|hotzilla|benjy/i })).toHaveCount(0);
+    await expect(page.locator('a[href*="website-portfolio"], a[href*="sumika"], a[href*="SUMI-KA"], a[href*="hotzilla"], a[href*="HOTZILLA"], a[href*="benjy-cafe"]')).toHaveCount(0);
+    await expect(page.locator('img[src*="sumika"], img[src*="SUMI-KA"], img[src*="hotzilla"], img[src*="HOTZILLA"], img[src*="benjy-cafe"]')).toHaveCount(0);
+
+    for (const route of ['/website-portfolio', '/sumika', '/hotzilla', '/benjy-cafe', '/SUMI-KA/index.html', '/HOTZILLA/index.html', '/benjy-cafe/index.html']) {
+        await page.goto(route, { waitUntil: 'domcontentloaded' });
+        await expect(page.getByRole('heading', { level: 1, name: /Let's get you back on track/ })).toBeVisible();
+        await expect(page.getByRole('link', { name: 'Back to home', exact: true })).toBeVisible();
+        await expect(page.locator('iframe')).toHaveCount(0);
+    }
+});
 
 test('navigation works with keyboard and closes after route changes', async ({ page }, testInfo) => {
     await page.goto('/');
@@ -83,6 +95,17 @@ test('home workflow selection and questions work', async ({ page }) => {
     await expect(page.getByRole('heading', { name: 'Your tools connect' })).toBeVisible();
     await page.getByText('How much does a project cost?', { exact: true }).click();
     await expect(page.getByRole('link', { name: 'compare automation options' })).toBeVisible();
+});
+
+test('company artwork is used and package navigation reaches the right section', async ({ page }) => {
+    await page.goto('/');
+    const logo = page.locator('.site-header .brand-logo');
+    await expect(logo).toHaveAttribute('src', '/brand/orion-logo.jpg');
+    await expect(logo).toBeVisible();
+    await expect.poll(() => logo.evaluate(image => image.naturalWidth)).toBe(500);
+    await page.locator('.site-footer').getByRole('link', { name: 'Website packages', exact: true }).click();
+    await expect(page).toHaveURL('/website#website-pricing');
+    await expect.poll(() => page.locator('#website-pricing').evaluate(section => Math.round(section.getBoundingClientRect().top))).toBeLessThan(180);
 });
 
 test('blog filtering and article contents support navigation', async ({ page }) => {

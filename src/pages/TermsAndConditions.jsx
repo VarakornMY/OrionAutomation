@@ -11,14 +11,14 @@ const sections = [
     },
     {
         id: 'services', title: 'Services, prices, and project agreements', content: <>
-            <p>Orion Automation offers website development, AI chatbots, automation workflows, and digital marketing. Website descriptions, example work, plans, prices, and timelines are informational and subject to confirmation for your requirements. Sending an enquiry or selecting a demonstration plan does not create a paid contract.</p>
+            <p>Orion Automation offers website development, AI chatbots, automation workflows, and digital marketing. Website descriptions, plans, prices, and timelines are informational and subject to confirmation for your requirements. Sending an enquiry does not create a paid contract.</p>
             <p>Scope, deliverables, fees, taxes where applicable, payment schedule, third-party costs, revisions, delivery dates, support, and renewal arrangements must be confirmed in the applicable project agreement. Additional work or changes to an agreed scope require agreement on any impact to cost and timing.</p>
         </>,
     },
     {
-        id: 'demonstrations', title: 'Account and portfolio demonstrations', content: <>
-            <p>The public sign-in, profile, and plan-selection features currently demonstrate a user experience using browser storage. They do not verify identity, establish a secure customer account, activate a service subscription, or process payment. Do not rely on these features to store confidential information or evidence of a purchase.</p>
-            <p>Portfolio previews illustrate website designs and functionality. Features in a preview are not included in your project unless agreed in its scope. Administrator access is restricted to authorised users.</p>
+        id: 'account-availability', title: 'Account and subscription availability', content: <>
+            <p>Online customer accounts, sign-in, and subscription management are not currently available. Any existing browser profile is stored only on that browser. It does not verify identity, establish a secure online account, activate a service subscription, or process payment. Do not use browser profile features to store confidential information or evidence of a purchase.</p>
+            <p>Contact our team for project updates, service enquiries, or subscription arrangements. Administrator access is restricted to authorised users.</p>
         </>,
     },
     {

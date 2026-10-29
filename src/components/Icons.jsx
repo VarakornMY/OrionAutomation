@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Icon = ({ name, size = 40, color = '#E6A520', className = '' }) => {
+export const Icon = ({ name, size = 40, color = 'currentColor', className = '' }) => {
     const icons = {
         chatbot: (
             <svg viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

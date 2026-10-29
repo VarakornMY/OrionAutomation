@@ -29,7 +29,7 @@ test('static routes stay on assets; API and MCP requests reach the backend with 
             return new Response('backend', { status: 201 });
         } },
     };
-    for (const path of ['/', '/admin', '/blog/example', '/HOTZILLA/index.html']) {
+    for (const path of ['/', '/admin', '/blog/example', '/assets/example.html']) {
         assert.equal(await (await worker.fetch(new Request(`https://example.com${path}`), env)).text(), 'frontend');
     }
     assert.equal(backendCalls, 0);

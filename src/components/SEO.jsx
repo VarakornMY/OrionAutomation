@@ -19,14 +19,15 @@ const SEO = ({ title, description, keywords, canonical, structuredData, robots }
             <meta property="og:url" content={fullUrl} />
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
-            <meta property="og:image" content={`${siteUrl}/og-image.jpg`} />
+            <meta property="og:image" content={`${siteUrl}/brand/orion-logo.jpg`} />
+            <meta property="og:image:alt" content="Orion Automation company logo" />
 
             {/* Twitter */}
             <meta property="twitter:card" content="summary_large_image" />
             <meta property="twitter:url" content={fullUrl} />
             <meta property="twitter:title" content={title} />
             <meta property="twitter:description" content={description} />
-            <meta property="twitter:image" content={`${siteUrl}/og-image.jpg`} />
+            <meta property="twitter:image" content={`${siteUrl}/brand/orion-logo.jpg`} />
 
             {/* Structured Data (JSON-LD) — accepts a single object or an array of objects */}
             {structuredData &&

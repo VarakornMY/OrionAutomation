@@ -189,7 +189,7 @@ const BlogPost = () => {
             url: 'https://orionautomation.my',
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://orionautomation.my/favicon.png',
+                url: 'https://orionautomation.my/brand/orion-logo.jpg',
             },
         },
         datePublished: post.publishedAt,

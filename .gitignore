@@ -48,5 +48,6 @@ MD FIles
 *.md
 *.markdown
 !CLOUDFLARE.md
+!AGENTS.md
 AUDIT.md
 POLISH-GUIDE.md

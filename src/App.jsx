@@ -11,10 +11,6 @@ import Home from './pages/Home';
 import AIChatbot from './pages/AIChatbot';
 import AIAutomation from './pages/AIAutomation';
 import Website from './pages/Website';
-import WebsitePortfolio from './pages/WebsitePortfolio';
-import SumikaViewer from './pages/SumikaViewer';
-import HotzillaViewer from './pages/HotzillaViewer';
-import BenjyCafeViewer from './pages/BenjyCafeViewer';
 import Marketing from './pages/Marketing';
 import Auth from './pages/Auth';
 import Profile from './pages/Profile';
@@ -34,11 +30,19 @@ const Shell = () => {
     const previousPath = useRef(location.pathname);
 
     useEffect(() => {
-        if (previousPath.current === location.pathname) return;
+        const pathChanged = previousPath.current !== location.pathname;
         previousPath.current = location.pathname;
+        if (location.hash) {
+            const frame = window.requestAnimationFrame(() => {
+                document.getElementById(location.hash.slice(1))?.scrollIntoView({ block: 'start' });
+            });
+            return () => window.cancelAnimationFrame(frame);
+        }
+        if (!pathChanged) return undefined;
         window.scrollTo(0, 0);
         mainRef.current?.focus({ preventScroll: true });
-    }, [location.pathname]);
+        return undefined;
+    }, [location.pathname, location.hash]);
 
     return (
         <div className="site-shell">
@@ -50,10 +54,6 @@ const Shell = () => {
                     <Route path="/ai-automation" element={<AIAutomation />} />
                     <Route path="/ai-chatbot" element={<AIChatbot />} />
                     <Route path="/website" element={<Website />} />
-                    <Route path="/website-portfolio" element={<WebsitePortfolio />} />
-                    <Route path="/sumika" element={<SumikaViewer />} />
-                    <Route path="/hotzilla" element={<HotzillaViewer />} />
-                    <Route path="/benjy-cafe" element={<BenjyCafeViewer />} />
                     <Route path="/marketing" element={<Marketing />} />
                     <Route path="/auth" element={<Auth />} />
                     <Route path="/profile" element={<Profile />} />

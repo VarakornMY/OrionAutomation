@@ -10,9 +10,7 @@ const services = [
 
 export const Brand = () => (
     <Link to="/" className="brand" aria-label="Orion Automation home">
-        <span className="brand-symbol" aria-hidden="true">
-            <svg viewBox="0 0 32 32" fill="none"><path d="M16 3 28 10v12L16 29 4 22V10L16 3Z" stroke="currentColor" strokeWidth="1.8" /><path d="M10 20V12l6-3 6 3v8l-6 3-6-3Z" stroke="currentColor" strokeWidth="1.8" /><circle cx="25" cy="6" r="4" fill="var(--color-accent)" stroke="var(--color-surface)" strokeWidth="2" /></svg>
-        </span>
+        <img className="brand-logo" src="/brand/orion-logo.jpg" alt="" width="58" height="58" />
         <span className="brand-wordmark">ORION<span>AUTOMATION</span></span>
     </Link>
 );
@@ -78,7 +76,6 @@ const Navbar = () => {
                             {services.map(([to, label, description]) => <NavLink key={to} to={to} className="service-navigation-link"><span>{label}</span><small>{description}</small></NavLink>)}
                         </div>}
                     </div>
-                    <NavLink to="/website-portfolio" className="nav-link">Our work</NavLink>
                     <NavLink to="/blog" className="nav-link">Journal</NavLink>
                     <NavLink to="/about-us" className="nav-link">About us</NavLink>
                 </nav>
@@ -91,7 +88,7 @@ const Navbar = () => {
                 <div className="container">
                     <p className="eyebrow">Our services</p>
                     {services.map(([to, label]) => <NavLink to={to} key={to} className="mobile-navigation-link">{label}<span aria-hidden="true">↗</span></NavLink>)}
-                    <div className="mobile-navigation-secondary"><NavLink to="/website-portfolio">Our work</NavLink><NavLink to="/blog">Journal</NavLink><NavLink to="/about-us">About us</NavLink></div>
+                    <div className="mobile-navigation-secondary"><NavLink to="/blog">Journal</NavLink><NavLink to="/about-us">About us</NavLink></div>
                     <a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Talk about your project <span aria-hidden="true">↗</span></a>
                     <p className="mobile-navigation-note">Practical digital solutions. Based in Malaysia.</p>
                 </div>

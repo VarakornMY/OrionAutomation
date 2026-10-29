@@ -134,7 +134,7 @@ const AIAutomation = () => {
             <section className="section section-tinted" aria-labelledby="automation-capabilities">
                 <div className="container">
                     <div className="service-section-intro"><p className="eyebrow">What we build</p><h2 className="section-heading" id="automation-capabilities">Connect every part of the work.</h2><p className="section-description">Start with one time-consuming task, or bring together the systems your business depends on.</p></div>
-                    <div className="feature-grid">{pillars.map((pillar) => <article className="surface-card" key={pillar.title}><span className="service-icon" aria-hidden="true"><Icon name={pillar.icon} size={23} color="#244d43" /></span><h3>{pillar.title}</h3><p>{pillar.description}</p><ul className="detail-list">{pillar.highlights.map((item) => <li key={item}>{item}</li>)}</ul></article>)}</div>
+                    <div className="feature-grid">{pillars.map((pillar) => <article className="surface-card" key={pillar.title}><span className="service-icon" aria-hidden="true"><Icon name={pillar.icon} size={23} color="var(--color-green)" /></span><h3>{pillar.title}</h3><p>{pillar.description}</p><ul className="detail-list">{pillar.highlights.map((item) => <li key={item}>{item}</li>)}</ul></article>)}</div>
                 </div>
             </section>
             <section className="section" aria-labelledby="automation-use-cases">

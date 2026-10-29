@@ -21,7 +21,7 @@ const posts = [
         readMinutes: 7,
         publishedAt: '2026-04-12',
         updatedAt: '2026-05-10',
-        cover: '#E6A520',
+        cover: '#c8c1af',
         excerpt:
             'A no-fluff playbook for small businesses ready to add an AI chatbot in 2026 — from picking use cases to measuring ROI in the first 30 days.',
         sections: [
@@ -88,7 +88,7 @@ const posts = [
         readMinutes: 8,
         publishedAt: '2026-03-22',
         updatedAt: '2026-04-30',
-        cover: '#7A4A00',
+        cover: '#ead6b9',
         excerpt:
             'A modern small business website has 10 non-negotiable elements. Miss any of them and you are quietly losing customers to competitors who did not.',
         sections: [
@@ -144,7 +144,7 @@ const posts = [
         readMinutes: 6,
         publishedAt: '2026-02-18',
         updatedAt: '2026-04-02',
-        cover: '#C5A880',
+        cover: '#f1daac',
         excerpt:
             'Marketing automation is a force multiplier — until it makes every email sound the same. Here is how to scale without flattening what makes you, you.',
         sections: [
@@ -202,7 +202,7 @@ const posts = [
         readMinutes: 9,
         publishedAt: '2026-01-15',
         updatedAt: '2026-05-05',
-        cover: '#E6A520',
+        cover: '#dac4b3',
         excerpt:
             'Traditional SEO is about ranking. AI SEO is about being cited. The playbook has changed — here is what is actually working in 2026.',
         sections: [
@@ -274,7 +274,7 @@ const posts = [
         readMinutes: 8,
         publishedAt: '2026-05-20',
         updatedAt: '2026-05-20',
-        cover: '#E6A520',
+        cover: '#c8c1af',
         excerpt:
             'A no-fluff 2026 playbook for SMBs ready to stop pasting data between tabs — how to pick the right first workflow, build it, and prove it paid for itself.',
         sections: [
@@ -366,7 +366,7 @@ const posts = [
         readMinutes: 8,
         publishedAt: '2026-05-19',
         updatedAt: '2026-05-19',
-        cover: '#7A4A00',
+        cover: '#ead6b9',
         excerpt:
             'Most reporting dashboards are broken before they ship — not because of bad design, but because the pipeline feeding them is fragile. Here is what a reliable one looks like in 2026.',
         sections: [
@@ -462,7 +462,7 @@ const posts = [
         readMinutes: 8,
         publishedAt: '2026-05-18',
         updatedAt: '2026-05-18',
-        cover: '#C5A880',
+        cover: '#f1daac',
         excerpt:
             'Shared spreadsheets and aging legacy software are quietly draining your operations team. Here is how mid-sized businesses are moving to lightweight, AI-augmented internal apps in 2026 — and what to build, buy, or skip.',
         sections: [
@@ -568,7 +568,7 @@ const posts = [
         readMinutes: 7,
         publishedAt: '2026-05-17',
         updatedAt: '2026-05-17',
-        cover: '#E6A520',
+        cover: '#dac4b3',
         excerpt:
             'Most small business websites convert under 3%. The ones that beat that average obey a small set of rules — and almost all of them are about removing friction, not adding cleverness.',
         sections: [
@@ -633,7 +633,7 @@ const posts = [
         readMinutes: 8,
         publishedAt: '2026-05-16',
         updatedAt: '2026-05-16',
-        cover: '#7A4A00',
+        cover: '#c8c1af',
         excerpt:
             'LCP, INP, CLS, TTFB — four acronyms that quietly decide whether Google ranks you and whether visitors stay. Here is what each one actually means, the 2026 targets, and the fixes that move the needle.',
         sections: [
@@ -729,7 +729,7 @@ const posts = [
         readMinutes: 8,
         publishedAt: '2026-05-15',
         updatedAt: '2026-05-15',
-        cover: '#C5A880',
+        cover: '#ead6b9',
         excerpt:
             'WCAG 2.2 AA is the new floor for legal, commercial, and search-engine reasons. Here is what it means in plain English, where most sites fail, and how to fix the issues that matter most.',
         sections: [
@@ -812,7 +812,7 @@ const posts = [
         readMinutes: 8,
         publishedAt: '2026-05-14',
         updatedAt: '2026-05-14',
-        cover: '#E6A520',
+        cover: '#f1daac',
         excerpt:
             '65% of Google searches now end with zero clicks. AEO is how you still win the customer — by being the answer the engine reads aloud, not the link nobody taps.',
         sections: [
@@ -898,7 +898,7 @@ const posts = [
         readMinutes: 9,
         publishedAt: '2026-05-13',
         updatedAt: '2026-05-13',
-        cover: '#7A4A00',
+        cover: '#dac4b3',
         excerpt:
             'Ranking on page one is no longer the prize. The prize is being the brand a generative AI names when a buyer asks for a recommendation. Here is the 2026 playbook for getting there.',
         sections: [
@@ -996,7 +996,7 @@ const posts = [
         readMinutes: 8,
         publishedAt: '2026-05-12',
         updatedAt: '2026-05-12',
-        cover: '#C5A880',
+        cover: '#c8c1af',
         excerpt:
             'The Google 3-Pack still drives 90% of local clicks, but the real shift in 2026 is that ChatGPT, Perplexity, and Apple Maps now decide who gets the call. Here is the playbook for showing up everywhere a customer can ask "near me".',
         sections: [

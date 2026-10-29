@@ -91,13 +91,7 @@ CONTACT:
 - Location: Based in Malaysia, serving globally
 
 WHAT WE DO:
-We help businesses grow with AI chatbots, beautiful websites, and smart marketing. Our mission is making automation accessible to everyone.
-
-PORTFOLIO:
-- Sumi-Ka Restaurant website (authentic Japanese yakitori restaurant in SS15 Subang Jaya)
-- Multiple e-commerce platforms
-- Corporate websites
-- Custom web applications"""
+We help businesses grow with AI chatbots, beautiful websites, and smart marketing. Our mission is making automation accessible to everyone."""
 
 # Block harmful content at the model level.
 SAFETY_SETTINGS = {

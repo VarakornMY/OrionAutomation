@@ -39,7 +39,7 @@ const Marketing = () => (
             <div className="container">
                 <div className="service-section-intro"><p className="eyebrow">Three complementary disciplines</p><h2 className="section-heading" id="marketing-disciplines">Built for the way people search.</h2><p className="section-description">Keep the fundamentals strong while making your content useful across new discovery channels.</p></div>
                 <div className="feature-grid service-marketing-grid">
-                    {disciplines.map((discipline) => <article className="surface-card" key={discipline.title}><span className="service-icon" aria-hidden="true"><Icon name={discipline.icon} size={23} color="#244d43" /></span><h3>{discipline.title}</h3><p className="service-full-name">{discipline.name}</p><p>{discipline.description}</p><ul className="detail-list">{discipline.items.map((item) => <li key={item}>{item}</li>)}</ul></article>)}
+                    {disciplines.map((discipline) => <article className="surface-card" key={discipline.title}><span className="service-icon" aria-hidden="true"><Icon name={discipline.icon} size={23} color="var(--color-green)" /></span><h3>{discipline.title}</h3><p className="service-full-name">{discipline.name}</p><p>{discipline.description}</p><ul className="detail-list">{discipline.items.map((item) => <li key={item}>{item}</li>)}</ul></article>)}
                 </div>
             </div>
         </section>
