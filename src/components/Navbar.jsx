@@ -1,506 +1,102 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useUser } from '../context/UserContext';
-import { useAdmin } from '../context/AdminContext';
-import ProfileModal from './ProfileModal';
-import AuthModal from './AuthModal';
-import Icon from './Icons';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+
+const services = [
+    ['/ai-automation', 'Business automation', 'Connect tools. Simplify everyday work.'],
+    ['/website', 'Website development', 'A better digital home for your business.'],
+    ['/ai-chatbot', 'AI chatbots', 'Make every customer conversation count.'],
+    ['/marketing', 'Search & marketing', 'Help the right people find you.'],
+];
+
+export const Brand = () => (
+    <Link to="/" className="brand" aria-label="Orion Automation home">
+        <span className="brand-symbol" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 3 28 10v12L16 29 4 22V10L16 3Z" stroke="currentColor" strokeWidth="1.8" /><path d="M10 20V12l6-3 6 3v8l-6 3-6-3Z" stroke="currentColor" strokeWidth="1.8" /><circle cx="25" cy="6" r="4" fill="var(--color-accent)" stroke="var(--color-surface)" strokeWidth="2" /></svg>
+        </span>
+        <span className="brand-wordmark">ORION<span>AUTOMATION</span></span>
+    </Link>
+);
 
 const Navbar = () => {
-    const [scrolled, setScrolled] = useState(false);
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
-    const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [servicesOpen, setServicesOpen] = useState(false);
+    const headerRef = useRef(null);
+    const menuButtonRef = useRef(null);
+    const servicesButtonRef = useRef(null);
     const location = useLocation();
-    const navigate = useNavigate();
-    const { user, logout: userLogout } = useUser();
-    const { isAdmin, logout: adminLogout } = useAdmin();
-
-    const logout = () => {
-        adminLogout();
-        userLogout();
-    };
-    const dropdownRef = useRef(null);
+    const isServicePage = services.some(([path]) => location.pathname === path);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
+        setMenuOpen(false);
+        setServicesOpen(false);
+    }, [location.pathname]);
 
-        const handleResize = () => {
-            if (window.innerWidth > 768) {
-                setIsMobileMenuOpen(false);
+    useEffect(() => {
+        const close = (event) => {
+            if (event.key === 'Escape') {
+                if (menuOpen) menuButtonRef.current?.focus();
+                else if (servicesOpen) servicesButtonRef.current?.focus();
+                setMenuOpen(false);
+                setServicesOpen(false);
+            }
+            if (event.type === 'pointerdown' && !headerRef.current?.contains(event.target)) {
+                setMenuOpen(false);
+                setServicesOpen(false);
             }
         };
-
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('resize', handleResize);
+        const resize = () => {
+            if (window.innerWidth > 960) setMenuOpen(false);
+        };
+        document.addEventListener('keydown', close);
+        document.addEventListener('pointerdown', close);
+        window.addEventListener('resize', resize);
         return () => {
-            window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('resize', handleResize);
+            document.removeEventListener('keydown', close);
+            document.removeEventListener('pointerdown', close);
+            window.removeEventListener('resize', resize);
         };
-    }, []);
+    }, [menuOpen, servicesOpen]);
 
-    // Click-outside handler for dropdown
     useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-                setIsDropdownOpen(false);
-            }
-        };
-
-        if (isDropdownOpen) {
-            document.addEventListener('mousedown', handleClickOutside);
-            document.addEventListener('touchstart', handleClickOutside);
-        }
-
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-            document.removeEventListener('touchstart', handleClickOutside);
-        };
-    }, [isDropdownOpen]);
-
-    // Close dropdown when mobile menu opens
-    useEffect(() => {
-        if (isMobileMenuOpen) {
-            setIsDropdownOpen(false);
-        }
-    }, [isMobileMenuOpen]);
-
-    // Default guest avatar - using Boring Avatars style
-    const getAvatar = (seed) => {
-        return `https://api.dicebear.com/7.x/shapes/svg?seed=${seed}&backgroundColor=E6A520,7A4A00,FFF8E7`;
-    };
-
-    const defaultAvatar = getAvatar('guest');
-
-    const navLinks = [
-        { path: '/', label: 'Home' },
-        { path: '/ai-automation', label: 'AI Automation' },
-        { path: '/website', label: 'Websites' },
-        { path: '/blog', label: 'Blog' },
-        // { path: '/website-portfolio', label: 'Portfolio' }
-    ];
+        if (!menuOpen) return undefined;
+        const previous = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        return () => { document.body.style.overflow = previous; };
+    }, [menuOpen]);
 
     return (
-        <>
-            <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                right: 0,
-                zIndex: 1000,
-                padding: '1rem 0',
-                transition: 'all 0.3s ease',
-                background: scrolled
-                    ? 'rgba(255, 248, 231, 0.8)'
-                    : 'rgba(255, 248, 231, 0.5)',
-                backdropFilter: 'blur(20px)',
-                WebkitBackdropFilter: 'blur(20px)',
-                borderBottom: scrolled
-                    ? '1px solid rgba(230, 165, 32, 0.3)'
-                    : '1px solid rgba(230, 165, 32, 0.1)',
-                boxShadow: scrolled
-                    ? '0 4px 20px rgba(122, 74, 0, 0.1)'
-                    : 'none'
-            }}>
-                <div className="container navbar-container" style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    width: '100%',
-                    maxWidth: '1400px',
-                    margin: '0 auto',
-                    padding: '0 2rem',
-                    position: 'relative'
-                }}>
-                    {/* Logo */}
-                    <Link to="/" className="logo" style={{
-                        fontSize: '1.5rem',
-                        fontWeight: 'bold',
-                        background: 'linear-gradient(135deg, #E6A520 0%, #7A4A00 100%)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        backgroundClip: 'text',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        textDecoration: 'none',
-                        transition: 'all 0.3s ease'
-                    }}>
-                        <Icon name="rocket" size={32} color="#E6A520" />
-                        ORION
-                    </Link>
-
-                    {/* Desktop Navigation Links */}
-                    <div className="nav-links-desktop">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.path}
-                                to={link.path}
-                                className="nav-link"
-                                style={{
-                                    color: location.pathname === link.path ? '#E6A520' : '#7A4A00',
-                                    textDecoration: 'none',
-                                    fontWeight: location.pathname === link.path ? '600' : '500',
-                                    fontSize: '1rem',
-                                    transition: 'all 0.3s ease',
-                                    position: 'relative',
-                                    padding: '0.5rem 0'
-                                }}
-                            >
-                                {link.label}
-                            </Link>
-                        ))}
+        <header className="site-header" ref={headerRef}>
+            <div className="container header-inner">
+                <Brand />
+                <nav className="desktop-navigation" aria-label="Main navigation">
+                    <div className="services-navigation">
+                        <button type="button" ref={servicesButtonRef} className={`nav-link nav-disclosure ${isServicePage ? 'active' : ''}`} aria-expanded={servicesOpen} aria-controls="service-navigation" onClick={() => setServicesOpen(!servicesOpen)}>
+                            Services <span className={`chevron ${servicesOpen ? 'is-open' : ''}`} aria-hidden="true" />
+                        </button>
+                        {servicesOpen && <div className="services-popover" id="service-navigation">
+                            <span className="popover-label">HOW WE CAN HELP</span>
+                            {services.map(([to, label, description]) => <NavLink key={to} to={to} className="service-navigation-link"><span>{label}</span><small>{description}</small></NavLink>)}
+                        </div>}
                     </div>
-
-                    {/* Profile Section (Desktop) */}
-                    <div className="nav-links-desktop" style={{ flex: '0 0 auto' }}>
-                        <div ref={dropdownRef} style={{ position: 'relative' }}>
-                            <button
-                                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                                style={{
-                                    background: 'transparent',
-                                    border: '2px solid var(--color-gold)',
-                                    borderRadius: '50%',
-                                    cursor: 'pointer',
-                                    padding: '3px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    transition: 'all 0.3s ease',
-                                    boxShadow: isDropdownOpen ? '0 0 20px rgba(197, 168, 128, 0.5)' : 'none'
-                                }}
-                            >
-                                <img
-                                    src={user ? user.avatar : defaultAvatar}
-                                    alt={user ? user.name : 'Guest'}
-                                    style={{
-                                        width: '45px',
-                                        height: '45px',
-                                        borderRadius: '50%',
-                                        objectFit: 'cover'
-                                    }}
-                                />
-                            </button>
-
-                            {/* Dropdown Menu - Desktop Only */}
-                            {isDropdownOpen && window.innerWidth > 768 && (
-                                <div className="glass-card fade-in" style={{
-                                    position: 'absolute',
-                                    top: '100%',
-                                    right: '0',
-                                    marginTop: '0.75rem',
-                                    width: '280px',
-                                    padding: '0',
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    zIndex: 10000,
-                                    border: '1px solid var(--color-gold)',
-                                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
-                                    background: 'rgba(255, 248, 231, 0.95)',
-                                    backdropFilter: 'blur(20px)',
-                                    borderRadius: '12px'
-                                }}>
-                                    <div style={{
-                                        padding: '1.25rem',
-                                        background: 'rgba(230, 165, 32, 0.1)',
-                                        borderBottom: '1px solid rgba(230, 165, 32, 0.2)',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '1rem'
-                                    }}>
-                                        <img
-                                            src={user ? user.avatar : defaultAvatar}
-                                            alt={user ? user.name : 'Guest'}
-                                            style={{
-                                                width: '50px',
-                                                height: '50px',
-                                                borderRadius: '50%',
-                                                border: '2px solid var(--color-gold)',
-                                                objectFit: 'cover'
-                                            }}
-                                        />
-                                        <div style={{ flex: 1, overflow: 'hidden' }}>
-                                            <div style={{
-                                                fontSize: '1.1rem',
-                                                fontWeight: 'bold',
-                                                color: '#000000',
-                                                marginBottom: '0.25rem',
-                                                overflow: 'hidden',
-                                                textOverflow: 'ellipsis',
-                                                whiteSpace: 'nowrap'
-                                            }}>
-                                                {user ? `@${user.username}` : 'Guest User'}
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div style={{ padding: '0.75rem 0 1rem' }}>
-                                        {isAdmin && (
-                                            <button
-                                                onClick={() => {
-                                                    setIsDropdownOpen(false);
-                                                    navigate('/admin/blog');
-                                                }}
-                                                style={{
-                                                    background: 'rgba(230, 165, 32, 0.1)',
-                                                    border: 'none',
-                                                    cursor: 'pointer',
-                                                    textAlign: 'left',
-                                                    padding: '0.75rem 1.25rem',
-                                                    color: '#7A4A00',
-                                                    display: 'block',
-                                                    fontSize: '1rem',
-                                                    fontWeight: '600',
-                                                    width: '100%',
-                                                    transition: 'all 0.2s ease',
-                                                    borderLeft: '3px solid #E6A520'
-                                                }}
-                                            >
-                                                📝 Blog CMS
-                                            </button>
-                                        )}
-                                        {user ? (
-                                            <>
-                                                <button
-                                                    onClick={() => {
-                                                        setIsProfileModalOpen(true);
-                                                        setIsDropdownOpen(false);
-                                                    }}
-                                                    className="nav-link"
-                                                    style={{
-                                                        background: 'none',
-                                                        border: 'none',
-                                                        cursor: 'pointer',
-                                                        textAlign: 'left',
-                                                        padding: '0.75rem 1.25rem',
-                                                        color: '#000000',
-                                                        display: 'block',
-                                                        fontSize: '1rem',
-                                                        width: '100%',
-                                                        transition: 'all 0.2s ease'
-                                                    }}
-                                                >
-                                                    👤 My Profile
-                                                </button>
-                                                <button
-                                                    onClick={() => {
-                                                        logout();
-                                                        setIsDropdownOpen(false);
-                                                    }}
-                                                    style={{
-                                                        background: 'none',
-                                                        border: 'none',
-                                                        cursor: 'pointer',
-                                                        textAlign: 'left',
-                                                        padding: '0.75rem 1.25rem',
-                                                        color: '#ff6b6b',
-                                                        display: 'block',
-                                                        fontSize: '1rem',
-                                                        width: '100%',
-                                                        transition: 'all 0.2s ease'
-                                                    }}
-                                                >
-                                                    🚪 Logout
-                                                </button>
-                                            </>
-                                        ) : (
-                                            <button
-                                                onClick={() => {
-                                                    setIsAuthModalOpen(true);
-                                                    setIsDropdownOpen(false);
-                                                }}
-                                                style={{
-                                                    display: 'block',
-                                                    textAlign: 'center',
-                                                    margin: '0 1.25rem 0.75rem',
-                                                    padding: '0.75rem',
-                                                    background: 'var(--color-gold)',
-                                                    color: '#000000',
-                                                    borderRadius: 'var(--radius-sm)',
-                                                    fontWeight: 'bold',
-                                                    border: 'none',
-                                                    cursor: 'pointer',
-                                                    width: 'calc(100% - 2.5rem)',
-                                                    transition: 'all 0.3s ease'
-                                                }}
-                                            >
-                                                🔐 Login / Sign Up
-                                            </button>
-                                        )}
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-
-                    {/* Hamburger Menu Button */}
-                    <button
-                        className="nav-hamburger"
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    >
-                        <Icon name="menu" size={28} color="#7A4A00" />
-                    </button>
-
-                    {/* Mobile Menu */}
-                    <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.path}
-                                to={link.path}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                style={{
-                                    color: location.pathname === link.path ? '#E6A520' : '#7A4A00',
-                                    textDecoration: 'none',
-                                    fontWeight: location.pathname === link.path ? '700' : '500',
-                                    fontSize: '1.1rem',
-                                    padding: '0.5rem 0',
-                                    textAlign: 'center'
-                                }}
-                            >
-                                {link.label}
-                            </Link>
-                        ))}
-
-                        <div style={{ height: '1px', background: 'rgba(230, 165, 32, 0.2)', margin: '0.5rem 0' }} />
-
-                        {isAdmin && (
-                            <Link
-                                to="/admin/blog"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                style={{
-                                    background: 'rgba(230, 165, 32, 0.12)',
-                                    color: '#7A4A00',
-                                    textDecoration: 'none',
-                                    fontWeight: '700',
-                                    fontSize: '1.05rem',
-                                    padding: '0.85rem 1rem',
-                                    borderRadius: '10px',
-                                    borderLeft: '3px solid #E6A520',
-                                    textAlign: 'center',
-                                    margin: '0.25rem 0',
-                                }}
-                            >
-                                📝 Blog CMS
-                            </Link>
-                        )}
-
-                        {user ? (
-                            <>
-                                {/* User Profile Section in Mobile Menu */}
-                                <div style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '1rem',
-                                    padding: '1rem',
-                                    background: 'rgba(230, 165, 32, 0.1)',
-                                    borderRadius: '8px',
-                                    margin: '0.5rem 0'
-                                }}>
-                                    <img
-                                        src={user.avatar}
-                                        alt="Profile"
-                                        style={{
-                                            width: '50px',
-                                            height: '50px',
-                                            borderRadius: '50%',
-                                            border: '2px solid var(--color-gold)',
-                                            objectFit: 'cover'
-                                        }}
-                                    />
-                                    <div style={{ flex: 1, textAlign: 'left' }}>
-                                        <div style={{
-                                            fontSize: '1rem',
-                                            fontWeight: 'bold',
-                                            color: '#000000',
-                                            marginBottom: '0.25rem'
-                                        }}>
-                                            @{user.username}
-                                        </div>
-                                        <div style={{
-                                            fontSize: '0.85rem',
-                                            color: '#7A4A00',
-                                            opacity: 0.7
-                                        }}>
-                                            {user.email}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button
-                                    onClick={() => {
-                                        setIsProfileModalOpen(true);
-                                        setIsMobileMenuOpen(false);
-                                    }}
-                                    style={{
-                                        background: 'none',
-                                        border: 'none',
-                                        color: '#7A4A00',
-                                        fontSize: '1.1rem',
-                                        padding: '0.75rem 0',
-                                        cursor: 'pointer',
-                                        fontWeight: '500',
-                                        width: '100%'
-                                    }}
-                                >
-                                    👤 My Profile
-                                </button>
-                                <button
-                                    onClick={() => {
-                                        logout();
-                                        setIsMobileMenuOpen(false);
-                                    }}
-                                    style={{
-                                        background: 'none',
-                                        border: 'none',
-                                        color: '#ff6b6b',
-                                        fontSize: '1.1rem',
-                                        padding: '0.75rem 0',
-                                        cursor: 'pointer',
-                                        fontWeight: '500',
-                                        width: '100%'
-                                    }}
-                                >
-                                    🚪 Logout
-                                </button>
-                            </>
-                        ) : (
-                            <button
-                                onClick={() => {
-                                    setIsAuthModalOpen(true);
-                                    setIsMobileMenuOpen(false);
-                                }}
-                                style={{
-                                    background: 'var(--color-gold)',
-                                    color: '#FFF8E7',
-                                    border: 'none',
-                                    padding: '0.75rem',
-                                    borderRadius: '8px',
-                                    fontSize: '1rem',
-                                    fontWeight: 'bold',
-                                    cursor: 'pointer',
-                                    marginTop: '0.5rem'
-                                }}
-                            >
-                                Login / Sign Up
-                            </button>
-                        )}
-                    </div>
+                    <NavLink to="/website-portfolio" className="nav-link">Our work</NavLink>
+                    <NavLink to="/blog" className="nav-link">Journal</NavLink>
+                    <NavLink to="/about-us" className="nav-link">About us</NavLink>
+                </nav>
+                <a className="button button-primary header-contact" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Let’s talk <span aria-hidden="true">↗</span></a>
+                <button type="button" className="mobile-menu-toggle" ref={menuButtonRef} onClick={() => { setMenuOpen(!menuOpen); setServicesOpen(false); }} aria-expanded={menuOpen} aria-controls="mobile-navigation" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}>
+                    <span>{menuOpen ? 'Close' : 'Menu'}</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">{menuOpen ? <path d="m6 6 12 12M6 18 18 6" /> : <path d="M4 7h16M4 12h16M4 17h16" />}</svg>
+                </button>
+            </div>
+            {menuOpen && <nav className="mobile-navigation" id="mobile-navigation" aria-label="Mobile navigation">
+                <div className="container">
+                    <p className="eyebrow">Our services</p>
+                    {services.map(([to, label]) => <NavLink to={to} key={to} className="mobile-navigation-link">{label}<span aria-hidden="true">↗</span></NavLink>)}
+                    <div className="mobile-navigation-secondary"><NavLink to="/website-portfolio">Our work</NavLink><NavLink to="/blog">Journal</NavLink><NavLink to="/about-us">About us</NavLink></div>
+                    <a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Talk about your project <span aria-hidden="true">↗</span></a>
+                    <p className="mobile-navigation-note">Practical digital solutions. Based in Malaysia.</p>
                 </div>
-            </nav>
-
-            <ProfileModal
-                isOpen={isProfileModalOpen}
-                onClose={() => setIsProfileModalOpen(false)}
-            />
-
-            <AuthModal
-                isOpen={isAuthModalOpen}
-                onClose={() => setIsAuthModalOpen(false)}
-            />
-        </>
+            </nav>}
+        </header>
     );
 };
 

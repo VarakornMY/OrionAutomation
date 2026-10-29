@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from './SEO';
+import ResponsiveContents from './ResponsiveContents';
 import '../styles/legal.css';
 
 const LegalPage = ({ title, description, path, introduction, sections, children }) => {
@@ -14,18 +15,21 @@ const LegalPage = ({ title, description, path, introduction, sections, children 
             <div className="container legal-container">
                 <header className="legal-header">
                     <Link to="/" className="legal-back">Back to home</Link>
-                    <p className="legal-eyebrow">ORION AUTOMATION</p>
+                    <p className="legal-eyebrow">ORION / LEGAL</p>
                     <h1>{title}</h1>
                     <p className="legal-date">Effective date: <time dateTime="2026-10-01">1 October 2026</time></p>
                     <p className="legal-introduction">{introduction}</p>
                 </header>
+                <div className="legal-layout">
                 <nav className="legal-contents" aria-label={`${title} contents`}>
-                    <h2>On this page</h2>
+                    <ResponsiveContents>
+                    <summary>On this page</summary>
                     <ol>
                         {sections.map(section => (
                             <li key={section.id}><a href={`#${section.id}`}>{section.title}</a></li>
                         ))}
                     </ol>
+                    </ResponsiveContents>
                 </nav>
                 <article className="legal-document" aria-label={title}>
                     {sections.map((section, index) => (
@@ -36,6 +40,7 @@ const LegalPage = ({ title, description, path, introduction, sections, children 
                     ))}
                     {children}
                 </article>
+                </div>
                 <div className="legal-related">
                     <Link to="/privacy-policy">Privacy Policy</Link>
                     <Link to="/terms-and-conditions">Terms &amp; Conditions</Link>

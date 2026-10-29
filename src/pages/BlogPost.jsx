@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams, Navigate } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import SEO from '../components/SEO';
+import ResponsiveContents from '../components/ResponsiveContents';
 import { getPostBySlug, getRelatedPosts } from '../data/blogPosts';
 import { getPost, listPosts, resolveImageUrl } from '../lib/api';
 import '../styles/blog.css';
@@ -11,9 +12,9 @@ const formatDateNice = (iso) =>
 const renderSection = (section, idx) => {
     switch (section.type) {
         case 'h2':
-            return <h2 key={idx}>{section.text}</h2>;
+            return <h2 key={idx} id={`article-section-${idx}`}>{section.text}</h2>;
         case 'h3':
-            return <h3 key={idx}>{section.text}</h3>;
+            return <h3 key={idx} id={`article-section-${idx}`}>{section.text}</h3>;
         case 'p':
             return <p key={idx}>{section.text}</p>;
         case 'ul':
@@ -96,6 +97,7 @@ const BlogPost = () => {
         window.scrollTo({ top: 0, behavior: 'instant' });
         setLoading(true);
         setNotFound(false);
+        setRelated([]);
 
         let cancelled = false;
         (async () => {
@@ -144,18 +146,32 @@ const BlogPost = () => {
         };
     }, [slug]);
 
-    if (notFound) return <Navigate to="/blog" replace />;
+    if (notFound) return (
+        <div className="blog-scope">
+            <SEO title="Article not found" description="Explore the latest ideas and guides from Orion Automation." canonical={`/blog/${slug}`} robots="noindex, follow" />
+            <header className="blog-hero">
+                <div className="blog-wrap">
+                    <span className="blog-hero__eyebrow">The Orion Journal</span>
+                    <h1 className="blog-hero__title">This article isn't here.</h1>
+                    <p className="blog-hero__subtitle">The link may have changed. Browse the journal for more ideas on websites, automation, and marketing.</p>
+                    <Link to="/blog" className="blog-btn" style={{ marginTop: '28px' }}>Back to all articles</Link>
+                </div>
+            </header>
+        </div>
+    );
     if (loading || !post) {
         return (
             <div className="blog-scope">
-                <div className="blog-article-wrap" style={{ paddingTop: '8rem' }}>
-                    <div className="blog-empty">Loading article…</div>
+                <div className="blog-article-wrap" style={{ paddingTop: '4rem' }}>
+                    <div className="blog-empty" role="status">Loading article…</div>
                 </div>
             </div>
         );
     }
 
     const url = `https://orionautomation.my/blog/${post.slug}`;
+    const contents = (post.sections || []).map((section, index) => ({ ...section, index }))
+        .filter(section => section.type === 'h2');
 
     const articleStructuredData = {
         '@context': 'https://schema.org',
@@ -256,8 +272,23 @@ const BlogPost = () => {
                     </div>
                 )}
 
-                <div className="blog-article-wrap blog-article__body">
-                    {(post.sections || []).map((section, idx) => renderSection(section, idx))}
+                <div className={`blog-reading-layout ${contents.length === 0 ? 'blog-reading-layout--plain' : ''}`}>
+                    {contents.length > 0 && (
+                        <aside className="blog-toc">
+                            <ResponsiveContents>
+                                <summary>In this article</summary>
+                                <nav aria-label="Article contents">
+                                    <ol>{contents.map(section => (
+                                        <li key={section.index}><a href={`#article-section-${section.index}`}>{section.text}</a></li>
+                                    ))}</ol>
+                                </nav>
+                            </ResponsiveContents>
+                        </aside>
+                    )}
+                    <div className="blog-article__body">
+                        {(post.sections || []).map((section, idx) => renderSection(section, idx))}
+                        <Link to="/blog" className="blog-back-link">← Back to all articles</Link>
+                    </div>
                 </div>
             </article>
 
@@ -275,7 +306,7 @@ const BlogPost = () => {
                                     className="blog-card"
                                     style={{ '--cover': p.cover || '#E6A520' }}
                                 >
-                                    <div className="blog-card__cover" aria-hidden="true" />
+                                    <div className="blog-card__cover" aria-hidden="true"><span>THE ORION JOURNAL</span><span>READ NEXT</span></div>
                                     <div className="blog-card__body">
                                         <span className="blog-card__category">{p.category}</span>
                                         <h3 className="blog-card__title">{p.title}</h3>

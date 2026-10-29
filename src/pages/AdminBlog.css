@@ -796,3 +796,27 @@
     line-height: 1.5;
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
+
+/* Quiet, accessible administration surfaces. */
+.admin-shell { background: #f7f8f6; color: #172522; }
+.admin-shell .admin-login { padding: 48px 20px; background: #f7f8f6; }
+.admin-shell .admin-login__card { background: #fff; border: 1px solid #dce3dc; border-radius: 18px; padding: 36px; box-shadow: 0 8px 36px #17252208; }
+.admin-shell .admin-login__title { color: #172522; letter-spacing: -.04em; }
+.admin-shell .admin-login__sub { color: #63706b; line-height: 1.7; }
+.admin-shell .admin-nav__section[data-active="true"] { background: #244d43; color: #fff; box-shadow: none; }
+.admin-shell .admin-field input, .admin-shell .admin-field select, .admin-shell .admin-field textarea { color: #172522; background: #fff; border: 1px solid #cbd4cb; font-size: 1rem; border-radius: 8px; min-height: 44px; }
+.admin-shell .admin-field input:focus, .admin-shell .admin-field select:focus, .admin-shell .admin-field textarea:focus { border-color: #244d43; box-shadow: 0 0 0 3px #244d4314; }
+.admin-shell button, .admin-shell .admin-back { min-height: 44px; }
+.admin-shell .admin-editor__actions { gap: 10px; flex-wrap: wrap; }
+.admin-shell .admin-field label, .admin-shell .admin-field > span { color: #34463d; }
+.admin-deferred { min-height: 100svh; display: grid; place-items: center; background: #f7f8f6; }
+.admin-deferred .eyebrow { color: #8b5915; }
+.admin-deferred__brand { display: flex; gap: 8px; align-items: baseline; text-decoration: none; color: #172522; font-size: 1.1rem; font-weight: 800; letter-spacing: .06em; margin-bottom: 52px; }
+.admin-deferred__brand span { font-size: .58rem; color: #63706b; font-weight: 500; letter-spacing: .16em; }
+@media (max-width: 600px) {
+    .admin-shell .admin-login__card { padding: 28px 22px; }
+    .admin-shell .admin-editor__head { gap: 20px; }
+    .admin-shell .admin-editor__actions { width: 100%; }
+    .admin-shell .admin-editor__actions > button { flex: 1; }
+    .admin-shell .admin-field input[type="color"] { width: 100%; }
+}

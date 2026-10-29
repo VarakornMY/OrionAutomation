@@ -1,9 +1,9 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import PricingCard from '../components/PricingCard';
 import Icon from '../components/Icons';
-import AnimatedBackground from '../components/AnimatedBackground';
 import SEO from '../components/SEO';
+import '../styles/services.css';
 
 const AIAutomation = () => {
     const pillars = [
@@ -107,203 +107,47 @@ const AIAutomation = () => {
     };
 
     return (
-        <div style={{ minHeight: '100vh', paddingTop: '80px' }}>
-            <SEO
-                title="AI Automation Workflow"
-                description="AI-powered automation: workflow automation, pipeline automation, and production internal system automation. Eliminate manual work and scale your operations."
-                keywords="AI automation, workflow automation, pipeline automation, internal system automation, business process automation, Malaysia"
-                canonical="/ai-automation"
-                structuredData={structuredData}
-            />
-
-            {/* Hero */}
-            <section className="section" style={{ padding: '6rem 2rem', position: 'relative', overflow: 'hidden' }}>
-                <AnimatedBackground />
-                <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}
-                    >
-                        <h1 style={{
-                            fontSize: 'clamp(3rem, 8vw, 5rem)',
-                            color: '#7A4A00',
-                            marginBottom: '1.5rem',
-                            fontWeight: 'bold',
-                            lineHeight: 1.1
-                        }}>
-                            AI Automation <span style={{ color: '#E6A520' }}>Workflow</span>
-                        </h1>
-                        <p style={{
-                            fontSize: '1.3rem',
-                            color: '#7A4A00',
-                            opacity: 0.8,
-                            marginBottom: '2.5rem',
-                            lineHeight: 1.6
-                        }}>
-                            Automation Workflow · Pipeline Automation · Production Internal System Automation
-                        </p>
-                        <a
-                            href="https://wa.me/601117993797"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{
-                                display: 'inline-block',
-                                padding: '1rem 2.5rem',
-                                background: '#E6A520',
-                                color: '#FFF8E7',
-                                borderRadius: '12px',
-                                textDecoration: 'none',
-                                fontWeight: '600',
-                                fontSize: '1.1rem',
-                                boxShadow: '0 4px 12px rgba(230, 165, 32, 0.3)',
-                                transition: 'all 0.3s ease'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.transform = 'translateY(-2px)';
-                                e.currentTarget.style.boxShadow = '0 6px 16px rgba(230, 165, 32, 0.4)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = '0 4px 12px rgba(230, 165, 32, 0.3)';
-                            }}
-                        >
-                            Automate My Business
-                        </a>
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* The Problem */}
-            <section className="section" style={{ padding: '4rem 2rem' }}>
+        <div className="page-shell service-page">
+            <SEO title="AI Automation Workflow" description="Connect your tools, simplify repetitive tasks, and build dependable workflows for your business." keywords="AI automation, workflow automation, pipeline automation, business process automation, Malaysia" canonical="/ai-automation" structuredData={structuredData} />
+            <section className="page-hero">
                 <div className="container">
-                    <div className="glass-card" style={{ padding: '3rem', textAlign: 'center' }}>
-                        <Icon name="alert" size={64} color="#E6A520" style={{ marginBottom: '1.5rem' }} />
-                        <h2 style={{ fontSize: '2.5rem', color: '#7A4A00', marginBottom: '1.5rem' }}>The Hidden Cost of Manual Work</h2>
-                        <p style={{ fontSize: '1.2rem', color: '#7A4A00', opacity: 0.8, maxWidth: '720px', margin: '0 auto', lineHeight: 1.7 }}>
-                            Your team is buried in copy-paste, spreadsheet shuffling, and tools that don't talk to each other.
-                            Every manual step is a chance for delays, errors, and burnout. Automation is no longer a luxury — it's the new baseline.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Three Pillars */}
-            <section className="section" style={{ padding: '4rem 2rem', background: 'rgba(230, 165, 32, 0.03)' }}>
-                <div className="container">
-                    <h2 style={{ fontSize: '2.5rem', color: '#7A4A00', textAlign: 'center', marginBottom: '0.75rem' }}>
-                        Three Pillars of Automation
-                    </h2>
-                    <p style={{ color: '#7A4A00', opacity: 0.7, textAlign: 'center', maxWidth: '700px', margin: '0 auto 3rem' }}>
-                        From single-task workflows to full production systems — we automate at every layer of your business.
-                    </p>
-                    <div className="grid grid-3" style={{ gap: '2rem' }}>
-                        {pillars.map((pillar, index) => (
-                            <div key={index} className="glass-card hover-lift" style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column' }}>
-                                <Icon name={pillar.icon} size={56} color="#E6A520" style={{ marginBottom: '1.25rem' }} />
-                                <h3 style={{ fontSize: '1.4rem', color: '#7A4A00', marginBottom: '1rem', fontWeight: 700 }}>
-                                    {pillar.title}
-                                </h3>
-                                <p style={{ color: '#7A4A00', opacity: 0.8, lineHeight: 1.6, marginBottom: '1.25rem' }}>
-                                    {pillar.description}
-                                </p>
-                                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                                    {pillar.highlights.map((item, i) => (
-                                        <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', marginBottom: '0.5rem', color: '#7A4A00', opacity: 0.85, fontSize: '0.95rem' }}>
-                                            <Icon name="check" size={18} color="#E6A520" />
-                                            <span>{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                    <nav className="service-breadcrumb" aria-label="Breadcrumb"><Link to="/">Home</Link><span aria-hidden="true">/</span><span>AI automation</span></nav>
+                    <div className="service-hero-grid">
+                        <div>
+                            <p className="eyebrow">AI automation</p>
+                            <h1 className="page-title">Less busywork.<br />More room to grow.</h1>
+                            <p className="page-description">Connect the tools your team already uses. We build workflows, data pipelines, and internal systems that turn repetitive work into a reliable process.</p>
+                            <div className="service-actions"><a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Discuss your workflow <span aria-hidden="true">↗</span></a><a className="button button-secondary" href="#automation-pricing">Explore packages</a></div>
+                            <p className="service-hero-note">Built around your process, not the other way around.</p>
+                        </div>
+                        <aside className="service-summary" aria-label="Example automated lead workflow">
+                            <p className="eyebrow">A simpler way to work</p>
+                            <h2>One enquiry. A connected process.</h2>
+                            <div className="workflow-preview">
+                                {[['01', 'Capture the enquiry', 'A customer submits your contact form.'], ['02', 'Organise the lead', 'Details move to your CRM or spreadsheet.'], ['03', 'Keep things moving', 'The right team receives a follow-up task.']].map(([number, title, description]) => <div className="workflow-preview-item" key={number}><span className="step-count" aria-hidden="true">{number}</span><div><strong>{title}</strong><small>{description}</small></div></div>)}
                             </div>
-                        ))}
+                            <p className="summary-footnote">Example workflow. The tools and steps are scoped to your business.</p>
+                        </aside>
                     </div>
                 </div>
             </section>
-
-            {/* Who Needs This */}
-            <section className="section" style={{ padding: '4rem 2rem' }}>
+            <section className="section section-tinted" aria-labelledby="automation-capabilities">
                 <div className="container">
-                    <h2 style={{ fontSize: '2.5rem', color: '#7A4A00', textAlign: 'center', marginBottom: '3rem' }}>
-                        Who Needs This?
-                    </h2>
-                    <div className="grid grid-3" style={{ gap: '2rem' }}>
-                        <div className="glass-card" style={{ padding: '2rem', textAlign: 'center' }}>
-                            <h3 style={{ fontSize: '1.3rem', color: '#E6A520', marginBottom: '1rem' }}>Ops & Logistics</h3>
-                            <p style={{ color: '#7A4A00', opacity: 0.8, lineHeight: 1.6 }}>
-                                Automate order processing, inventory sync, and fulfillment status across your tools.
-                            </p>
-                        </div>
-                        <div className="glass-card" style={{ padding: '2rem', textAlign: 'center' }}>
-                            <h3 style={{ fontSize: '1.3rem', color: '#E6A520', marginBottom: '1rem' }}>Sales & CRM</h3>
-                            <p style={{ color: '#7A4A00', opacity: 0.8, lineHeight: 1.6 }}>
-                                Lead routing, follow-ups, and pipeline updates — automatic, instant, never forgotten.
-                            </p>
-                        </div>
-                        <div className="glass-card" style={{ padding: '2rem', textAlign: 'center' }}>
-                            <h3 style={{ fontSize: '1.3rem', color: '#E6A520', marginBottom: '1rem' }}>Finance & Reporting</h3>
-                            <p style={{ color: '#7A4A00', opacity: 0.8, lineHeight: 1.6 }}>
-                                Invoices, statements, daily reports — generated, sent, and archived without lifting a finger.
-                            </p>
-                        </div>
-                    </div>
+                    <div className="service-section-intro"><p className="eyebrow">What we build</p><h2 className="section-heading" id="automation-capabilities">Connect every part of the work.</h2><p className="section-description">Start with one time-consuming task, or bring together the systems your business depends on.</p></div>
+                    <div className="feature-grid">{pillars.map((pillar) => <article className="surface-card" key={pillar.title}><span className="service-icon" aria-hidden="true"><Icon name={pillar.icon} size={23} color="#244d43" /></span><h3>{pillar.title}</h3><p>{pillar.description}</p><ul className="detail-list">{pillar.highlights.map((item) => <li key={item}>{item}</li>)}</ul></article>)}</div>
                 </div>
             </section>
-
-            {/* Pricing */}
-            <section className="section" style={{ padding: '4rem 2rem', background: 'rgba(230, 165, 32, 0.03)' }}>
+            <section className="section" aria-labelledby="automation-use-cases">
                 <div className="container">
-                    <h2 style={{ fontSize: '2.5rem', color: '#7A4A00', textAlign: 'center', marginBottom: '3rem' }}>
-                        Automation Packages
-                    </h2>
-                    <div className="grid grid-3" style={{ gap: '2rem' }}>
-                        {plans.map((plan, index) => (
-                            <PricingCard key={index} {...plan} />
-                        ))}
-                    </div>
+                    <div className="service-section-intro"><p className="eyebrow">Where it helps</p><h2 className="section-heading" id="automation-use-cases">Give your team time back.</h2></div>
+                    <div className="feature-grid">{[['Ops & logistics', 'Connect order processing, inventory updates, and fulfilment status across your tools.'], ['Sales & CRM', 'Route new leads, organise follow-ups, and keep your sales pipeline up to date.'], ['Finance & reporting', 'Generate invoices, statements, and daily reports with fewer manual handoffs.']].map(([title, description]) => <article className="surface-card" key={title}><h3>{title}</h3><p>{description}</p></article>)}</div>
                 </div>
             </section>
-
-            {/* CTA */}
-            <section className="section" style={{ padding: '5rem 2rem', textAlign: 'center' }}>
-                <div className="container">
-                    <div className="glass-card" style={{ padding: '4rem 2rem' }}>
-                        <h2 style={{ fontSize: '2.5rem', color: '#7A4A00', marginBottom: '1.5rem' }}>
-                            Ready to Automate Your Business?
-                        </h2>
-                        <p style={{ fontSize: '1.2rem', color: '#7A4A00', opacity: 0.8, marginBottom: '2rem', maxWidth: '600px', margin: '0 auto 2rem' }}>
-                            Let's map your workflows and replace manual work with reliable automation.
-                        </p>
-                        <a
-                            href="https://wa.me/601117993797"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{
-                                display: 'inline-block',
-                                padding: '1rem 2.5rem',
-                                background: '#E6A520',
-                                color: '#FFF8E7',
-                                borderRadius: '12px',
-                                textDecoration: 'none',
-                                fontWeight: '600',
-                                fontSize: '1.1rem',
-                                boxShadow: '0 4px 12px rgba(230, 165, 32, 0.3)',
-                                transition: 'all 0.3s ease'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.transform = 'translateY(-2px)';
-                                e.currentTarget.style.boxShadow = '0 6px 16px rgba(230, 165, 32, 0.4)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = '0 4px 12px rgba(230, 165, 32, 0.3)';
-                            }}
-                        >
-                            Contact Us on WhatsApp
-                        </a>
-                    </div>
-                </div>
+            <section className="section section-tinted" id="automation-pricing" aria-labelledby="automation-pricing-heading">
+                <div className="container"><div className="service-section-intro"><p className="eyebrow">Clear starting points</p><h2 className="section-heading" id="automation-pricing-heading">Automation packages.</h2><p className="section-description">Choose the scale that fits today. We’ll confirm your integrations and scope before the project begins.</p></div><div className="pricing-grid">{plans.map((plan) => <PricingCard key={plan.title} {...plan} />)}</div></div>
+            </section>
+            <section className="section" aria-labelledby="automation-next-step">
+                <div className="container"><div className="contact-band"><div><p className="eyebrow">Your next step</p><h2 id="automation-next-step">Tell us what takes too much time.</h2><p>We’ll help you map the workflow and identify a practical place to start.</p></div><a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Talk to our team <span aria-hidden="true">↗</span></a></div></div>
             </section>
         </div>
     );

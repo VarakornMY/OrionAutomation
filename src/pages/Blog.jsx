@@ -11,7 +11,6 @@ const formatDate = (iso) =>
 const Blog = () => {
     const [allPosts, setAllPosts] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [source, setSource] = useState('api'); // 'api' | 'static'
 
     useEffect(() => {
         let cancelled = false;
@@ -22,15 +21,12 @@ const Blog = () => {
                 const posts = res?.posts || [];
                 if (posts.length > 0) {
                     setAllPosts(posts);
-                    setSource('api');
                 } else {
                     setAllPosts(getStaticPosts());
-                    setSource('static');
                 }
             } catch {
                 if (cancelled) return;
                 setAllPosts(getStaticPosts());
-                setSource('static');
             } finally {
                 if (!cancelled) setLoading(false);
             }
@@ -99,12 +95,12 @@ const Blog = () => {
                         getting found in the age of AI search.
                     </p>
 
-                    <div className="blog-filter" role="tablist" aria-label="Filter posts by category">
+                    <div className="blog-filter" role="group" aria-label="Filter articles by category">
                         {categories.map((cat) => (
                             <button
                                 key={cat}
-                                role="tab"
-                                aria-selected={cat === activeCategory}
+                                type="button"
+                                aria-pressed={cat === activeCategory}
                                 data-active={cat === activeCategory}
                                 onClick={() => setActiveCategory(cat)}
                                 className="blog-chip"
@@ -113,6 +109,9 @@ const Blog = () => {
                             </button>
                         ))}
                     </div>
+                    <p className="blog-results" aria-live="polite">
+                        {loading ? 'Finding your next read…' : `${visiblePosts.length} ${visiblePosts.length === 1 ? 'article' : 'articles'}${activeCategory !== 'All' ? ` in ${activeCategory}` : ' to help your business move forward'}`}
+                    </p>
                 </div>
             </header>
 
@@ -122,7 +121,7 @@ const Blog = () => {
                     Featured post
                 </h2>
                 {loading ? (
-                    <div className="blog-empty">Loading the latest articles…</div>
+                    <div className="blog-empty" role="status">Loading the latest articles…</div>
                 ) : featured ? (
                     <Link to={`/blog/${featured.slug}`} className="blog-featured">
                         <div className="blog-featured__tag">Featured · {featured.category}</div>
@@ -150,14 +149,16 @@ const Blog = () => {
                             Latest articles
                         </h2>
                         <div className="blog-grid">
-                            {rest.map((post) => (
+                            {rest.map((post, index) => (
                                 <Link
                                     key={post.slug}
                                     to={`/blog/${post.slug}`}
                                     className="blog-card"
                                     style={{ '--cover': post.cover || '#E6A520' }}
                                 >
-                                    <div className="blog-card__cover" aria-hidden="true" />
+                                    <div className="blog-card__cover" aria-hidden="true">
+                                        <span>THE ORION JOURNAL</span><span>{String(index + 2).padStart(2, '0')}</span>
+                                    </div>
                                     <div className="blog-card__body">
                                         <span className="blog-card__category">{post.category}</span>
                                         <h3 className="blog-card__title">{post.title}</h3>

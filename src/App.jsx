@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { UserProvider } from './context/UserContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { AdminProvider } from './context/AdminContext';
 import Navbar from './components/Navbar';
-import LightweightBackground from './components/LightweightBackground';
 import Footer from './components/Footer';
 import ChatbotWidget from './components/ChatbotWidget';
 import { BACKEND_ENABLED } from './lib/api';
@@ -25,23 +24,27 @@ import AdminBlog from './pages/AdminBlog';
 import NotFound from './pages/NotFound';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
+import AboutUs from './pages/AboutUs';
 
 // The CMS has its own chrome — hide the public Navbar/Footer/widget there.
 const Shell = () => {
     const location = useLocation();
     const isAdmin = location.pathname.startsWith('/admin');
+    const mainRef = useRef(null);
+    const previousPath = useRef(location.pathname);
+
+    useEffect(() => {
+        if (previousPath.current === location.pathname) return;
+        previousPath.current = location.pathname;
+        window.scrollTo(0, 0);
+        mainRef.current?.focus({ preventScroll: true });
+    }, [location.pathname]);
 
     return (
-        <div style={{
-            position: 'relative',
-            minHeight: '100vh',
-            display: 'flex',
-            flexDirection: 'column'
-        }}>
+        <div className="site-shell">
             <a href="#main-content" className="skip-link">Skip to main content</a>
-            {!isAdmin && <LightweightBackground />}
             {!isAdmin && <Navbar />}
-            <main id="main-content" style={{ flex: 1 }}>
+            <main id="main-content" className={`site-main ${isAdmin ? 'is-admin' : ''}`} ref={mainRef} tabIndex={-1}>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/ai-automation" element={<AIAutomation />} />
@@ -56,6 +59,7 @@ const Shell = () => {
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/blog" element={<Blog />} />
                     <Route path="/blog/:slug" element={<BlogPost />} />
+                    <Route path="/about-us" element={<AboutUs />} />
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                     <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                     <Route path="/admin" element={<AdminBlog />} />

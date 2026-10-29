@@ -12,10 +12,12 @@ import {
     adminUpdatePost,
     adminUploadImage,
     API_BASE,
+    BACKEND_ENABLED,
     resolveImageUrl,
 } from '../lib/api';
 import '../styles/blog.css';
 import './AdminBlog.css';
+import '../styles/supporting.css';
 
 const EMPTY_POST = {
     slug: '',
@@ -853,7 +855,7 @@ const AdminBlog = () => {
     }, [logout]);
 
     useEffect(() => {
-        if (isAdmin) refresh();
+        if (isAdmin && BACKEND_ENABLED) refresh();
     }, [isAdmin, refresh]);
 
     const onEdit = async (slug) => {
@@ -887,7 +889,25 @@ const AdminBlog = () => {
         await refresh();
     };
 
-    if (!ready) return null;
+    if (!BACKEND_ENABLED) {
+        return (
+            <div className="support-state-page admin-deferred">
+                <SEO title="Content management" description="Orion Automation content management portal." robots="noindex, nofollow" />
+                <section className="container support-state-wrap">
+                    <div className="support-state-card">
+                        <Link to="/" className="admin-deferred__brand">ORION<span>AUTOMATION</span></Link>
+                        <p className="eyebrow">Content management</p>
+                        <h1>The admin portal<br />isn't available yet.</h1>
+                        <p>The public website and articles are available to explore. If you need help with content or a project, please contact our team.</p>
+                        <div className="support-actions"><Link to="/" className="button button-primary">Back to website</Link><Link to="/blog" className="button button-secondary">Read the journal</Link></div>
+                        <a className="support-text-link" href="mailto:marketing@orionautomation.xyz">Contact the team <span aria-hidden="true">↗</span></a>
+                    </div>
+                </section>
+            </div>
+        );
+    }
+
+    if (!ready) return <div className="admin-login" role="status">Loading your workspace…</div>;
 
     return (
         <div className="blog-scope admin-shell">

@@ -1,280 +1,51 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import ServiceModal from '../components/ServiceModal';
-import ScrollObserver from '../components/ScrollObserver';
 import Icon from '../components/Icons';
-import Button from '../components/Button';
 import SEO from '../components/SEO';
 
+const serviceItems = [
+    { icon: 'sync', number: '01', title: 'Business automation', copy: 'Connect your tools and simplify repetitive work, from lead capture to everyday operations.', path: '/ai-automation', tags: 'Workflows · Integrations · Internal systems' },
+    { icon: 'website', number: '02', title: 'Website development', copy: 'A considered digital presence that makes your business clear, credible, and easy to engage with.', path: '/website', tags: 'Business websites · E-commerce · SEO' },
+    { icon: 'chatbot', number: '03', title: 'AI chatbots', copy: 'Help customers get answers, book appointments, and take the next step in their own time.', path: '/ai-chatbot', tags: 'WhatsApp · Customer support · Booking' },
+    { icon: 'search', number: '04', title: 'Search & marketing', copy: 'Build a stronger presence across search engines, answer engines, and AI-powered discovery.', path: '/marketing', tags: 'SEO · AEO · GEO' },
+];
+const workflows = [
+    { title: 'Enquiries', description: 'A more connected customer journey.', steps: [['chatbot', 'A new enquiry comes in', 'Website, WhatsApp, or social media'], ['calendar', 'The next step is organised', 'Answers, appointments, and routing'], ['sync', 'Your team stays in the loop', 'A clear handoff to the right person']] },
+    { title: 'Operations', description: 'Less repetitive work between your tools.', steps: [['code', 'Your tools connect', 'Bring the right information together'], ['sync', 'Routine work moves forward', 'Triggers, checks, and approval steps'], ['chart', 'Your team has a clearer view', 'Reporting that supports decisions']] },
+    { title: 'Websites', description: 'A clearer path from browsing to action.', steps: [['search', 'The right person finds you', 'A considered search presence'], ['website', 'Your business makes sense', 'Clear content on every screen'], ['chatbot', 'A conversation starts', 'Straightforward ways to get in touch']] },
+];
+
 const Home = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const services = [
-        {
-            icon: 'sync',
-            title: 'AI Automation Workflow',
-            description: 'Automation workflows, pipeline automation, and production internal system automation.',
-            link: '/ai-automation'
-        },
-        {
-            icon: 'website',
-            title: 'Premium Websites',
-            description: 'High-performance websites with AI Chatbot integration and Modern Marketing (SEO/AEO/GEO) built in.',
-            link: '/website'
-        }
-    ];
-
-    const processSteps = [
-        { icon: 'search', title: 'Discovery', desc: 'We analyze your business needs and goals.' },
-        { icon: 'design', title: 'Strategy', desc: 'We design a custom roadmap for success.' },
-        { icon: 'code', title: 'Development', desc: 'Our experts build your solution with precision.' },
-        { icon: 'rocket', title: 'Launch', desc: 'We deploy, monitor, and optimize for growth.' }
-    ];
-
-    const structuredData = {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Orion Automation",
-        "url": "https://orionautomation.my",
-        "logo": "https://orionautomation.my/favicon.png",
-        "sameAs": [
-            "https://www.facebook.com/orionautomation",
-            "https://twitter.com/orionautomation"
-        ],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "601117993797",
-            "contactType": "customer service"
-        }
-    };
-
-    const sectionTitleStyle = {
-        color: '#7A4A00',
-        fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
-        fontWeight: '700',
-        marginBottom: '0.5rem',
-        textAlign: 'center'
-    };
-
-    const sectionSubtitleStyle = {
-        color: '#7A4A00',
-        opacity: 0.7,
-        fontSize: '1.1rem',
-        textAlign: 'center',
-        maxWidth: '600px',
-        margin: '0 auto 3rem auto'
-    };
-
+    const [workflow, setWorkflow] = useState(0);
+    const selected = workflows[workflow];
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }}
-            style={{ minHeight: '100vh', paddingTop: '6rem', paddingBottom: '4rem' }}
-        >
-            <SEO
-                title="Home"
-                description="Orion Automation builds AI automation workflows, pipeline automation, production internal system automation, and premium websites with AI Chatbots and Modern Marketing (SEO/AEO/GEO) built in."
-                keywords="AI automation, workflow automation, pipeline automation, internal system automation, website development, AI chatbot, SEO, AEO, GEO, Orion Automation, Malaysia"
-                canonical="/"
-                structuredData={structuredData}
-            />
-            <ServiceModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-
-            <div className="container">
-                <ScrollObserver>
-                    {/* Hero Section */}
-                    <div className="glass-card flex-center flex-col text-center animate-me mb-2xl" style={{
-                        padding: '4rem 2rem',
-                        minHeight: '88vh',
-                        boxSizing: 'border-box',
-                        background: 'linear-gradient(135deg, rgba(255, 248, 231, 0.9) 0%, rgba(230, 165, 32, 0.15) 100%)',
-                        position: 'relative',
-                        overflow: 'hidden'
-                    }}>
-                        <div style={{ position: 'relative', zIndex: 1 }}>
-                            <p style={{
-                                fontSize: '0.9rem',
-                                fontWeight: '600',
-                                color: '#E6A520',
-                                letterSpacing: '0.2em',
-                                textTransform: 'uppercase',
-                                marginBottom: '1rem'
-                            }}>
-                                Welcome to
-                            </p>
-                            <h1 className="mb-md text-gradient-animate" style={{
-                                fontSize: 'clamp(2.5rem, 7vw, 5rem)',
-                                fontWeight: '800',
-                                lineHeight: 1.1,
-                                letterSpacing: '-0.02em'
-                            }}>
-                                Orion Automation
-                            </h1>
-                            <p className="mb-lg" style={{
-                                fontSize: 'clamp(1.1rem, 2vw, 1.4rem)',
-                                maxWidth: '650px',
-                                color: '#7A4A00',
-                                lineHeight: 1.6
-                            }}>
-                                Transform Your Business with <span style={{ color: '#E6A520', fontWeight: '700' }}>AI-Powered Solutions</span>
-                            </p>
-                            <div className="flex gap-md" style={{ flexWrap: 'wrap', justifyContent: 'center' }}>
-                                <Button onClick={() => setIsModalOpen(true)} variant="primary" size="large">
-                                    Explore Services
-                                </Button>
-                                <Button href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer" variant="outline" size="large">
-                                    Contact Us
-                                </Button>
-                            </div>
-                        </div>
+        <div className="home-page">
+            <SEO title="Smarter workflows. Better websites." description="Orion Automation helps Malaysian businesses grow with thoughtful websites, practical business automation, AI chatbots, and search marketing." canonical="/" structuredData={{ '@context': 'https://schema.org', '@type': 'Organization', name: 'Orion Automation', url: 'https://orionautomation.my', logo: 'https://orionautomation.my/favicon.png', contactPoint: { '@type': 'ContactPoint', telephone: '+601117993797', contactType: 'customer service' } }} />
+            <section className="home-hero">
+                <div className="container hero-grid">
+                    <div className="hero-copy">
+                        <p className="eyebrow"><span className="eyebrow-line" /> Built for the way you work</p>
+                        <h1>Less busywork.<br />More room<br className="desktop-break" /> <span>to grow.</span></h1>
+                        <p className="hero-description">Thoughtful websites, practical automation, and AI chatbots. We help your business work better, so you can focus on what’s next.</p>
+                        <div className="hero-actions"><a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Let’s talk about your project <span aria-hidden="true">↗</span></a><Link className="button button-secondary" to="/website-portfolio">Explore our work <span aria-hidden="true">→</span></Link></div>
+                        <div className="hero-footnote"><span className="location-dot" /> Based in Malaysia <span className="footnote-divider" /> Built around your business</div>
                     </div>
-
-                    {/* Services Grid */}
-                    <div className="grid grid-2" style={{ marginBottom: '4rem', gap: '1.5rem' }}>
-                        {services.map((service, index) => (
-                            <div key={index} className="glass-card hover-lift animate-me" style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'space-between',
-                                alignItems: 'center',
-                                textAlign: 'center',
-                                padding: '2.5rem 2rem'
-                            }}>
-                                <div style={{ marginBottom: '1.5rem' }} className="icon-hover">
-                                    <Icon name={service.icon} size={56} color="#E6A520" />
-                                </div>
-                                <div style={{ flex: 1 }}>
-                                    <h3 className="mb-sm" style={{ color: '#7A4A00', fontWeight: '700', fontSize: '1.4rem' }}>{service.title}</h3>
-                                    <p className="mb-md" style={{ fontSize: '0.95rem', color: '#7A4A00', opacity: 0.75, lineHeight: 1.6 }}>{service.description}</p>
-                                </div>
-                                <Link to={service.link} style={{ textDecoration: 'none', marginTop: 'auto' }}>
-                                    <Button variant="outline" size="small">
-                                        Learn More
-                                    </Button>
-                                </Link>
-                            </div>
-                        ))}
+                    <div className="workflow-illustration">
+                        <div className="workflow-topline"><span className="workflow-monogram" aria-hidden="true">o.</span><span>A simpler way to work</span><span className="workflow-label">THE ORION APPROACH</span></div>
+                        <div className="workflow-tabs" aria-label="Explore example workflows">{workflows.map((item, index) => <button type="button" key={item.title} aria-pressed={index === workflow} onClick={() => setWorkflow(index)}>{item.title}</button>)}</div>
+                        <div className="workflow-canvas" aria-live="polite" aria-atomic="true"><p className="workflow-caption">{selected.description}</p>{selected.steps.map(([icon, title, caption], index) => <React.Fragment key={`${workflow}-${index}`}><div className="workflow-step"><span className="workflow-icon"><Icon name={icon} size={22} color="currentColor" /></span><div><h2>{title}</h2><p>{caption}</p></div><span className="workflow-check" aria-hidden="true">✓</span></div>{index < 2 && <div className="workflow-connector" aria-hidden="true"><span /></div>}</React.Fragment>)}</div>
+                        <div className="workflow-footer"><span className="location-dot" /> Connected tools. Clear next steps.<span className="workflow-example">Illustrative workflow</span></div>
+                        <div className="workflow-note"><span aria-hidden="true">↗</span><span>Designed around people.<br /><strong>Powered by the right technology.</strong></span></div>
                     </div>
-
-                    {/* About Us */}
-                    <div className="glass-card flex-center flex-col text-center animate-me" style={{ 
-                        padding: '4rem 3rem', 
-                        marginBottom: '4rem',
-                        background: 'linear-gradient(135deg, rgba(255, 248, 231, 0.85) 0%, rgba(230, 165, 32, 0.08) 100%)'
-                    }}>
-                        <h2 style={sectionTitleStyle}>Pioneering the Future</h2>
-                        <p style={{ maxWidth: '700px', fontSize: '1.15rem', color: '#7A4A00', opacity: 0.85, lineHeight: 1.8, marginBottom: '2.5rem' }}>
-                            We believe that every business, regardless of size, deserves access to <span style={{ color: '#E6A520', fontWeight: '600' }}>world-class automation solutions</span>. Our team combines technical excellence with creative innovation.
-                        </p>
-                        <div style={{ display: 'flex', gap: '3rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                            <div style={{ textAlign: 'center' }}>
-                                <Icon name="chatbot" size={36} color="#7A4A00" />
-                                <p style={{ fontSize: '0.9rem', color: '#7A4A00', fontWeight: '600', opacity: 0.8, marginTop: '0.5rem' }}>AI-Powered</p>
-                            </div>
-                            <div style={{ textAlign: 'center' }}>
-                                <Icon name="zap" size={36} color="#E6A520" />
-                                <p style={{ fontSize: '0.9rem', color: '#7A4A00', fontWeight: '600', opacity: 0.8, marginTop: '0.5rem' }}>Fast</p>
-                            </div>
-                            <div style={{ textAlign: 'center' }}>
-                                <Icon name="shield" size={36} color="#7A4A00" />
-                                <p style={{ fontSize: '0.9rem', color: '#7A4A00', fontWeight: '600', opacity: 0.8, marginTop: '0.5rem' }}>Secure</p>
-                            </div>
-                            <div style={{ textAlign: 'center' }}>
-                                <Icon name="chart" size={36} color="#7A4A00" />
-                                <p style={{ fontSize: '0.9rem', color: '#7A4A00', fontWeight: '600', opacity: 0.8, marginTop: '0.5rem' }}>Scalable</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Our Process */}
-                    <div className="glass-card animate-me" style={{ padding: '3rem', marginBottom: '4rem' }}>
-                        <h2 style={sectionTitleStyle}>Our Process</h2>
-                        <p style={sectionSubtitleStyle}>A proven methodology that delivers results, every time.</p>
-                        <div style={{ 
-                            display: 'flex', 
-                            justifyContent: 'space-between', 
-                            alignItems: 'flex-start',
-                            position: 'relative',
-                            flexWrap: 'wrap',
-                            gap: '2rem'
-                        }}>
-                            {/* Connecting Line */}
-                            <div style={{
-                                position: 'absolute',
-                                top: '30px',
-                                left: '60px',
-                                right: '60px',
-                                height: '2px',
-                                background: 'linear-gradient(90deg, rgba(230, 165, 32, 0.3) 0%, rgba(230, 165, 32, 0.6) 50%, rgba(230, 165, 32, 0.3) 100%)',
-                                zIndex: 0
-                            }} />
-                            {processSteps.map((step, i) => (
-                                <div key={i} style={{ 
-                                    textAlign: 'center', 
-                                    flex: '1 1 200px',
-                                    position: 'relative',
-                                    zIndex: 1
-                                }}>
-                                    <div style={{
-                                        width: '60px', 
-                                        height: '60px', 
-                                        borderRadius: '50%', 
-                                        background: 'linear-gradient(135deg, rgba(230, 165, 32, 0.2) 0%, rgba(230, 165, 32, 0.1) 100%)',
-                                        border: '2px solid #E6A520',
-                                        display: 'flex', 
-                                        alignItems: 'center', 
-                                        justifyContent: 'center', 
-                                        margin: '0 auto 1rem auto'
-                                    }}>
-                                        <span style={{ 
-                                            fontSize: '1.2rem', 
-                                            fontWeight: '700', 
-                                            color: '#E6A520' 
-                                        }}>
-                                            {i + 1}
-                                        </span>
-                                    </div>
-                                    <div style={{ marginBottom: '0.5rem' }}>
-                                        <Icon name={step.icon} size={24} color="#E6A520" />
-                                    </div>
-                                    <h4 style={{ color: '#7A4A00', marginBottom: '0.5rem', fontWeight: '700' }}>{step.title}</h4>
-                                    <p style={{ fontSize: '0.9rem', color: '#7A4A00', opacity: 0.7 }}>{step.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* CTA */}
-                    <div className="glass-card flex-center flex-col text-center animate-me" style={{ 
-                        padding: '5rem 3rem',
-                        background: 'linear-gradient(135deg, rgba(230, 165, 32, 0.1) 0%, rgba(255, 248, 231, 0.9) 100%)'
-                    }}>
-                        <h2 className="mb-lg" style={{ 
-                            color: '#7A4A00', 
-                            fontSize: 'clamp(2rem, 4vw, 3rem)', 
-                            fontWeight: '800' 
-                        }}>
-                            Ready to Transform Your Business?
-                        </h2>
-                        <p style={{ 
-                            fontSize: '1.15rem', 
-                            color: '#7A4A00', 
-                            opacity: 0.8, 
-                            marginBottom: '2.5rem', 
-                            maxWidth: '550px' 
-                        }}>
-                            Let's scope your first automation, website, or AI chatbot — no fluff, no hard sell.
-                        </p>
-                        <Button onClick={() => setIsModalOpen(true)} variant="primary" size="large" className="btn-shimmer">
-                            Get Started Today
-                        </Button>
-                    </div>
-                </ScrollObserver>
-            </div>
-        </motion.div>
+                </div>
+            </section>
+            <div className="capability-strip"><div className="container"><span>Your next chapter, made practical.</span><div><span>Strategy</span><span aria-hidden="true">/</span><span>Design</span><span aria-hidden="true">/</span><span>Development</span><span aria-hidden="true">/</span><span>Automation</span></div></div></div>
+            <section className="section" aria-labelledby="home-services"><div className="container"><div className="section-heading-row"><div><p className="eyebrow">What we do</p><h2 id="home-services" className="section-heading">Good technology.<br />Better business.</h2></div><p className="section-description">Whether you need a stronger website or a smoother way to work, we turn the complex into something useful.</p></div><div className="home-services">{serviceItems.map(item => <Link to={item.path} className="home-service-card" key={item.path}><div className="service-card-top"><span className="service-card-icon"><Icon name={item.icon} size={28} color="currentColor" /></span><span className="card-index">{item.number}</span></div><h3>{item.title}</h3><p>{item.copy}</p><div className="service-card-bottom"><small>{item.tags}</small><span className="circle-arrow" aria-hidden="true">↗</span></div></Link>)}</div></div></section>
+            <section className="section selected-work-section" aria-labelledby="selected-work"><div className="container"><div className="section-heading-row"><div><p className="eyebrow">A closer look</p><h2 id="selected-work" className="section-heading">Distinct businesses.<br />Considered experiences.</h2></div><Link to="/website-portfolio" className="text-link">Explore the portfolio <span aria-hidden="true">↗</span></Link></div><div className="home-projects"><Link to="/sumika" className="home-project-card"><div className="project-image"><img src="/SUMI-KA/images/hero-bg.jpg" alt="Japanese yakitori dining at Sumi-Ka" loading="lazy" width="800" height="560" /><span className="project-open" aria-hidden="true">↗</span></div><div className="project-details"><div><span className="eyebrow">Hospitality · Website concept</span><h3>Sumi-Ka</h3></div><p>A warm digital welcome<br />for a Japanese dining experience.</p></div></Link><Link to="/hotzilla" className="home-project-card"><div className="project-image"><img src="/HOTZILLA/assets/hero-background.jpg" alt="Bold, food-focused Hotzilla restaurant website concept" loading="lazy" width="800" height="560" /><span className="project-open" aria-hidden="true">↗</span></div><div className="project-details"><div><span className="eyebrow">Food & beverage · Website concept</span><h3>Hotzilla</h3></div><p>A bold personality.<br />An easy path to the menu.</p></div></Link></div></div></section>
+            <section className="section home-process-section" aria-labelledby="home-process"><div className="container home-process-layout"><div><p className="eyebrow">How we work</p><h2 id="home-process" className="section-heading">A clear process.<br />From idea to launch.</h2><p className="section-description">You bring the business context. We bring the technical thinking. Together, we build something that fits.</p><a href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer" className="text-link">Tell us what you have in mind <span aria-hidden="true">↗</span></a></div><ol className="process-list">{[['Understand', 'We start with your goals, your team, and the work you want to improve.'], ['Plan', 'We agree on the scope, the right approach, and the next steps.'], ['Build', 'We design and develop your solution, with feedback along the way.'], ['Launch & refine', 'We help you launch and make the experience work in practice.']].map(([title, copy], index) => <li key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{copy}</p></div></li>)}</ol></div></section>
+            <section className="section home-faq-section" aria-labelledby="home-questions"><div className="container faq-layout"><div><p className="eyebrow">Before we begin</p><h2 id="home-questions" className="section-heading">A few good<br />questions.</h2><p className="section-description">Not sure where to start?<br />A conversation is a good first step.</p></div><div className="faq-list"><details><summary>What can you help my business with?</summary><p>We build websites, business automations, and AI chatbots, and help improve your visibility through SEO, AEO, and GEO. Start with the challenge you want to solve and we’ll help you explore the options.</p></details><details><summary>Can you work with tools we already use?</summary><p>Our automation work connects tools such as CRMs, calendars, email, and spreadsheets. We’ll review your current setup and the available integrations before recommending an approach.</p></details><details><summary>How much does a project cost?</summary><p>Our service pages include starting prices and package details. The final scope depends on what your business needs. <Link to="/website">Explore website packages</Link> or <Link to="/ai-automation">compare automation options</Link>.</p></details><details><summary>How do we get started?</summary><p>Send us a message on WhatsApp with a little about your business and what you’d like to improve. We’ll discuss the goals and help define a practical next step.</p></details></div></div></section>
+            <section className="section home-contact-section"><div className="container"><div className="contact-band"><div><p className="eyebrow">Your next step</p><h2>Let’s make work<br />work better.</h2><p>Tell us about your business. We’ll start with what matters to you.</p></div><div className="contact-band-actions"><a className="button button-light" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Start a conversation <span aria-hidden="true">↗</span></a><a href="mailto:marketing@orionautomation.xyz">Prefer email? Get in touch <span aria-hidden="true">→</span></a></div></div></div></section>
+        </div>
     );
 };
 

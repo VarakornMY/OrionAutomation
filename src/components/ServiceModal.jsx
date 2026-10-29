@@ -1,128 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import AccessibleModal from './AccessibleModal';
 
-const ServiceModal = ({ isOpen, onClose }) => {
-    if (!isOpen) return null;
-
+export default function ServiceModal({ isOpen, onClose }) {
     const services = [
-        {
-            title: 'AI Automation Workflow',
-            description: 'Workflow, pipeline & production internal system automation.',
-            link: '/ai-automation',
-            icon: '⚙️'
-        },
-        {
-            title: 'Premium Website',
-            description: 'High-performance websites with AI Chatbot & Modern Marketing built in.',
-            link: '/website',
-            icon: '💻'
-        },
-        {
-            title: 'AI Chatbot',
-            description: '24/7 conversational agent on your site & messaging apps.',
-            link: '/ai-chatbot',
-            icon: '🤖'
-        },
-        {
-            title: 'Modern Marketing',
-            description: 'SEO · AEO · GEO — be the answer everywhere.',
-            link: '/marketing',
-            icon: '📈'
-        }
+        { title: 'AI automation', description: 'Connect your tools and simplify repetitive work.', link: '/ai-automation' },
+        { title: 'Website development', description: 'A thoughtful digital home for your business.', link: '/website' },
+        { title: 'AI chatbots', description: 'Help customers find answers and take the next step.', link: '/ai-chatbot' },
+        { title: 'Modern marketing', description: 'Help customers discover your business.', link: '/marketing' },
     ];
-
-    return (
-        <AnimatePresence>
-            {isOpen && (
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    onClick={onClose}
-                    style={{
-                        position: 'fixed',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        background: 'rgba(0, 0, 0, 0.8)',
-                        backdropFilter: 'blur(5px)',
-                        zIndex: 2000,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        padding: '1rem',
-                    }}
-                >
-                    <motion.div
-                        initial={{ scale: 0.9, opacity: 0, y: 20 }}
-                        animate={{ scale: 1, opacity: 1, y: 0 }}
-                        exit={{ scale: 0.9, opacity: 0, y: 20 }}
-                        onClick={(e) => e.stopPropagation()}
-                        className="glass-card"
-                        style={{
-                            maxWidth: '400px',
-                            width: '100%',
-                            position: 'relative',
-                            border: '1px solid var(--color-gold)',
-                            boxShadow: 'var(--shadow-glow-gold)',
-                        }}
-                    >
-                        <button
-                            onClick={onClose}
-                            style={{
-                                position: 'absolute',
-                                top: '1rem',
-                                right: '1rem',
-                                background: 'transparent',
-                                border: 'none',
-                                color: 'var(--color-ivory)',
-                                fontSize: '1.5rem',
-                                cursor: 'pointer',
-                            }}
-                        >
-                            ×
-                        </button>
-
-                        <h2 className="text-center mb-lg" style={{ color: 'var(--color-gold)' }}>
-                            Choose a Service
-                        </h2>
-
-                        <div className="grid" style={{ gap: '1rem' }}>
-                            {services.map((service, index) => (
-                                <Link
-                                    key={index}
-                                    to={service.link}
-                                    onClick={onClose}
-                                    className="glass-card hover-lift"
-                                    style={{
-                                        textDecoration: 'none',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '1rem',
-                                        padding: '1rem',
-                                        background: 'rgba(255, 255, 255, 0.05)',
-                                        border: '1px solid rgba(197, 168, 128, 0.2)',
-                                    }}
-                                >
-                                    <span style={{ fontSize: '2rem' }}>{service.icon}</span>
-                                    <div>
-                                        <h3 style={{ fontSize: '1.2rem', marginBottom: '0.2rem', color: 'var(--color-ivory)' }}>
-                                            {service.title}
-                                        </h3>
-                                        <p style={{ fontSize: '0.9rem', opacity: 0.7, margin: 0 }}>
-                                            {service.description}
-                                        </p>
-                                    </div>
-                                </Link>
-                            ))}
-                        </div>
-                    </motion.div>
-                </motion.div>
-            )}
-        </AnimatePresence>
-    );
-};
-
-export default ServiceModal;
+    return <AccessibleModal isOpen={isOpen} onClose={onClose} titleId="services-dialog-title"><p className="eyebrow">What we do</p><h2 id="services-dialog-title">Find your starting point.</h2><div className="service-choice-list">{services.map(service=><Link to={service.link} onClick={onClose} key={service.link}><div><h3>{service.title}</h3><p>{service.description}</p></div><span aria-hidden="true">↗</span></Link>)}</div></AccessibleModal>;
+}

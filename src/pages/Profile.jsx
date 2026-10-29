@@ -1,162 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useUser } from '../context/UserContext';
-import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
+import '../styles/supporting.css';
 
-const Profile = () => {
-    const { user, logout, updateProfile } = useUser();
-    const navigate = useNavigate();
-    const [isEditing, setIsEditing] = useState(false);
-    const [formData, setFormData] = useState({
-        username: ''
-    });
-
-    useEffect(() => {
-        if (!user) {
-            navigate('/auth');
-        } else {
-            setFormData({
-                username: user.username
-            });
-        }
-    }, [user, navigate]);
-
-    if (!user) return null;
-
-    const handleSave = (e) => {
-        e.preventDefault();
-        updateProfile(formData);
-        setIsEditing(false);
-    };
-
-    return (
-        <div style={{ position: 'relative', minHeight: '100vh', paddingTop: '8rem' }}>
-            <div className="container">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="glass-card"
-                    style={{ maxWidth: '800px', margin: '0 auto', padding: 'var(--spacing-xl)' }}
-                >
-                    {/* Header */}
-                    <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 'var(--spacing-lg)',
-                        marginBottom: 'var(--spacing-xl)',
-                        borderBottom: '1px solid rgba(197, 168, 128, 0.2)',
-                        paddingBottom: 'var(--spacing-lg)'
-                    }}>
-                        <img
-                            src={user.avatar}
-                            alt="Profile"
-                            style={{
-                                width: '100px',
-                                height: '100px',
-                                borderRadius: '50%',
-                                border: '2px solid var(--color-gold)'
-                            }}
-                        />
-                        <div style={{ flex: 1 }}>
-                            {isEditing ? (
-                                <form onSubmit={handleSave} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                                    <input
-                                        type="text"
-                                        value={formData.username}
-                                        onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-                                        style={{
-                                            background: 'rgba(0,0,0,0.3)',
-                                            border: '1px solid var(--color-gold)',
-                                            padding: '0.5rem',
-                                            color: 'white',
-                                            borderRadius: '4px'
-                                        }}
-                                    />
-                                    <div style={{ display: 'flex', gap: '0.5rem' }}>
-                                        <button type="submit" className="btn btn-primary" style={{ padding: '0.25rem 1rem', fontSize: '0.8rem' }}>Save</button>
-                                        <button type="button" onClick={() => setIsEditing(false)} className="btn btn-secondary" style={{ padding: '0.25rem 1rem', fontSize: '0.8rem' }}>Cancel</button>
-                                    </div>
-                                </form>
-                            ) : (
-                                <>
-                                    <h1 style={{ fontSize: '2rem', marginBottom: '0.25rem' }}>@{user.username}</h1>
-                                    <p style={{ fontSize: '0.9rem', opacity: 0.6 }}>Member since {user.joinDate}</p>
-                                </>
-                            )}
-                        </div>
-                        {!isEditing && (
-                            <button
-                                onClick={() => setIsEditing(true)}
-                                className="btn btn-secondary"
-                            >
-                                Edit Profile
-                            </button>
-                        )}
-                    </div>
-
-                    {/* Current Plan */}
-                    <div style={{ marginBottom: 'var(--spacing-xl)' }}>
-                        <h2 style={{ color: 'var(--color-gold)', marginBottom: 'var(--spacing-md)' }}>Current Plan</h2>
-                        {user.currentPlan ? (
-                            <div style={{
-                                background: 'rgba(197, 168, 128, 0.1)',
-                                padding: 'var(--spacing-lg)',
-                                borderRadius: 'var(--radius-md)',
-                                border: '1px solid var(--color-gold)'
-                            }}>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                                    <h3 style={{ fontSize: '1.5rem', margin: 0 }}>{user.currentPlan.title}</h3>
-                                    <span style={{
-                                        background: 'var(--color-gold)',
-                                        color: 'black',
-                                        padding: '0.25rem 0.75rem',
-                                        borderRadius: '20px',
-                                        fontWeight: 'bold',
-                                        fontSize: '0.8rem'
-                                    }}>ACTIVE</span>
-                                </div>
-                                <p style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{user.currentPlan.price}</p>
-                                <p style={{ opacity: 0.7 }}>Purchased on: {user.currentPlan.purchaseDate}</p>
-                            </div>
-                        ) : (
-                            <div style={{
-                                textAlign: 'center',
-                                padding: 'var(--spacing-xl)',
-                                background: 'rgba(255,255,255,0.05)',
-                                borderRadius: 'var(--radius-md)'
-                            }}>
-                                <p style={{ marginBottom: '1rem', opacity: 0.7 }}>You haven't purchased any plans yet.</p>
-                                <button onClick={() => navigate('/')} className="btn btn-primary">Browse Services</button>
-                            </div>
-                        )}
-                    </div>
-
-                    {/* Account Actions */}
-                    <div style={{ borderTop: '1px solid rgba(197, 168, 128, 0.2)', paddingTop: 'var(--spacing-lg)' }}>
-                        <button
-                            onClick={() => {
-                                logout();
-                                navigate('/');
-                            }}
-                            style={{
-                                background: 'transparent',
-                                border: '1px solid #ff4444',
-                                color: '#ff4444',
-                                padding: '0.5rem 1.5rem',
-                                borderRadius: 'var(--radius-sm)',
-                                cursor: 'pointer',
-                                transition: 'all 0.3s ease'
-                            }}
-                            onMouseEnter={(e) => e.target.style.background = 'rgba(255, 68, 68, 0.1)'}
-                            onMouseLeave={(e) => e.target.style.background = 'transparent'}
-                        >
-                            Log Out
-                        </button>
-                    </div>
-                </motion.div>
-            </div>
-        </div>
-    );
-};
-
-export default Profile;
+export default function Profile() {
+    const { user, logout, updateProfile, loading } = useUser();
+    const [username, setUsername] = useState('');
+    const [message, setMessage] = useState('');
+    useEffect(() => { setUsername(user?.username || ''); }, [user?.username]);
+    function save(event) {
+        event.preventDefault();
+        if (!username.trim()) { setMessage('Please enter a display name.'); return; }
+        updateProfile({ username: username.trim() });
+        setMessage('Your display name has been saved on this browser.');
+    }
+    return <div className="page-shell support-state-page"><SEO title="Browser profile" description="Your locally saved Orion Automation profile." canonical="/profile" robots="noindex, nofollow" /><section className="container support-state-wrap"><div className="support-state-card">
+        <p className="eyebrow">Saved on this device</p><h1>Your browser profile.</h1>
+        {loading ? <p role="status">Loading your profile…</p> : user ? <>
+            <p>This information is saved in this browser. Online account access and subscription management are not available yet.</p>
+            <form onSubmit={save} className="support-form"><label htmlFor="profile-display-name">Display name</label><input id="profile-display-name" type="text" autoComplete="nickname" value={username} onChange={event=>{setUsername(event.target.value);setMessage('');}} maxLength={80} required /><p className="support-field-hint">Use the name you’d like us to address you by.</p><button className="button button-primary" type="submit">Save display name</button><p className="support-form-message" role="status">{message}</p></form>
+            <div className="support-profile-actions"><Link to="/website" className="support-text-link">Explore our services <span aria-hidden="true">→</span></Link><button type="button" className="support-text-button" onClick={logout}>Clear browser profile</button></div>
+        </> : <><p>You don’t have a profile saved on this browser. For project updates or service enquiries, our team is ready to help.</p><div className="support-actions"><a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Contact the team <span aria-hidden="true">↗</span></a><Link className="button button-secondary" to="/">Back to home</Link></div></>}
+    </div></section></div>;
+}
