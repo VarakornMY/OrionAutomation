@@ -117,7 +117,7 @@ test('interaction motion respects reduced-motion preferences', async ({ page }) 
 test('visual effects can be paused persistently without hiding content', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'no-preference' });
     await page.goto('/');
-    await expect(page.locator('.hero-laser canvas')).toHaveCount(1);
+    await expect(page.locator('.site-atmosphere canvas')).toHaveCount(1);
     await page.getByRole('button', { name: 'Pause visual effects' }).click();
     await expect(page.locator('canvas')).toHaveCount(0);
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
@@ -125,7 +125,7 @@ test('visual effects can be paused persistently without hiding content', async (
     await expect(page.getByRole('button', { name: 'Enable visual effects' })).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('canvas')).toHaveCount(0);
     await page.getByRole('button', { name: 'Enable visual effects' }).click();
-    await expect(page.locator('.hero-laser canvas')).toHaveCount(1);
+    await expect(page.locator('.site-atmosphere canvas')).toHaveCount(1);
 });
 
 test('content and navigation work when WebGL is unavailable', async ({ page }) => {

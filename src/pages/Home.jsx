@@ -1,4 +1,4 @@
-﻿import React, { lazy, Suspense, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { business } from '../data/business';
@@ -8,7 +8,6 @@ import Text3DFlip from '../components/effects/Text3DFlip';
 import { useSiteMotion } from '../components/effects/MotionPreferences';
 import '../styles/home.css';
 
-const LaserFlow = lazy(() => import('../components/effects/LaserFlow'));
 const services = [
     { title: 'Websites', path: '/website', link: 'Website packages', description: 'A considered first impression. Built around your business, made for every screen.', items: ['Custom design', 'Online stores', 'Content & SEO'], icon: 'website' },
     { title: 'Automation', path: '/ai-automation', link: 'Automation packages', description: 'Less repetition. More room to work. Connect the tools your team already uses.', items: ['Connected tools', 'Workflows', 'Internal systems'], icon: 'automation' },
@@ -24,12 +23,10 @@ function ServiceIcon({ type }) {
     </svg>;
 }
 export default function Home() {
-    const surfaceRef = useRef(null);
     const { enabled } = useSiteMotion();
     return <div className="home-page">
         <SEO title="Websites & automation" description={business.description} canonical="/" />
         <section className="studio-hero">
-            <div className="hero-laser" aria-hidden="true">{enabled && <Suspense fallback={null}><LaserFlow surfaceRef={surfaceRef} beamPosition={0.76} color="#EC7267" intensity={1.6} flare={1.1} spread={1.7} fog={0.15} dust={0.5} speed={0.6} dpr={1} /></Suspense>}</div>
             <div className="container studio-hero-layout">
                 <div className="hero-copy">
                     <h1 aria-label="Websites & automation.">
@@ -39,7 +36,7 @@ export default function Home() {
                     <p>Thoughtfully built websites. Seamlessly connected tools.<br className="desktop-break" /> More space for the work that matters.</p>
                     <div className="studio-actions"><Link className="button button-primary" to="/contact">Start a project</Link><a className="button button-secondary" href="#services">Explore services</a></div>
                 </div>
-                <div className="hero-art" aria-hidden="true"><div className="hero-orbit orbit-one" /><div className="hero-orbit orbit-two" /><div className="hero-brand-glass" ref={surfaceRef}><div className="brand-art-line" /><img src="/brand/orion-logo.jpg" alt="" width="500" height="500" /><span>Ideas, connected.</span><div className="brand-art-dots"><i /><i /><i /></div></div><span className="orbit-label label-web">Websites</span><span className="orbit-label label-auto">Automation</span></div>
+                <div className="hero-art" aria-hidden="true"><div className="hero-orbit orbit-one" /><div className="hero-orbit orbit-two" /><div className="hero-brand-glass"><div className="brand-art-line" /><img src="/brand/orion-logo.jpg" alt="" width="500" height="500" /><span>Ideas, connected.</span><div className="brand-art-dots"><i /><i /><i /></div></div><span className="orbit-label label-web">Websites</span><span className="orbit-label label-auto">Automation</span></div>
             </div>
             <div className="container hero-bottom"><span>Built for your business.</span><a href="#services">Discover what we do<span className="scroll-line" aria-hidden="true" /></a><span>Based in Malaysia</span></div>
         </section>
