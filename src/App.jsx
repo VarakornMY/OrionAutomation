@@ -22,6 +22,8 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
+import SiteAtmosphere from './components/effects/SiteAtmosphere';
+import { MotionPreferences } from './components/effects/MotionPreferences';
 
 // The CMS has its own chrome — hide the public Navbar/Footer/widget there.
 const Shell = () => {
@@ -47,6 +49,7 @@ const Shell = () => {
 
     return (
         <div className="site-shell">
+            {!isAdmin && <SiteAtmosphere />}
             <a href="#main-content" className="skip-link">Skip to main content</a>
             {!isAdmin && <Navbar />}
             <main id="main-content" className={`site-main ${isAdmin ? 'is-admin' : ''}`} ref={mainRef} tabIndex={-1}>
@@ -80,7 +83,7 @@ export function Site() {
         <ThemeProvider>
             <UserProvider>
                 <AdminProvider>
-                    <Shell />
+                    <MotionPreferences><Shell /></MotionPreferences>
                 </AdminProvider>
             </UserProvider>
         </ThemeProvider>

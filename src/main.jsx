@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './styles/theme.css'
 import './styles/interactions.css'
+import './styles/glass.css'
 
 import { HelmetProvider } from 'react-helmet-async'
 

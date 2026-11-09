@@ -1,4 +1,5 @@
 import React from 'react';
+import Reveal from '../components/effects/Reveal';
 import { Link } from 'react-router-dom';
 import PricingCard from '../components/PricingCard';
 import SEO from '../components/SEO';
@@ -74,16 +75,17 @@ const Website = () => {
     return (
         <div className="page-shell service-page">
             <SEO title="Website Design & Development" description="Custom business websites and e-commerce development for Malaysian businesses." canonical="/website" structuredData={structuredData} />
-            <section className="page-hero">
+            <Reveal><section className="page-hero">
                 <div className="container">
                     <h1 className="page-title">Websites</h1>
+                    <p className="page-description">Business websites and online stores, designed for your customers and built for every screen.</p>
                     <div className="service-actions">
                         <a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Discuss a website</a>
                         <a className="button button-secondary" href="#website-pricing">Packages</a>
                     </div>
                 </div>
-            </section>
-            <section className="section" aria-labelledby="website-foundation">
+            </section></Reveal>
+            <Reveal><section className="section" aria-labelledby="website-foundation">
                 <div className="container">
                     <h2 className="section-heading" id="website-foundation">Design & development</h2>
                     <div className="feature-grid">
@@ -94,8 +96,8 @@ const Website = () => {
                         ].map(([title, description]) => <article className="surface-card" key={title}><h3>{title}</h3><p>{description}</p></article>)}
                     </div>
                 </div>
-            </section>
-            <section className="section" aria-labelledby="website-related">
+            </section></Reveal>
+            <Reveal><section className="section" aria-labelledby="website-related">
                 <div className="container">
                     <h2 className="section-heading" id="website-related">Integrations</h2>
                     <div className="feature-grid" data-columns="2">
@@ -103,8 +105,8 @@ const Website = () => {
                         <article className="surface-card"><h3>Search & marketing</h3><p>Technical SEO and structured content for search engines, answer engines, and generative AI.</p><Link className="service-inline-link" to="/marketing">Marketing services</Link></article>
                     </div>
                 </div>
-            </section>
-            <section className="section" aria-labelledby="website-process">
+            </section></Reveal>
+            <Reveal><section className="section" aria-labelledby="website-process">
                 <div className="container">
                     <h2 className="section-heading" id="website-process">Process</h2>
                     <ol className="service-process">
@@ -116,16 +118,16 @@ const Website = () => {
                         ].map(([title, description]) => <li key={title}><h3>{title}</h3><p>{description}</p></li>)}
                     </ol>
                 </div>
-            </section>
-            <section className="section" id="website-pricing" aria-labelledby="website-pricing-heading">
+            </section></Reveal>
+            <Reveal><section className="section" id="website-pricing" aria-labelledby="website-pricing-heading">
                 <div className="container">
                     <h2 className="section-heading" id="website-pricing-heading">Packages</h2>
                     <div className="pricing-grid">{packages.map((pkg) => <PricingCard key={pkg.title} {...pkg} period="" />)}</div>
                 </div>
-            </section>
-            <section className="section" aria-labelledby="website-next-step">
+            </section></Reveal>
+            <Reveal><section className="section" aria-labelledby="website-next-step">
                 <div className="container"><div className="contact-band"><h2 id="website-next-step">Discuss your website</h2><a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Contact Orion</a></div></div>
-            </section>
+            </section></Reveal>
         </div>
     );
 };

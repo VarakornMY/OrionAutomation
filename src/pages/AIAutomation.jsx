@@ -1,4 +1,5 @@
 import React from 'react';
+import Reveal from '../components/effects/Reveal';
 import PricingCard from '../components/PricingCard';
 import SEO from '../components/SEO';
 import '../styles/services.css';
@@ -104,16 +105,17 @@ const AIAutomation = () => {
     return (
         <div className="page-shell service-page">
             <SEO title="Business Automation" description="Workflow automation, data pipelines, and internal systems for Malaysian businesses." canonical="/ai-automation" structuredData={structuredData} />
-            <section className="page-hero">
+            <Reveal><section className="page-hero">
                 <div className="container">
                     <h1 className="page-title">Business automation</h1>
+                    <p className="page-description">Connect your tools, simplify repetitive tasks, and keep your business moving.</p>
                     <div className="service-actions">
                         <a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Discuss a project</a>
                         <a className="button button-secondary" href="#automation-pricing">Packages</a>
                     </div>
                 </div>
-            </section>
-            <section className="section" aria-labelledby="automation-capabilities">
+            </section></Reveal>
+            <Reveal><section className="section" aria-labelledby="automation-capabilities">
                 <div className="container">
                     <h2 className="section-heading" id="automation-capabilities">Services</h2>
                     <div className="feature-grid">
@@ -126,8 +128,8 @@ const AIAutomation = () => {
                         ))}
                     </div>
                 </div>
-            </section>
-            <section className="section" aria-labelledby="automation-use-cases">
+            </section></Reveal>
+            <Reveal><section className="section" aria-labelledby="automation-use-cases">
                 <div className="container">
                     <h2 className="section-heading" id="automation-use-cases">Applications</h2>
                     <div className="feature-grid">
@@ -138,16 +140,16 @@ const AIAutomation = () => {
                         ].map(([title, description]) => <article className="surface-card" key={title}><h3>{title}</h3><p>{description}</p></article>)}
                     </div>
                 </div>
-            </section>
-            <section className="section" id="automation-pricing" aria-labelledby="automation-pricing-heading">
+            </section></Reveal>
+            <Reveal><section className="section" id="automation-pricing" aria-labelledby="automation-pricing-heading">
                 <div className="container">
                     <h2 className="section-heading" id="automation-pricing-heading">Packages</h2>
                     <div className="pricing-grid">{plans.map((plan) => <PricingCard key={plan.title} {...plan} />)}</div>
                 </div>
-            </section>
-            <section className="section" aria-labelledby="automation-next-step">
+            </section></Reveal>
+            <Reveal><section className="section" aria-labelledby="automation-next-step">
                 <div className="container"><div className="contact-band"><h2 id="automation-next-step">Discuss your workflow</h2><a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Contact Orion</a></div></div>
-            </section>
+            </section></Reveal>
         </div>
     );
 };

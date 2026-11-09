@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import { MotionToggle } from './effects/MotionPreferences';
 
 const services = [
     ['/ai-automation', 'Business automation'],
@@ -11,7 +12,7 @@ const services = [
 export const Brand = () => (
     <Link to="/" className="brand" aria-label="Orion Automation home">
         <img className="brand-logo" src="/brand/orion-logo.jpg" alt="" width="58" height="58" />
-        <span className="brand-wordmark">Orion</span>
+        <span className="brand-wordmark">ORION<span>AUTOMATION</span></span>
     </Link>
 );
 
@@ -78,6 +79,7 @@ const Navbar = () => {
                     <NavLink to="/blog" className="nav-link">Journal</NavLink>
                     <NavLink to="/about-us" className="nav-link">About us</NavLink>
                 </nav>
+                <MotionToggle />
                 <NavLink className="button button-primary header-contact" to="/contact">Contact</NavLink>
                 <button type="button" className="mobile-menu-toggle" ref={menuButtonRef} onClick={() => { setMenuOpen(!menuOpen); setServicesOpen(false); }} aria-expanded={menuOpen} aria-controls="mobile-navigation" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}>
                     <span>{menuOpen ? 'Close' : 'Menu'}</span><span className={`menu-lines ${menuOpen ? 'is-open' : ''}`} aria-hidden="true"><span /><span /></span>

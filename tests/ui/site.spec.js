@@ -89,16 +89,16 @@ test('navigation works with keyboard and closes after route changes', async ({ p
     }
 });
 
-test('service selection and questions work with keyboard', async ({ page }) => {
+test('service cards and questions work with keyboard', async ({ page }) => {
     await page.goto('/');
-    const websites = page.getByRole('button', { name: 'Websites', exact: true });
+    const websites = page.locator('.service-directory').getByRole('link', { name: 'Websites', exact: true });
     await websites.focus();
     await page.keyboard.press('Enter');
-    await expect(websites).toHaveAttribute('aria-expanded', 'true');
-    await expect(page.locator('#service-panel-0').getByRole('link', { name: 'Website packages' })).toBeVisible();
-    await page.getByRole('button', { name: 'Automation', exact: true }).click();
-    await expect(websites).toHaveAttribute('aria-expanded', 'false');
-    await expect(page.locator('#service-panel-1').getByRole('link', { name: 'Automation packages' })).toBeVisible();
+    await expect(page).toHaveURL('/website');
+    await page.goto('/');
+    await page.locator('.service-directory').getByRole('link', { name: 'Automation packages' }).click();
+    await expect(page).toHaveURL('/ai-automation');
+    await page.goto('/');
     await page.getByText('How much does a project cost?', { exact: true }).click();
     await expect(page.locator('.question-answer').getByRole('link', { name: 'automation packages' })).toBeVisible();
 });
@@ -106,13 +106,57 @@ test('service selection and questions work with keyboard', async ({ page }) => {
 test('interaction motion respects reduced-motion preferences', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/');
-    await page.getByRole('button', { name: 'Websites', exact: true }).click();
-    await expect(page.locator('#service-panel-0').getByRole('link', { name: 'Website packages' })).toBeVisible();
-    const transition = await page.locator('#service-panel-0').evaluate(element => parseFloat(getComputedStyle(element).transitionDuration));
+    await page.locator('.service-directory').getByRole('link', { name: 'Website packages' }).scrollIntoViewIfNeeded();
+    const transition = await page.locator('.service-entry').first().evaluate(element => parseFloat(getComputedStyle(element).transitionDuration));
     expect(transition).toBeLessThanOrEqual(.001);
-    await expect(page.locator('.studio-logo-stage img')).toHaveCSS('transform', 'none');
-    await expect(page.locator('.studio-hero p')).toHaveCount(0);
-    await expect(page.locator('.eyebrow, .page-description, .section-description')).toHaveCount(0);
+    await expect(page.locator('.hero-flip')).toHaveText('automation.');
+    await expect(page.locator('canvas')).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Motion reduced by system preference' })).toBeDisabled();
+});
+
+test('visual effects can be paused persistently without hiding content', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
+    await page.goto('/');
+    await expect(page.locator('.hero-laser canvas')).toHaveCount(1);
+    await page.getByRole('button', { name: 'Pause visual effects' }).click();
+    await expect(page.locator('canvas')).toHaveCount(0);
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+    await page.reload();
+    await expect(page.getByRole('button', { name: 'Enable visual effects' })).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('canvas')).toHaveCount(0);
+    await page.getByRole('button', { name: 'Enable visual effects' }).click();
+    await expect(page.locator('.hero-laser canvas')).toHaveCount(1);
+});
+
+test('content and navigation work when WebGL is unavailable', async ({ page }) => {
+    await page.addInitScript(() => {
+        const original = HTMLCanvasElement.prototype.getContext;
+        HTMLCanvasElement.prototype.getContext = function(type, ...args) {
+            return type.startsWith('webgl') ? null : original.call(this, type, ...args);
+        };
+    });
+    await page.goto('/');
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+    await page.getByRole('link', { name: 'Start a project', exact: true }).click();
+    await expect(page.getByRole('heading', { name: 'Contact Orion', exact: true })).toBeVisible();
+});
+
+test('hero text returns to its original size after the 3D hover effect', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop');
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
+    await page.goto('/');
+    const letter = page.locator('.hero-flip .flip-front').first();
+    await expect(letter).toBeVisible();
+    const before = await letter.boundingBox();
+    await page.locator('.hero-flip').hover();
+    await expect.poll(async () => {
+        const current = await letter.boundingBox();
+        return Math.abs(current.x - before.x) + Math.abs(current.width - before.width);
+    }).toBeLessThan(1);
+    await page.waitForTimeout(1600);
+    const after = await letter.boundingBox();
+    expect(Math.abs(after.x - before.x)).toBeLessThan(1);
+    expect(Math.abs(after.width - before.width)).toBeLessThan(1);
 });
 
 test('company artwork is used and package navigation reaches the right section', async ({ page }) => {

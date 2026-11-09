@@ -1,8 +1,8 @@
 .service-page {
-    --service-ink: #30231f;
-    --service-muted: #5b4941;
-    --service-accent: #9f0606;
-    --service-line: #a89b85;
+    --service-ink: var(--color-ink);
+    --service-muted: var(--color-muted);
+    --service-accent: var(--color-accent);
+    --service-line: var(--color-border);
     color: var(--service-ink);
 }
 
@@ -19,22 +19,22 @@
 .service-page .surface-card h3 { font-size: 1.2rem; line-height: 1.4; letter-spacing: -0.025em; margin: 0 0 1rem; }
 .service-page .surface-card p { color: var(--service-muted); font-size: 0.95rem; line-height: 1.75; margin: 0; }
 .service-page .detail-list, .pricing-card .detail-list { display: grid; gap: 0; padding: 0; margin: 1.4rem 0 0; list-style: none; }
-.service-page .detail-list li, .pricing-card .detail-list li { padding: 0.7rem 0; border: 0; color: var(--service-muted, #5b4941); font-size: 0.9rem; line-height: 1.6; }
-.service-page .detail-list li + li, .pricing-card .detail-list li + li { border-top: 1px solid #b9ad98; }
+.service-page .detail-list li, .pricing-card .detail-list li { padding: 0.7rem 0; border: 0; color: var(--service-muted, var(--color-muted)); font-size: 0.9rem; line-height: 1.6; }
+.service-page .detail-list li + li, .pricing-card .detail-list li + li { border-top: 1px solid var(--color-border); }
 .service-inline-link { position: relative; display: inline-flex; color: var(--service-accent); font-size: 0.9rem; font-weight: 600; padding: 0.65rem 0; margin-top: 1.1rem; min-height: 44px; text-decoration: none; }
 .service-inline-link::after { content: ''; position: absolute; inset: auto 0 0.45rem; height: 1px; background: currentColor; transform-origin: left; transform: scaleX(0.25); transition: transform 180ms ease; }
 .service-inline-link:hover::after, .service-inline-link:focus-visible::after { transform: scaleX(1); }
 
 .service-page .pricing-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; align-items: stretch; }
-.pricing-card { min-width: 0; display: flex; flex-direction: column; padding: clamp(1.25rem, 2.2vw, 2rem); border: 1px solid #a89b85; border-radius: 0; background: transparent; color: #30231f; transition: border-color 200ms ease, background-color 200ms ease; }
-.pricing-card.is-popular { border-top: 3px solid #9f0606; padding-top: calc(clamp(1.25rem, 2.2vw, 2rem) - 2px); }
-.pricing-card:focus-within { border-color: #9f0606; background: #d9cdb4; }
+.pricing-card { min-width: 0; display: flex; flex-direction: column; padding: clamp(1.25rem, 2.2vw, 2rem); border: 1px solid var(--color-border); border-radius: 0; background: transparent; color: var(--color-ink); transition: border-color 200ms ease, background-color 200ms ease; }
+.pricing-card.is-popular { border-top: 3px solid var(--color-accent); padding-top: calc(clamp(1.25rem, 2.2vw, 2rem) - 2px); }
+.pricing-card:focus-within { border-color: var(--color-accent); background: var(--color-soft); }
 .pricing-card .pricing-card-heading { min-height: 3.1rem; margin: 0 0 1.5rem; font-size: 1.1rem; font-weight: 600; line-height: 1.45; letter-spacing: -0.025em; }
-.pricing-card .pricing-price { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 0.4rem; margin: 0; color: #30231f; line-height: 1.3; }
+.pricing-card .pricing-price { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 0.4rem; margin: 0; color: var(--color-ink); line-height: 1.3; }
 .pricing-price strong { font-size: clamp(1.75rem, 2.5vw, 2.45rem); font-weight: 600; letter-spacing: -0.05em; }
-.pricing-price span { color: #5b4941; font-size: 0.85rem; }
-.pricing-card .pricing-note { color: #5b4941; font-size: 0.85rem; line-height: 1.65; margin: 0.7rem 0 0; min-height: 2.65rem; }
-.pricing-card .detail-list { margin-top: 1.5rem; margin-bottom: 1.8rem; padding-top: 0.7rem; border-top: 1px solid #a89b85; flex: 1; }
+.pricing-price span { color: var(--color-muted); font-size: 0.85rem; }
+.pricing-card .pricing-note { color: var(--color-muted); font-size: 0.85rem; line-height: 1.65; margin: 0.7rem 0 0; min-height: 2.65rem; }
+.pricing-card .detail-list { margin-top: 1.5rem; margin-bottom: 1.8rem; padding-top: 0.7rem; border-top: 1px solid var(--color-border); flex: 1; }
 .pricing-card .button { width: 100%; justify-content: center; margin-top: auto; transition: background-color 180ms ease, color 180ms ease, transform 120ms ease; }
 .pricing-card .button:active { transform: scale(0.98); }
 
@@ -66,7 +66,7 @@
 }
 
 @media (hover: hover) {
-    .pricing-card:hover { border-color: #9f0606; background: #d9cdb4; }
+    .pricing-card:hover { border-color: var(--color-accent); background: var(--color-soft); }
 }
 @media (max-width: 1000px) {
     .service-page .feature-grid { gap: 1.5rem; }

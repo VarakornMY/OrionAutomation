@@ -1,4 +1,5 @@
 import React from 'react';
+import Reveal from '../components/effects/Reveal';
 import PricingCard from '../components/PricingCard';
 import SEO from '../components/SEO';
 import '../styles/services.css';
@@ -68,16 +69,17 @@ const AIChatbot = () => {
     return (
         <div className="page-shell service-page">
             <SEO title="AI Chatbots" description="Chatbots for customer enquiries, bookings, and follow-ups across WhatsApp, Messenger, Instagram, and your website." canonical="/ai-chatbot" structuredData={structuredData} />
-            <section className="page-hero">
+            <Reveal><section className="page-hero">
                 <div className="container">
                     <h1 className="page-title">AI chatbots</h1>
+                    <p className="page-description">Turn customer questions into conversations, appointments, and organised follow-ups.</p>
                     <div className="service-actions">
                         <a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Discuss a chatbot</a>
                         <a className="button button-secondary" href="#chatbot-pricing">Plans</a>
                     </div>
                 </div>
-            </section>
-            <section className="section" aria-labelledby="chatbot-features">
+            </section></Reveal>
+            <Reveal><section className="section" aria-labelledby="chatbot-features">
                 <div className="container">
                     <h2 className="section-heading" id="chatbot-features">Features</h2>
                     <div className="feature-grid" data-columns="2">
@@ -89,8 +91,8 @@ const AIChatbot = () => {
                         ].map(([title, description]) => <article className="surface-card" key={title}><h3>{title}</h3><p>{description}</p></article>)}
                     </div>
                 </div>
-            </section>
-            <section className="section" aria-labelledby="chatbot-use-cases">
+            </section></Reveal>
+            <Reveal><section className="section" aria-labelledby="chatbot-use-cases">
                 <div className="container">
                     <h2 className="section-heading" id="chatbot-use-cases">Applications</h2>
                     <div className="feature-grid">
@@ -101,14 +103,14 @@ const AIChatbot = () => {
                         ].map(([title, description]) => <article className="surface-card" key={title}><h3>{title}</h3><p>{description}</p></article>)}
                     </div>
                 </div>
-            </section>
-            <section className="section" id="chatbot-pricing" aria-labelledby="chatbot-pricing-heading">
+            </section></Reveal>
+            <Reveal><section className="section" id="chatbot-pricing" aria-labelledby="chatbot-pricing-heading">
                 <div className="container">
                     <h2 className="section-heading" id="chatbot-pricing-heading">Plans</h2>
                     <div className="pricing-grid">{plans.map((plan) => <PricingCard key={plan.title} {...plan} />)}</div>
                 </div>
-            </section>
-            <section className="section" aria-labelledby="chatbot-faq">
+            </section></Reveal>
+            <Reveal><section className="section" aria-labelledby="chatbot-faq">
                 <div className="container">
                     <h2 className="section-heading" id="chatbot-faq">Questions</h2>
                     <div className="service-faq">
@@ -117,10 +119,10 @@ const AIChatbot = () => {
                         <details><summary>How do I choose the right plan?</summary><div className="faq-answer"><p>Tell us where your enquiries come from and which tasks your team repeats most often. We will help you choose the platforms and workflows to include.</p></div></details>
                     </div>
                 </div>
-            </section>
-            <section className="section" aria-labelledby="chatbot-next-step">
+            </section></Reveal>
+            <Reveal><section className="section" aria-labelledby="chatbot-next-step">
                 <div className="container"><div className="contact-band"><h2 id="chatbot-next-step">Discuss your chatbot</h2><a className="button button-primary" href="https://wa.me/601117993797" target="_blank" rel="noopener noreferrer">Contact Orion</a></div></div>
-            </section>
+            </section></Reveal>
         </div>
     );
 };

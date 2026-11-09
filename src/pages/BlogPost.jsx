@@ -1,3 +1,4 @@
+import Reveal from '../components/effects/Reveal';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import SEO from '../components/SEO';
@@ -289,7 +290,7 @@ const BlogPost = () => {
             </article>
 
             {related.length > 0 && (
-                <section className="blog-related" aria-labelledby="related-title">
+                <Reveal><section className="blog-related" aria-labelledby="related-title">
                     <div className="blog-wrap">
                         <h2 id="related-title" className="blog-related__title">
                             Keep reading
@@ -318,7 +319,7 @@ const BlogPost = () => {
                             </Link>
                         </div>
                     </div>
-                </section>
+                </section></Reveal>
             )}
         </div>
     );

@@ -1,3 +1,4 @@
+import Reveal from '../components/effects/Reveal';
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
@@ -111,7 +112,7 @@ const Blog = () => {
             </header>
 
             {/* Featured */}
-            <section className="blog-wrap" aria-labelledby="featured-heading">
+            <Reveal><section className="blog-wrap" aria-labelledby="featured-heading">
                 <h2 id="featured-heading" style={{ position: 'absolute', left: '-9999px' }}>
                     Featured post
                 </h2>
@@ -132,10 +133,10 @@ const Blog = () => {
                 ) : (
                     <div className="blog-empty">No posts in this category yet. Check back soon.</div>
                 )}
-            </section>
+            </section></Reveal>
 
             {/* Latest grid */}
-            <section className="blog-wrap" aria-labelledby="latest-heading">
+            <Reveal><section className="blog-wrap" aria-labelledby="latest-heading">
                 {rest.length > 0 && (
                     <>
                         <h2 id="latest-heading" className="blog-section-title">
@@ -163,7 +164,7 @@ const Blog = () => {
                         </div>
                     </>
                 )}
-            </section>
+            </section></Reveal>
 
         </div>
     );

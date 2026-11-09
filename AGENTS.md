@@ -2,8 +2,8 @@
 
 - Use the supplied company artwork at `public/brand/orion-logo.jpg`. Do not
   replace it with an invented icon, monogram, or an AI-redrawn logo.
-- Brand palette: background `#c8c1af`, highlight `#f1daac`, deep red `#9f0606`.
-  Derived warm surfaces and dark text must retain accessible contrast.
+- Brand palette: rose brown `#8E635A`, coral `#EC7267`, peach `#EDB18C`.
+  Use dark warm backgrounds, translucent glass surfaces, and accessible contrast.
 - Do not create, restore, advertise, or publish the removed Sumi-Ka, Hotzilla,
   Benjy Cafe, or other unapproved restaurant demo portfolio projects. Their
   pages, routes, static files, images, and portfolio links were deliberately

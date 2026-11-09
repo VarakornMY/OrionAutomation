@@ -51,3 +51,6 @@ MD FIles
 !AGENTS.md
 AUDIT.md
 POLISH-GUIDE.md
+
+.npm-cache/
+!src/components/effects/ATTRIBUTION.md

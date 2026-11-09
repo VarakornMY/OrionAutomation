@@ -1,4 +1,5 @@
 import React from 'react';
+import Reveal from '../components/effects/Reveal';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import BusinessDetails from '../components/BusinessDetails';
@@ -9,8 +10,8 @@ export default function Contact() {
     return (
         <div className="page-shell contact-page">
             <SEO title="Contact Orion Automation" description={`Contact ${business.name} for website development, automation, chatbot and search marketing enquiries. Phone ${business.phoneDisplay} or email ${business.email}.`} canonical="/contact" structuredData={{ '@context': 'https://schema.org', '@type': 'ContactPage', '@id': `${business.url}/contact#page`, url: `${business.url}/contact`, name: 'Contact Orion Automation', mainEntity: { '@id': organizationSchema['@id'] } }} />
-            <section className="page-hero container"><h1 className="page-title">Contact Orion</h1></section>
-            <section className="section container business-contact-layout" aria-labelledby="contact-details-title">
+            <Reveal><section className="page-hero container"><h1 className="page-title">Contact Orion</h1></section></Reveal>
+            <Reveal><section className="section container business-contact-layout" aria-labelledby="contact-details-title">
                 <div>
                     <h2 id="contact-details-title">Contact details</h2>
                     <dl className="business-details">
@@ -25,12 +26,12 @@ export default function Contact() {
                     <p>For an existing project, include the project name and the support you need.</p>
                     <Link className="text-link" to="/website#website-pricing">Website packages</Link>
                 </div>
-            </section>
-            <section className="section container business-information" aria-labelledby="business-details-title">
+            </section></Reveal>
+            <Reveal><section className="section container business-information" aria-labelledby="business-details-title">
                 <h2 id="business-details-title">Business details</h2>
                 <BusinessDetails />
                 <div className="business-policy-links"><Link to="/about-us">About Orion</Link><Link to="/privacy-policy">Privacy policy</Link><Link to="/terms-and-conditions">Terms & conditions</Link></div>
-            </section>
+            </section></Reveal>
         </div>
     );
 }
